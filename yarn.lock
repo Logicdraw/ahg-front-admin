@@ -527,6 +527,11 @@ safe-buffer@^5.1.0:
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
   integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
 
+schema-dts@^0.8.2:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-0.8.3.tgz#6c03ca47200e80e9a871d6de626a7cf04fe009b7"
+  integrity sha512-GSLeVkUgEe8DzS8/FGWou1wlC8tQ1KXA5amCqCIH/psUzF74fWswtT0QFlSoJLT08CYyixnc3S/lkAm+RExoLQ==
+
 semiver@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/semiver/-/semiver-1.1.0.tgz#9c97fb02c21c7ce4fcf1b73e2c7a24324bdddd5f"
@@ -599,6 +604,20 @@ supports-color@^7.0.0:
   dependencies:
     has-flag "^4.0.0"
 
+svelte-router-spa@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/svelte-router-spa/-/svelte-router-spa-6.0.2.tgz#505bfc72c6256658218012133a23858b5876510a"
+  integrity sha512-ySs/2TnjdLnvo0tHfdJsRPhPl0Mj4/h2qi0Zb8t4zC+BBBaCr6cZc7MtRfgzD4IMp80Nqe7ZXd/hCJuHSGtf5A==
+  dependencies:
+    url-params-parser "^1.0.3"
+
+svelte-seo@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/svelte-seo/-/svelte-seo-1.2.1.tgz#c971428049f06180ba095366321e6e06a892c09c"
+  integrity sha512-e1N1MSgct4y0XYUzWEgBy5zdlmfGAC8qn4RuL6n7tjSrl3qr7w0bY8Nv40Vbnv+UaejL7VlX9QQGjzFnSPZ2DQ==
+  dependencies:
+    schema-dts "^0.8.2"
+
 svelte@^3.0.0:
   version "3.38.2"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.38.2.tgz#55e5c681f793ae349b5cc2fe58e5782af4275ef5"
@@ -629,6 +648,11 @@ totalist@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/totalist/-/totalist-1.1.0.tgz#a4d65a3e546517701e3e5c37a47a70ac97fe56df"
   integrity sha512-gduQwd1rOdDMGxFG1gEvhV88Oirdo2p+KjoYFU7k2g+i7n6AFFbDQ5kMPUsW0pNbfQsB/cwXvT1i4Bue0s9g5g==
+
+url-params-parser@^1.0.3:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/url-params-parser/-/url-params-parser-1.0.4.tgz#10003b232e9cd13e2ba2374a1abc6e1aa8ff1b67"
+  integrity sha512-0m6BqGpY2OetTZ3UPTLKkbTfUHigsX2YhrzORT9iYiyUJ/SP2WJ3cggg2YWtvMs36GPwK9Q44ffddyarniu2Tg==
 
 wrappy@1:
   version "1.0.2"
