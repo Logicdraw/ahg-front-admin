@@ -604,6 +604,11 @@ supports-color@^7.0.0:
   dependencies:
     has-flag "^4.0.0"
 
+svelte-local-storage-store@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/svelte-local-storage-store/-/svelte-local-storage-store-0.2.3.tgz#6a652391fe1f4b8d26ff012af95e39dd8e8bbd39"
+  integrity sha512-xpo8Q+PTJWnmUrnGy13rItn0ZSTPEh826GoYbNZ5RCdJEUEayY6dmvoS7HTvrzyzYkiozQ1PKOuge5uuIof3NQ==
+
 svelte-router-spa@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/svelte-router-spa/-/svelte-router-spa-6.0.2.tgz#505bfc72c6256658218012133a23858b5876510a"

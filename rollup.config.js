@@ -43,6 +43,22 @@ export default {
 				dev: !production
 			}
 		}),
+
+		replace({
+			'process.env.NODE_ENV': JSON.stringify( 'production' ),
+			// 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+			// stringify the object       
+			app_: JSON.stringify({
+				env: {
+					IS_PROD: production,
+					AUTH_API_URL: process.env.AUTH_API_URL,
+					SUPERADMIN_API_URL: process.env.SUPERADMIN_API_URL,
+					OLD_ACT_API_URL: process.env.OLD_ACT_API_URL,
+					MAINTENANCE: process.env.MAINTENANCE,
+				}
+			}),
+		}),
+
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),
