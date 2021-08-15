@@ -58,12 +58,6 @@ td .arrow-divider:last-child {
 		{#each rows as row}
 			<TableRow {row} {columns} />
 		{/each}
-		{#each rows as row}
-			<TableRow {row} {columns} />
-		{/each}
-		{#each rows as row}
-			<TableRow {row} {columns} />
-		{/each}
 	</tbody>
 </table>
 

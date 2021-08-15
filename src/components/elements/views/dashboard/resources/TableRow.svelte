@@ -4,27 +4,29 @@ export let columns;
 
 
 
-// get data points...
+let row_values = [];
 
-// let row_values = [];
+for (var i = 0; i < columns.length; i++) {
+	let column = columns[i];
+	let row_value = row;
+	let column_full_str = '';
+	for (var j = 0; j < column.length; j++) {
+		let column_str = column[j];
+		column_full_str += column_str;
+		try {
+			console.log(row_value);
+			console.log(column_str);
+			row_value = row_value[column_str];
+		} catch(err) {
+			row_value = '';
+			break;
+		}
+		column_str += ' > ';
+	}
+	row_values.push([column_full_str, row_value]);
+}
 
-// for (var i = 0; i < columns.length; i++) {
-// 	let column = columns[i];
-// 	let row_value = row;
-// 	let column_full_str = '';
-// 	for (var i = 0; i < column.length; i++) {
-// 		let column_str = column[i];
-// 		column_full_str += column_str;
-// 		column_str += ' > ';
-// 		try {
-// 			row_value = row_value[column_str];
-// 		} catch(err) {
-// 			row_value = '';
-// 			break;
-// 		}
-// 	}
-// 	row_values.push([column_full_str, row_value]);
-// }
+// console.log(row_values);
 
 
 </script>
@@ -58,17 +60,11 @@ span.id {
 
 
 <tr>
-	<td>
-		Patrick Bourgeois
-	</td>
-
-	<td>
-		patrick@logicdraw.com
-	</td>
-
-	<td>
-		patrick@logicdraw.com
-	</td>
+	{#each row_values as row_value}
+		<td>
+			{row_value[1] || 'N/A'}
+		</td>
+	{/each}
 </tr>
 
 
