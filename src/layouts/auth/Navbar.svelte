@@ -39,7 +39,7 @@ function openActive() {
 
 			<Navigate to='/login' styles='navbar-item'>
 				<img src="/img/logo.png" style="width: 37px !important;">
-				<span>AHG Superadmin</span>
+				<span>AHG Database</span>
 			</Navigate>
 
 			<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-items" on:click={changeActive} class:is-active={active}>

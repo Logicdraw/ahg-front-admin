@@ -16,7 +16,54 @@ function closeActive() {
 
 function openActive() {
 	active = true;
-}	
+}
+
+
+const resources = [
+	{
+		id: 'adult_reps',
+		name: 'Adult Reps',
+	},
+	{
+		id: 'coaches',
+		name: 'Coaches',
+	},
+	{
+		id: 'guardians',
+		name: 'Guardians',
+	},
+	{
+		id: 'players',
+		name: 'Players',
+	},
+	// --
+	{
+		id: 'camp_instances',
+		name: 'Camps',
+	},
+	{
+		id: 'program_instances',
+		name: 'Programs',
+	},
+	{
+		id: 'team_instances',
+		name: 'Teams',
+	},
+	// --
+	{
+		id: 'camp_instance_registrations',
+		name: 'Camp Registrations',
+	},
+	{
+		id: 'program_instance_registrations',
+		name: 'Program Registrations',
+	},
+	{
+		id: 'team_instance_registrations',
+		name: 'Team Registrations',
+	},
+	// 
+]
 
 
 </script>
@@ -37,9 +84,9 @@ function openActive() {
 
 		<div class="navbar-brand">
 
-			<Navigate to='/resources' styles='navbar-item'>
+			<Navigate to='/my/resources' styles='navbar-item'>
 				<img src="/img/logo.png" style="width: 37px !important;">
-				<span>AHG Admin</span>
+				<span>AHG Database</span>
 			</Navigate>
 
 			<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-items" on:click={changeActive} class:is-active={active}>
@@ -63,11 +110,15 @@ function openActive() {
 						<span>View</span>
 					</a>
 
-					<div class="navbar-dropdown is-right" style="z-index: 10001;">
+					<div class="navbar-dropdown is-right--" style="z-index: 10001;">
 
-						<!-- <Navigate to='/resources/users' styles='navbar-item' on:click={closeActive}>
-							<span>Users</span>
-						</Navigate> -->
+						{#each resources as resource}
+
+							<Navigate to='/my/resources/{resource.id}' styles='navbar-item' on:click={closeActive}>
+								<span>{resource.name}</span>
+							</Navigate>
+
+						{/each}
 
 					</div>
 
@@ -83,11 +134,15 @@ function openActive() {
 						<span>Create</span>
 					</a>
 
-					<div class="navbar-dropdown is-right" style="z-index: 10001;">
+					<div class="navbar-dropdown is-right--" style="z-index: 10001;">
 
-						<!-- <Navigate to='/resources/users/create' styles='navbar-item' on:click={closeActive}>
-							<span>User</span>
-						</Navigate> -->
+						{#each resources as resource}
+
+							<Navigate to='/my/resource/{resource.id}/create' styles='navbar-item' on:click={closeActive}>
+								<span>{resource.name}</span>
+							</Navigate>
+
+						{/each}
 
 					</div>
 
