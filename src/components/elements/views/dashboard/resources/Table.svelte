@@ -4,6 +4,8 @@ export let columns;
 
 
 import TableRow from 'components/elements/views/dashboard/resources/TableRow.svelte';
+import TableRowMobile from 'components/elements/views/dashboard/resources/TableRowMobile.svelte';
+
 
 
 
@@ -16,45 +18,57 @@ import TableRow from 'components/elements/views/dashboard/resources/TableRow.sve
 
 <style>
 
-.panel {
-
+.table {
+	border: 1px solid var(--border);
 }
 
 @media screen and (max-width: 768px) {
-	.panel {
-		border: none !important;
+	.table {
+		display: none !important;
 	}
+}
+
+thead {
+	background: var(--bg-light) !important;
+}
+
+td .arrow-divider:last-child {
+	display: none !important;
 }
 
 </style>
 
 
-<div class="panel">
-
-	<div class="panel-heading is-hidden-mobile">
-
-		<div class="columns is-variable is-mobile is-2 is-vcentered">
-
+<table class="table  is-hoverable is-fullwidth">
+	<thead>
+		<tr>
 			{#each columns as column}
-				<div class="column is-narrow">
+				<td>
 					<span>
 						{#each column as column_str}
-							{column_str}<span class="arrow-divider">></span>
+							{column_str}<span class="arrow-divider"> ></span>
 						{/each}
 					</span>
-				</div>
+				</td>
 			{/each}
+		</tr>
+	</thead>
 
-		</div>
+	<tbody>
+		{#each rows as row}
+			<TableRow {row} {columns} />
+		{/each}
+		{#each rows as row}
+			<TableRow {row} {columns} />
+		{/each}
+		{#each rows as row}
+			<TableRow {row} {columns} />
+		{/each}
+	</tbody>
+</table>
 
-	</div>
 
-	{#each rows as row}
-
-		<TableRow {row} {columns} />
-
-	{/each}
-
-</div>
-
+{#each rows as row}
+	<TableRowMobile {row} {columns} />
+{/each}
 

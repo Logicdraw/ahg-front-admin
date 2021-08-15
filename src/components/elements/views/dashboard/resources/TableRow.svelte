@@ -3,27 +3,28 @@ export let row;
 export let columns;
 
 
+
 // get data points...
 
-let row_values = [];
+// let row_values = [];
 
-for (var i = 0; i < columns.length; i++) {
-	let column = columns[i];
-	let row_value = row;
-	let column_full_str = '';
-	for (var i = 0; i < column.length; i++) {
-		let column_str = column[i];
-		column_full_str += column_str;
-		column_str += ' > ';
-		try {
-			row_value = row_value[column_str];
-		} catch(err) {
-			row_value = '';
-			break;
-		}
-	}
-	row_values.push([column_full_str, row_value]);
-}
+// for (var i = 0; i < columns.length; i++) {
+// 	let column = columns[i];
+// 	let row_value = row;
+// 	let column_full_str = '';
+// 	for (var i = 0; i < column.length; i++) {
+// 		let column_str = column[i];
+// 		column_full_str += column_str;
+// 		column_str += ' > ';
+// 		try {
+// 			row_value = row_value[column_str];
+// 		} catch(err) {
+// 			row_value = '';
+// 			break;
+// 		}
+// 	}
+// 	row_values.push([column_full_str, row_value]);
+// }
 
 
 </script>
@@ -55,53 +56,22 @@ span.id {
 
 
 
-<!-- Desktop -->
 
-<div class="panel-block is-hidden-mobile">
+<tr>
+	<td>
+		Patrick Bourgeois
+	</td>
 
-	<div class="columns is-variable is-mobile is-2 is-vcentered">
+	<td>
+		patrick@logicdraw.com
+	</td>
 
-		<!-- each -->
-		{#each row_values as row_value}
-			<div class="column is-narrow">
-				{row_value[1]}
-			</div>
-		{/each}
-
-	</div>
-
-</div>
+	<td>
+		patrick@logicdraw.com
+	</td>
+</tr>
 
 
-<!-- Mobile -->
-
-<div class="card is-hidden-desktop is-hidden-tablet">
-
-	<div class="card-content">
-
-		{#each row_values as row_value}
-
-			<div class="columns is-variable is-mobile is-1">
-
-				<div class="column">
-					<span class="id">
-						{row_value[0]}
-					</span>
-				</div>
-
-				<div class="column is-narrow">
-					<span>
-						{row_value[1]}
-					</span>
-				</div>
-
-			</div>
-
-		{/each}
-
-	</div>
-
-</div>
 
 
 

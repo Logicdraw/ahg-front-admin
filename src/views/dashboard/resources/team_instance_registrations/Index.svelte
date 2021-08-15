@@ -20,6 +20,13 @@ const default_columns = [
 
 
 
+import { auth } from 'store/index.js';
+
+
+import { get } from 'svelte/store';
+import SvelteSeo from 'svelte-seo';
+
+
 const admin_api_url = app_.env.ADMIN_API_URL;
 
 const token = get(auth).token;
@@ -112,7 +119,7 @@ $: promise = getRows(params);
 
 
 
-<section class="section">
+<section class="section skinny-section">
 
 	<div class="container is-fullwidth">
 
@@ -129,7 +136,7 @@ $: promise = getRows(params);
 
 {:then rows}
 
-<section class="section">
+<section class="section skinny-section" style="padding-top: 0.25rem !important;">
 
 	<div class="container is-fullwidth">
 
@@ -149,7 +156,7 @@ $: promise = getRows(params);
 
 {:catch error}
 
-<section class="section">
+<section class="section skinny-section" style="padding-top: 0.25rem !important;">
 
 	<div class="container is-fullwidth">
 

@@ -176,7 +176,7 @@ const routes = [
 						component: DashboardResourceAdultRepsCreate,
 					},
 					{
-						name: 'adult_reps/:resource_id/edit',
+						name: 'adult_reps/edit/:resource_id',
 						component: DashboardResourceAdultRepsEdit,
 					},
 					{
@@ -184,7 +184,7 @@ const routes = [
 						component: DashboardResourceCoachesCreate,
 					},
 					{
-						name: 'coaches/:resource_id/edit',
+						name: 'coaches/edit/:resource_id',
 						component: DashboardResourceCoachesEdit,
 					},
 					{
@@ -192,7 +192,7 @@ const routes = [
 						component: DashboardResourceGuardiansCreate,
 					},
 					{
-						name: 'guardians/:resource_id/edit',
+						name: 'guardians/edit/:resource_id',
 						component: DashboardResourceGuardiansEdit,
 					},
 					{
@@ -200,7 +200,7 @@ const routes = [
 						component: DashboardResourcePlayersCreate,
 					},
 					{
-						name: 'players/:resource_id/edit',
+						name: 'players/edit/:resource_id',
 						component: DashboardResourcePlayersEdit,
 					},
 					// --
@@ -209,7 +209,7 @@ const routes = [
 						component: DashboardResourceCampsCreate,
 					},
 					{
-						name: 'camp_instances/:resource_id/edit',
+						name: 'camp_instances/edit/:resource_id',
 						component: DashboardResourceCampsEdit,
 					},
 					{
@@ -217,7 +217,7 @@ const routes = [
 						component: DashboardResourceProgramsCreate,
 					},
 					{
-						name: 'program_instances/:resource_id/edit',
+						name: 'program_instances/edit/:resource_id',
 						component: DashboardResourceProgramsEdit,
 					},
 					{
@@ -225,7 +225,7 @@ const routes = [
 						component: DashboardResourceTeamsCreate,
 					},
 					{
-						name: 'team_instances/:resource_id/edit',
+						name: 'team_instances/edit/:resource_id',
 						component: DashboardResourceTeamsEdit,
 					},
 					// --
@@ -234,7 +234,7 @@ const routes = [
 						component: DashboardResourceCampRegistrationsCreate,
 					},
 					{
-						name: 'camp_instance_registrations/:resource_id/edit',
+						name: 'camp_instance_registrations/edit/:resource_id',
 						component: DashboardResourceCampRegistrationsEdit,
 					},
 					{
@@ -242,7 +242,7 @@ const routes = [
 						component: DashboardResourceProgramRegistrationsCreate,
 					},
 					{
-						name: 'program_instance_registrations/:resource_id/edit',
+						name: 'program_instance_registrations/edit/:resource_id',
 						component: DashboardResourceProgramRegistrationsEdit,
 					},
 					{
@@ -250,7 +250,7 @@ const routes = [
 						component: DashboardResourceTeamRegistrationsCreate,
 					},
 					{
-						name: 'team_instance_registrations/:resource_id/edit',
+						name: 'team_instance_registrations/edit/:resource_id',
 						component: DashboardResourceTeamRegistrationsEdit,
 					},
 				],

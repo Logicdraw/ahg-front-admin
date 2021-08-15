@@ -85,7 +85,7 @@ export default {
 				env: {
 					IS_PROD: production,
 					AUTH_API_URL: process.env.AUTH_API_URL,
-					SUPERADMIN_API_URL: process.env.SUPERADMIN_API_URL,
+					ADMIN_API_URL: process.env.ADMIN_API_URL,
 					MAINTENANCE: process.env.MAINTENANCE,
 				}
 			}),
