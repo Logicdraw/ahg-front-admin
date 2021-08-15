@@ -6,15 +6,14 @@ import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 
 import Table from 'components/elements/views/dashboard/resources/Table.svelte';
-import Filter from 'components/elements/views/dashboard/resources/players/Filter.svelte';
+import Filter from 'components/elements/views/dashboard/resources/coaches/Filter.svelte';
 
 
 
 const columns = [
-	['first_name'],
-	['last_name'],
-	['date_of_birth'],
-	['gender'],
+	['full_name'],
+	['email'],
+	['mobile_phone'],
 ]
 
 
@@ -42,7 +41,7 @@ async function getRows(params) {
 	let params_string = new URLSearchParams(cleaned_params).toString();
 
 
-	const url = `${admin_api_url}/resources/players?${params_string}`;
+	const url = `${admin_api_url}/resources/coaches?${params_string}`;
 
 	try {
 
@@ -100,7 +99,7 @@ $: promise = getRows(params);
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				Players
+				Coaches
 			</p>
 
 		</div>

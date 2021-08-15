@@ -5,6 +5,16 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 
+
+
+import replace from '@rollup/plugin-replace';
+
+import { config } from 'dotenv';
+
+config().parsed;
+
+
+
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -27,6 +37,29 @@ function serve() {
 		}
 	};
 }
+
+
+
+import postcss from 'rollup-plugin-postcss';
+import sveltePreprocess from 'svelte-preprocess';
+
+
+
+import alias from '@rollup/plugin-alias';
+
+
+const aliases = alias({
+	resolve: ['.svelte', '.js'], //optional, by default this will just look for .js files or folders
+	entries: [
+		{ find: 'components', replacement: 'src/components' },
+		{ find: 'layouts', replacement: 'src/layouts' },
+		{ find: 'views', replacement: 'src/views' },
+		{ find: 'store', replacement: 'src/store' },
+		{ find: 'util', replacement: 'src/util' },
+	]
+});
+
+
 
 export default {
 	input: 'src/main.js',
@@ -53,7 +86,6 @@ export default {
 					IS_PROD: production,
 					AUTH_API_URL: process.env.AUTH_API_URL,
 					SUPERADMIN_API_URL: process.env.SUPERADMIN_API_URL,
-					OLD_ACT_API_URL: process.env.OLD_ACT_API_URL,
 					MAINTENANCE: process.env.MAINTENANCE,
 				}
 			}),
@@ -73,6 +105,12 @@ export default {
 			dedupe: ['svelte']
 		}),
 		commonjs(),
+
+
+		postcss(),
+
+
+		aliases,
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated

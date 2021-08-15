@@ -6,15 +6,15 @@ import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 
 import Table from 'components/elements/views/dashboard/resources/Table.svelte';
-import Filter from 'components/elements/views/dashboard/resources/players/Filter.svelte';
+import Filter from 'components/elements/views/dashboard/resources/camp_instance_registrations/Filter.svelte';
 
 
 
-const columns = [
-	['first_name'],
-	['last_name'],
-	['date_of_birth'],
-	['gender'],
+const default_columns = [
+	['players_sc', 'full_name'],
+	['camp_instances_sc', 'camps_sc', 'name'],
+	['camp_instances_sc', 'year_start'],
+	['camp_instances_sc', 'year_end'],
 ]
 
 
@@ -42,7 +42,7 @@ async function getRows(params) {
 	let params_string = new URLSearchParams(cleaned_params).toString();
 
 
-	const url = `${admin_api_url}/resources/players?${params_string}`;
+	const url = `${admin_api_url}/resources/camp-instance-registrations?${params_string}`;
 
 	try {
 
@@ -100,7 +100,7 @@ $: promise = getRows(params);
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				Players
+				Camp Registrations
 			</p>
 
 		</div>
