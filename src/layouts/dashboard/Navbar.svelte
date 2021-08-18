@@ -66,6 +66,22 @@ const resources = [
 ]
 
 
+const act_resources = [
+	{
+		id: 'camp_registrations',
+		name: 'Camp Registrations',
+	},
+	{
+		id: 'coach_registrations',
+		name: 'Coach Registrations',
+	},
+	{
+		id: 'team_registrations',
+		name: 'Team Registrations',
+	},
+]
+
+
 </script>
 
 
@@ -150,16 +166,67 @@ const resources = [
 				</div>
 
 
-				<Navigate styles="navbar-item" to="/logout" on:click={closeActive}>
-					<span on:click={closeActive}>ACT Archive</span>
-				</Navigate>
+				<div class="navbar-item has-dropdown is-hoverable" style="z-index: 100;">
 
+
+					<a class="navbar-link">
+						<span>ACT Archive</span>
+					</a>
+
+					<div class="navbar-dropdown is-right--" style="z-index: 10001;">
+
+						{#each act_resources as resource}
+
+							<Navigate to='/my/act/resources/{resource.id}' styles='navbar-item' on:click={closeActive}>
+								<span>{resource.name}</span>
+							</Navigate>
+
+						{/each}
+
+					</div>
+
+
+				</div>
+
+
+
+
+				<div class="navbar-item has-dropdown is-hoverable" style="z-index: 100;">
+
+
+					<a class="navbar-link">
+						<span>File Templates</span>
+					</a>
+
+					<div class="navbar-dropdown is-right--" style="z-index: 10001;">
+
+						<Navigate to='/my/file_templates' styles='navbar-item' on:click={closeActive}>
+							<span>View</span>
+						</Navigate>
+
+						<Navigate to='/my/file_template/create' styles='navbar-item' on:click={closeActive}>
+							<span>Create</span>
+						</Navigate>
+
+					</div>
+
+
+				</div>
+
+
+				<Navigate styles="navbar-item" to="/my/resources/master-search" on:click={closeActive}>
+					<span on:click={closeActive}>Master Search</span>
+				</Navigate>
 
 				<!-- resources dropdown! -->
 
 			</div>
 
 			<div class="navbar-end">
+
+				<!-- <Navigate styles="navbar-item" to="/my/settings" on:click={closeActive}>
+					<span on:click={closeActive}>Settings</span>
+				</Navigate> -->
 
 				<Navigate styles="navbar-item" to="/logout" on:click={closeActive}>
 					<span on:click={closeActive}>Logout</span>

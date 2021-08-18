@@ -1,6 +1,9 @@
 <script>
+export let resource_id;
 export let rows;
 export let columns;
+
+export let id_key;
 
 
 import TableRow from 'components/elements/views/dashboard/resources/TableRow.svelte';
@@ -32,6 +35,11 @@ thead {
 	background: var(--bg-light) !important;
 }
 
+td .arrow-divider {
+	margin-left: 0.325rem !important;
+	margin-right: 0.325rem !important;
+}
+
 td .arrow-divider:last-child {
 	display: none !important;
 }
@@ -39,15 +47,13 @@ td .arrow-divider:last-child {
 </style>
 
 
-<table class="table  is-hoverable is-fullwidth">
+<table class="table is-hoverable is-fullwidth">
 	<thead>
 		<tr>
 			{#each columns as column}
 				<td>
 					<span>
-						{#each column as column_str}
-							{column_str}<span class="arrow-divider"> ></span>
-						{/each}
+						{column[column.length - 1]}
 					</span>
 				</td>
 			{/each}
@@ -56,13 +62,13 @@ td .arrow-divider:last-child {
 
 	<tbody>
 		{#each rows as row}
-			<TableRow {row} {columns} />
+			<TableRow {row} {columns} {resource_id} {id_key} />
 		{/each}
 	</tbody>
 </table>
 
 
 {#each rows as row}
-	<TableRowMobile {row} {columns} />
+	<TableRowMobile {row} {columns} {resource_id} {id_key} />
 {/each}
 

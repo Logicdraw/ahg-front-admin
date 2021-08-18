@@ -25,6 +25,7 @@ import DashboardLayout from 'layouts/dashboard/Layout.svelte';
 
 import DashboardResourcesIndex from 'views/dashboard/resources/Index.svelte';
 
+import DashboardResourcesMasterSearch from 'views/dashboard/resources/MasterSearch.svelte';
 // 
 
 import DashboardResourcesAdultRepsIndex from 'views/dashboard/resources/adult_reps/Index.svelte';
@@ -49,10 +50,10 @@ import DashboardResourcesTeamRegistrationsIndex from 'views/dashboard/resources/
 
 
 import DashboardResourceAdultRepsCreate from 'views/dashboard/resource/adult_reps/Create.svelte';
-import DashboardResourceAdultRepsEdit from 'views/dashboard/resource/adult_reps/Create.svelte';
+import DashboardResourceAdultRepsEdit from 'views/dashboard/resource/adult_reps/Edit.svelte';
 
 import DashboardResourceCoachesCreate from 'views/dashboard/resource/coaches/Create.svelte';
-import DashboardResourceCoachesEdit from 'views/dashboard/resource/coaches/Create.svelte';
+import DashboardResourceCoachesEdit from 'views/dashboard/resource/coaches/Edit.svelte';
 
 import DashboardResourceGuardiansCreate from 'views/dashboard/resource/guardians/Create.svelte';
 import DashboardResourceGuardiansEdit from 'views/dashboard/resource/guardians/Edit.svelte';
@@ -78,6 +79,39 @@ import DashboardResourceProgramRegistrationsEdit from 'views/dashboard/resource/
 import DashboardResourceTeamRegistrationsCreate from 'views/dashboard/resource/team_instance_registrations/Create.svelte';
 import DashboardResourceTeamRegistrationsEdit from 'views/dashboard/resource/team_instance_registrations/Edit.svelte';
 
+
+// ACT
+
+import DashboardACTResourcesCampRegistrationsIndex from 'views/dashboard/act/resources/camp_registrations/Index.svelte';
+
+import DashboardACTResourcesCoachRegistrationsIndex from 'views/dashboard/act/resources/coach_registrations/Index.svelte';
+
+import DashboardACTResourcesTeamRegistrationsIndex from 'views/dashboard/act/resources/team_registrations/Index.svelte';
+
+
+import DashboardACTResourceCampRegistrationsEdit from 'views/dashboard/act/resource/camp_registrations/Edit.svelte';
+
+import DashboardACTResourceCoachRegistrationsEdit from 'views/dashboard/act/resource/coach_registrations/Edit.svelte';
+
+import DashboardACTResourceTeamRegistrationsEdit from 'views/dashboard/act/resource/team_registrations/Edit.svelte';
+
+
+
+// Files
+
+import DashboardFileTemplatesIndex from 'views/dashboard/file_templates/Index.svelte';
+
+
+// File
+
+import DashboardFileTemplateCreate from 'views/dashboard/file_template/Create.svelte';
+
+import DashboardFileTemplateEdit from 'views/dashboard/file_template/Edit.svelte';
+
+
+// Settings
+
+import DashboardSettingsIndex from 'views/dashboard/settings/Index.svelte';
 
 
 // Errors
@@ -122,6 +156,10 @@ const routes = [
 					{
 						name: 'index',
 						component: DashboardResourcesIndex,
+					},
+					{
+						name: 'master-search',
+						component: DashboardResourcesMasterSearch,
 					},
 					// Adult --
 					{
@@ -254,6 +292,66 @@ const routes = [
 						component: DashboardResourceTeamRegistrationsEdit,
 					},
 				],
+			},
+			{
+				name: 'act',
+				nestedRoutes: [
+					{
+						name: 'resources',
+						nestedRoutes: [
+							{
+								name: 'camp_registrations',
+								component: DashboardACTResourcesCampRegistrationsIndex,
+							},
+							{
+								name: 'coach_registrations',
+								component: DashboardACTResourcesCoachRegistrationsIndex,
+							},
+							{
+								name: 'team_registrations',
+								component: DashboardACTResourcesTeamRegistrationsIndex,
+							},
+						],
+					},
+					{
+						name: 'resource',
+						nestedRoutes: [
+							{
+								name: 'camp_registrations/edit/:resource_id',
+								component: DashboardACTResourceCampRegistrationsEdit,
+							},
+							{
+								name: 'coach_registrations/edit/:resource_id',
+								component: DashboardACTResourceCampRegistrationsEdit,
+							},
+							{
+								name: 'team_registrations/edit/:resource_id',
+								component: DashboardACTResourceTeamRegistrationsEdit,
+							},
+						],
+					},
+				],
+			},
+			{
+				name: 'file_templates',
+				component: DashboardFileTemplatesIndex,
+			},
+			{
+				name: 'file_template',
+				nestedRoutes: [
+					{
+						name: 'create',
+						component: DashboardFileTemplateCreate,
+					},
+					{
+						name: 'edit/:file_template_id',
+						component: DashboardFileTemplateEdit,
+					},
+				],
+			},
+			{
+				name: 'settings',
+				component: DashboardSettingsIndex,
 			},
 		],
 	},

@@ -18,7 +18,7 @@ import { Navigate } from 'svelte-router-spa';
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				View
+				<span>View</span>
 			</p>
 
 		</div>

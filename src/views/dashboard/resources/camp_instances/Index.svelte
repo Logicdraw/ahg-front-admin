@@ -10,11 +10,13 @@ import Filter from 'components/elements/views/dashboard/resources/camp_instances
 
 
 
-const default_columns = [
+const columns = [
 	['camps_sc', 'name'],
 	['year_start'],
 	['year_end'],
 ]
+
+const resource_id = 'camp_instances';
 
 
 
@@ -30,6 +32,9 @@ const admin_api_url = app_.env.ADMIN_API_URL;
 const token = get(auth).token;
 
 
+let at_last_page = false;
+
+
 let abort_controller = new AbortController();
 
 async function getRows(params) {
@@ -43,6 +48,10 @@ async function getRows(params) {
 		if (!((value === null) || (value === undefined) || (value === ''))) {
 			cleaned_params[key] = value;
 		}
+	}
+
+	if (cleaned_params['q']) {
+		cleaned_params['offset'] = 0;
 	}
 
 	let params_string = new URLSearchParams(cleaned_params).toString();
@@ -66,6 +75,8 @@ async function getRows(params) {
 			throw new Error(result);
 		}
 
+		at_last_page = (!result.length);
+
 		return result;
 
 	} catch(err) {
@@ -85,6 +96,8 @@ async function getRows(params) {
 
 let params = {
 	q: '',
+	offset: 0,
+	limit: 25,
 }
 
 $: promise = getRows(params);
@@ -106,7 +119,7 @@ $: promise = getRows(params);
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				Camps
+				<span>Camps</span>
 			</p>
 
 		</div>
@@ -121,7 +134,7 @@ $: promise = getRows(params);
 
 	<div class="container is-fullwidth">
 
-		<Filter bind:params={params} />
+		<Filter bind:params={params} {at_last_page} />
 
 	</div>
 
@@ -144,7 +157,7 @@ $: promise = getRows(params);
 
 		{:else}
 
-			<Table {rows} {columns} />
+			<Table {rows} {columns} {resource_id} />
 
 		{/if}
 

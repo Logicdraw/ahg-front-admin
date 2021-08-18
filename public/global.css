@@ -28,6 +28,7 @@
 
 	--border: #9da0a2;
 	--border-hover: #737779;
+	--border-light: #b7c1c7;
 
 
 	--blue: #2e9bec;
@@ -114,7 +115,10 @@ body {
 }
 
 .hero-subtitle span {
-	text-decoration: underline !important;
+	background-color: #242424 !important;
+	padding: 0.375rem 1rem;
+	border-radius: 6px;
+	display: inline-block;
 }
 
 .hero-subtitle a {
@@ -541,6 +545,25 @@ form {
 }
 
 
+.button {
+	border-color: var(--border) !important;
+}
+
+.button.is-normal {
+	font-weight: 400 !important;
+}
+
+.button:hover {
+	border-color: var(--border-hover) !important;
+}
+
+.button.is-medium {
+	font-weight: 400 !important;
+	color: var(--text-grey) !important;
+	font-size: 1.125rem !important;
+}
+
+
 
 
 .modal-card-body {
@@ -675,4 +698,34 @@ form {
 
 }
 
+
+
+.textarea {
+	border: 1px solid var(--border) !important;
+	border-radius: 3px !important;
+}
+
+
+.paginate-button i {
+	margin: 0 !important;
+}
+
+
+.selectContainer {
+	font-family: 'Inter' !important;
+}
+
+.selectContainer input {
+	font-family: 'Inter' !important;
+
+}
+
+.selectContainer:not(.multiSelect) input {
+	border-radius: 3px !important;
+	border: 1px solid var(--border) !important;
+}
+
+.listContainer {
+	border: 1px solid var(--border) !important;
+}
 

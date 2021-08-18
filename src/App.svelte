@@ -13,7 +13,7 @@ const in_maintenance = (app_.env.MAINTENANCE == '1');
 	
 main {
 	min-height: calc(100vh - var(--navbar-height));
-	margin-top: var(--navbar-height);
+	/*margin-top: var(--navbar-height);*/
 }
 
 </style>

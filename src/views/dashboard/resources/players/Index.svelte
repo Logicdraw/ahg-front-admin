@@ -4,10 +4,11 @@ export let currentRoute;
 
 import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
+import Paginate from 'components/elements/Paginate.svelte';
+import Tabs from 'components/elements/views/dashboard/resources/players/Tabs.svelte';
 
 import Table from 'components/elements/views/dashboard/resources/Table.svelte';
 import Filter from 'components/elements/views/dashboard/resources/players/Filter.svelte';
-
 
 
 const columns = [
@@ -16,6 +17,8 @@ const columns = [
 	['date_of_birth'],
 	['gender'],
 ]
+
+const resource_id = 'players';
 
 
 
@@ -31,6 +34,8 @@ const admin_api_url = app_.env.ADMIN_API_URL;
 const token = get(auth).token;
 
 
+let at_last_page = false;
+
 let abort_controller = new AbortController();
 
 async function getRows(params) {
@@ -44,6 +49,11 @@ async function getRows(params) {
 		if (!((value === null) || (value === undefined) || (value === ''))) {
 			cleaned_params[key] = value;
 		}
+	}
+
+
+	if (cleaned_params['q']) {
+		cleaned_params['offset'] = 0;
 	}
 
 	let params_string = new URLSearchParams(cleaned_params).toString();
@@ -67,6 +77,8 @@ async function getRows(params) {
 			throw new Error(result);
 		}
 
+		at_last_page = (!result.length);
+
 		return result;
 
 	} catch(err) {
@@ -85,7 +97,9 @@ async function getRows(params) {
 
 
 let params = {
-	q: '',
+	q: currentRoute.queryParams.q || '',
+	offset: 0,
+	limit: 25,
 }
 
 $: promise = getRows(params);
@@ -107,7 +121,7 @@ $: promise = getRows(params);
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				Players
+				<span>Players</span>
 			</p>
 
 		</div>
@@ -118,11 +132,22 @@ $: promise = getRows(params);
 
 
 
+<section class="section skinny-section" style="padding-bottom: 0 !important;">
+
+	<div class="container is-fullwidth">
+
+		<Tabs {params} />
+
+	</div>
+
+</section>
+
+
 <section class="section skinny-section">
 
 	<div class="container is-fullwidth">
 
-		<Filter bind:params={params} />
+		<Filter bind:params={params} {at_last_page} />
 
 	</div>
 
@@ -145,9 +170,11 @@ $: promise = getRows(params);
 
 		{:else}
 
-			<Table {rows} {columns} />
+			<Table {rows} {columns} {resource_id} />
 
 		{/if}
+
+		<!-- <Paginate bind:params={params} /> -->
 
 	</div>
 

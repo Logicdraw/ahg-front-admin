@@ -10,11 +10,14 @@ import Filter from 'components/elements/views/dashboard/resources/team_instances
 
 
 
-const default_columns = [
+const columns = [
 	['teams_sc', 'name'],
 	['year_start'],
 	['year_end'],
 ]
+
+const resource_id = 'team_instances';
+
 
 
 
@@ -28,6 +31,9 @@ import SvelteSeo from 'svelte-seo';
 const admin_api_url = app_.env.ADMIN_API_URL;
 
 const token = get(auth).token;
+
+
+let at_last_page = false;
 
 
 let abort_controller = new AbortController();
@@ -45,6 +51,11 @@ async function getRows(params) {
 		}
 	}
 
+	if (cleaned_params['q']) {
+		cleaned_params['offset'] = 0;
+	}
+
+
 	let params_string = new URLSearchParams(cleaned_params).toString();
 
 
@@ -60,11 +71,16 @@ async function getRows(params) {
 			},
 		});
 
+
+
 		const result = await resp.json();
 
 		if (!resp.ok) {
 			throw new Error(result);
 		}
+
+		at_last_page = (!result.length);
+
 
 		return result;
 
@@ -85,6 +101,8 @@ async function getRows(params) {
 
 let params = {
 	q: '',
+	limit: 25,
+	offset: 0,
 }
 
 $: promise = getRows(params);
@@ -106,7 +124,7 @@ $: promise = getRows(params);
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				Camps
+				<span>Teams</span>
 			</p>
 
 		</div>
@@ -121,7 +139,7 @@ $: promise = getRows(params);
 
 	<div class="container is-fullwidth">
 
-		<Filter bind:params={params} />
+		<Filter bind:params={params} {at_last_page} />
 
 	</div>
 
@@ -144,7 +162,7 @@ $: promise = getRows(params);
 
 		{:else}
 
-			<Table {rows} {columns} />
+			<Table {rows} {columns} {resource_id} />
 
 		{/if}
 

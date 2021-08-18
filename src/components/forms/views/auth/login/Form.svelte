@@ -60,7 +60,7 @@ const {
 		submitForm(form_data).then(data => {
 
 			auth.set({token: data.access_token});
-			navigateTo('/resources');
+			navigateTo('/my/resources');
 
 		}).catch(error => {
 

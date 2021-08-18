@@ -1,8 +1,8 @@
 <script>
-export let msg_show;
+export let msg_show = true;
 export let msg_text;
-export let msg_type; // error or success.
-export let msg_forever;
+export let msg_type = 'error'; // error or success.
+export let msg_forever = true;
 
 
 function hideCard() {

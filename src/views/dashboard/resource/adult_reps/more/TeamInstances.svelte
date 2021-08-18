@@ -1,7 +1,4 @@
 <script>
-export let currentRoute;
-
-
 
 </script>
 
@@ -9,4 +6,5 @@ export let currentRoute;
 <style>
 
 </style>
+
 

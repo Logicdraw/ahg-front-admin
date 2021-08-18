@@ -10,12 +10,17 @@ import Filter from 'components/elements/views/dashboard/resources/camp_instance_
 
 
 
-const default_columns = [
-	['players_sc', 'full_name'],
+const columns = [
+	['camp_instance_registrations_sc', 'players_sc', 'first_name'],
+	['camp_instance_registrations_sc', 'players_sc', 'last_name'],
 	['camp_instances_sc', 'camps_sc', 'name'],
 	['camp_instances_sc', 'year_start'],
 	['camp_instances_sc', 'year_end'],
 ]
+
+const id_key = 'camp_instance_registration_id';
+
+const resource_id = 'camp_instance_registrations';
 
 
 
@@ -29,6 +34,9 @@ import SvelteSeo from 'svelte-seo';
 const admin_api_url = app_.env.ADMIN_API_URL;
 
 const token = get(auth).token;
+
+
+let at_last_page = false;
 
 
 let abort_controller = new AbortController();
@@ -46,10 +54,14 @@ async function getRows(params) {
 		}
 	}
 
+	if (cleaned_params['q']) {
+		cleaned_params['offset'] = 0;
+	}
+
 	let params_string = new URLSearchParams(cleaned_params).toString();
 
 
-	const url = `${admin_api_url}/resources/camp-instance-registrations?${params_string}`;
+	const url = `${admin_api_url}/resources/camp-instances-camp-instance-registrations?${params_string}`;
 
 	try {
 
@@ -66,6 +78,8 @@ async function getRows(params) {
 		if (!resp.ok) {
 			throw new Error(result);
 		}
+
+		at_last_page = (!result.length);
 
 		return result;
 
@@ -86,6 +100,8 @@ async function getRows(params) {
 
 let params = {
 	q: '',
+	offset: 0,
+	limit: 25,
 }
 
 $: promise = getRows(params);
@@ -107,7 +123,7 @@ $: promise = getRows(params);
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				Camp Registrations
+				<span>Camp Registrations</span>
 			</p>
 
 		</div>
@@ -122,7 +138,7 @@ $: promise = getRows(params);
 
 	<div class="container is-fullwidth">
 
-		<Filter bind:params={params} />
+		<Filter bind:params={params} {at_last_page} />
 
 	</div>
 
@@ -145,7 +161,7 @@ $: promise = getRows(params);
 
 		{:else}
 
-			<Table {rows} {columns} />
+			<Table {rows} {columns} {resource_id} {id_key} />
 
 		{/if}
 

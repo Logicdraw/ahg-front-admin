@@ -310,6 +310,11 @@ chokidar@^3.5.0:
   optionalDependencies:
     fsevents "~2.3.1"
 
+chosen-js@^1.8.7:
+  version "1.8.7"
+  resolved "https://registry.yarnpkg.com/chosen-js/-/chosen-js-1.8.7.tgz#9bfa5597f5081d602ff4ae904af9aef33265bb1d"
+  integrity sha512-eVdrZJ2U5ISdObkgsi0od5vIJdLwq1P1Xa/Vj/mgxkMZf14DlgobfB6nrlFi3kW4kkvKLsKk4NDqZj1MU1DCpw==
+
 coa@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/coa/-/coa-2.0.2.tgz#43f6c21151b4ef2bf57187db0d73de229e3e7ec3"
@@ -1964,6 +1969,11 @@ svelte-router-spa@^6.0.2:
   integrity sha512-ySs/2TnjdLnvo0tHfdJsRPhPl0Mj4/h2qi0Zb8t4zC+BBBaCr6cZc7MtRfgzD4IMp80Nqe7ZXd/hCJuHSGtf5A==
   dependencies:
     url-params-parser "^1.0.3"
+
+svelte-select@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/svelte-select/-/svelte-select-4.3.1.tgz#ed2832e78d2aff6251c1199d74dc41864adbffca"
+  integrity sha512-JQx0jFxGx2/Jv/SNpUzP/p7ud3yUdrUg97yxEc/lmFI3UMRpJsTVMZ3OJMCWBuesT9WhP8CPg14K9aJRjZciUw==
 
 svelte-seo@^1.1.0:
   version "1.2.1"
