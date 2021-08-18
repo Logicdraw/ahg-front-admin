@@ -1,8 +1,9 @@
 <script>
 export let params;
+export let resource_id;
 
-import ExportModal from 'components/elements/views/dashboard/resources/players/ExportModal.svelte';
-import SelectColumnsModal from 'components/elements/views/dashboard/resources/players/SelectColumnsModal.svelte';
+import ExportModal from 'components/elements/views/dashboard/ExportModal.svelte';
+import SelectColumnsModal from 'components/elements/views/dashboard/resources/SelectColumnsModal.svelte';
 
 
 import { Navigate } from 'svelte-router-spa';
@@ -28,6 +29,7 @@ async function openSelectColumnsModal() {
 <style>
 
 </style>
+
 
 
 <ExportModal bind:is_active={export_modal_is_active} {params} />
@@ -66,8 +68,8 @@ async function openSelectColumnsModal() {
 
 		<div class="control">
 
-			<Navigate to='/my/resource/players/create' styles="button is-normal">
-				Create Player
+			<Navigate to='/my/resource/{resource_id}/create' styles="button is-normal">
+				Create
 				<i class="fal fa-plus"></i>
 			</Navigate>
 

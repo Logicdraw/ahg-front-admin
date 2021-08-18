@@ -7,51 +7,9 @@ import MsgCard from 'components/elements/MsgCard.svelte';
 import { Navigate } from 'svelte-router-spa';
 
 
-const resources = [
-	{
-		id: 'adult_reps',
-		name: 'Adult Reps',
-	},
-	{
-		id: 'coaches',
-		name: 'Coaches',
-	},
-	{
-		id: 'guardians',
-		name: 'Guardians',
-	},
-	{
-		id: 'players',
-		name: 'Players',
-	},
-	// --
-	{
-		id: 'camp_instances',
-		name: 'Camps',
-	},
-	{
-		id: 'program_instances',
-		name: 'Programs',
-	},
-	{
-		id: 'team_instances',
-		name: 'Teams',
-	},
-	// --
-	{
-		id: 'camp_instance_registrations',
-		name: 'Camp Registrations',
-	},
-	{
-		id: 'program_instance_registrations',
-		name: 'Program Registrations',
-	},
-	{
-		id: 'team_instance_registrations',
-		name: 'Team Registrations',
-	},
-	// 
-]
+import resources_info from 'utils/resources.js';
+
+
 
 </script>
 
@@ -86,7 +44,7 @@ const resources = [
 
 		<div class="columns is-variable is-mobile is-multiline is-centered">
 
-			{#each resources as resource}
+			{#each resources_info as resource}
 
 				<div class="column is-3-desktop is-4-tablet is-6-mobile">
 
@@ -113,7 +71,7 @@ const resources = [
 
 		<div class="columns is-variable is-mobile is-multiline is-centered">
 
-			{#each resources as resource}
+			{#each resources_info as resource}
 
 				<div class="column is-3-desktop is-4-tablet is-6-mobile">
 
@@ -130,7 +88,6 @@ const resources = [
 	</div>
 
 </section>
-<br>
 
 
 

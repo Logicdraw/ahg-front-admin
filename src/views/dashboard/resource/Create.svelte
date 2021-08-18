@@ -2,6 +2,12 @@
 export let currentRoute;
 
 
+import resources_info from 'utils/resources.js';
+
+const resource_info = resources_info[currentRoute.namedParams.resource_id];
+
+
+import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 import Form from 'components/forms/views/dashboard/resource/players/create/Form.svelte'
 
@@ -28,7 +34,7 @@ let msg_text;
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				<span>Create new Player</span>
+				<span>Create new {resource_info.name_singular}</span>
 			</p>
 
 		</div>
@@ -37,6 +43,11 @@ let msg_text;
 
 </section>
 
+
+{#await promise}
+
+
+{:then results}
 
 <section class="section">
 
@@ -52,7 +63,7 @@ let msg_text;
 
 					<div class="card-content">
 
-						<Form bind:msg_show={msg_show} bind:msg_type={msg_type} bind:msg_text={msg_text} />
+						<Form bind:msg_show={msg_show} bind:msg_type={msg_type} bind:msg_text={msg_text} resource_id={resource_info.id} />
 
 					</div>
 
@@ -66,6 +77,19 @@ let msg_text;
 
 </section>
 
+{:catch error}
+
+<section class="section skinny-section" style="padding-top: 0.25rem !important;">
+
+	<div class="container is-fullwidth">
+
+		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={error.detail} />
+
+	</div>
+
+</section>
+
+{/await}
 
 
 

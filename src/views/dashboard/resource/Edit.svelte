@@ -2,23 +2,23 @@
 export let currentRoute;
 
 
-import MsgCard from 'components/elements/MsgCard.svelte';
+import resources_info from 'utils/resources.js';
+
+const resource_info = resources_info[currentRoute.namedParams.resource_id];
+
+
 import Loading from 'components/elements/Loading.svelte';
+import MsgCard from 'components/elements/MsgCard.svelte';
+import Form from 'components/forms/views/dashboard/resource/{resource_info.id}/edit/Form.svelte';
 
-import Form from 'components/forms/views/dashboard/resource/camp_instance_registrations/create/Form.svelte'
-
-import SvelteSeo from 'svelte-seo';
-
-
-let msg_show = false;
-let msg_type;
-let msg_text;
+import Tabs from 'components/elements/views/dashboard/resource/{resource_info.id}/edit/Tabs.svelte';
 
 
 import { auth } from 'store/index.js';
 
 
 import { get } from 'svelte/store';
+import SvelteSeo from 'svelte-seo';
 
 
 const admin_api_url = app_.env.ADMIN_API_URL;
@@ -26,36 +26,12 @@ const admin_api_url = app_.env.ADMIN_API_URL;
 const token = get(auth).token;
 
 
-const promise = Promise.all([
-	getCampInstances(),
-	getPlayers(),
-]);
+let abort_controller = new AbortController();
 
 
-async function getCampInstances() {
+async function getRow() {
 
-	const url = `${admin_api_url}/resources/camp-instances?limit=1000000`;
-
-	const resp = await fetch(url, {
-		method: 'GET',
-		headers: {
-			Authorization: `Bearer ${token}`,
-		},
-	});
-
-	const result = await resp.json();
-
-	if (!resp.ok) {
-		throw new Error(result);
-	}
-
-	return result;
-
-}
-
-async function getPlayers() {
-
-	const url = `${admin_api_url}/resources/players?limit=1000000`;
+	const url = `${admin_api_url}/resources/${resource_info.id}/${currentRoute.namedParams.resource_id}`;
 
 	const resp = await fetch(url, {
 		method: 'GET',
@@ -75,6 +51,46 @@ async function getPlayers() {
 }
 
 
+async function getAdditionalResource(resource_id) {
+
+	const url = `${admin_api_url}/resources/${resource_id}`;
+
+	const resp = await fetch(url, {
+		method: 'GET',
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
+	});
+
+	const result = await resp.json();
+
+	if (!resp.ok) {
+		throw new Error(result);
+	}
+
+	return result;
+}
+
+
+
+let promise_funcs = [
+	getRow(),
+];
+
+
+for (var i = 0; i < resource_info.form_additional_data.length; i++) {
+	promise_funcs.push(getAdditionalResource(resource_info.form_additional_data[i].url));
+}
+
+
+const promise = Promise.all(promise_funcs);
+
+
+
+
+let msg_show = false;
+let msg_type;
+let msg_text;
 
 </script>
 
@@ -92,10 +108,21 @@ async function getPlayers() {
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				<span>Create new Camp Registration</span>
+				<span>Edit {resource_info.name_singular}</span>
 			</p>
 
 		</div>
+
+	</div>
+
+</section>
+
+
+<section class="section skinny-section">
+
+	<div class="container is-fullwidth">
+
+		<Tabs resource_id={currentRoute.namedParams.resource_id} />
 
 	</div>
 
@@ -106,9 +133,9 @@ async function getPlayers() {
 
 <Loading />
 
-{:then results}
+{:then resource}
 
-<section class="section">
+<section class="section skinny-section">
 
 	<div class="container">
 
@@ -122,7 +149,7 @@ async function getPlayers() {
 
 					<div class="card-content">
 
-						<Form bind:msg_show={msg_show} bind:msg_type={msg_type} bind:msg_text={msg_text} camp_instances={results[0]} players={results[1]} />
+						<Form bind:msg_show={msg_show} bind:msg_type={msg_type} bind:msg_text={msg_text} {resource} resource_id={resource_info.id} />
 
 					</div>
 

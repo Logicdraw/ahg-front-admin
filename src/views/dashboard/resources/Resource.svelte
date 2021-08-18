@@ -1,26 +1,20 @@
 <script>
 export let currentRoute;
 
+import resources_info from 'utils/resources.js';
+
+
+const resource_info = resources_info[currentRoute.namedParams.resource_id];
+
+let columns = resources_info.default_columns;
+
 
 import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
+import Tabs from 'components/elements/views/dashboard/resources/Tabs.svelte';
 
 import Table from 'components/elements/views/dashboard/resources/Table.svelte';
-import Filter from 'components/elements/views/dashboard/resources/program_instance_registrations/Filter.svelte';
-
-
-
-const columns = [
-	['program_instance_registrations_sc', 'players_sc', 'first_name'],
-	['program_instance_registrations_sc', 'players_sc', 'last_name'],
-	['program_instances_sc', 'programs_sc', 'name'],
-	['program_instances_sc', 'year_start'],
-	['program_instances_sc', 'year_end'],
-]
-
-
-const id_key = 'program_instance_registration_id';
-const resource_id = 'program_instance_registrations';
+import Filter from 'components/elements/views/dashboard/resources/Filter.svelte';
 
 
 
@@ -61,7 +55,7 @@ async function getRows(params) {
 	let params_string = new URLSearchParams(cleaned_params).toString();
 
 
-	const url = `${admin_api_url}/resources/program-instances-program-instance-registrations?${params_string}`;
+	const url = `${admin_api_url}/resources/${resource_info.url}?${params_string}`;
 
 	try {
 
@@ -123,7 +117,7 @@ $: promise = getRows(params);
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				<span>Program Registrations</span>
+				<span>{resource_info.name}</span>
 			</p>
 
 		</div>
@@ -132,6 +126,15 @@ $: promise = getRows(params);
 
 </section>
 
+<section class="section skinny-section" style="padding-bottom: 0 !important;">
+
+	<div class="container is-fullwidth">
+
+		<Tabs {params} />
+
+	</div>
+
+</section>
 
 
 <section class="section skinny-section">
@@ -161,7 +164,7 @@ $: promise = getRows(params);
 
 		{:else}
 
-			<Table {rows} {columns} {resource_id} {id_key} />
+			<Table {rows} {columns} {resource_id} id_key={resource_info['id_key']} />
 
 		{/if}
 
