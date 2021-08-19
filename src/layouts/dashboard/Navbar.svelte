@@ -130,7 +130,7 @@ const act_resources = [
 
 						{#each resources as resource}
 
-							<Navigate to='/my/resources/{resource.id}' styles='navbar-item' on:click={closeActive}>
+							<Navigate to='/my/resources/resource/{resource.id}' styles='navbar-item' on:click={closeActive}>
 								<span>{resource.name}</span>
 							</Navigate>
 
@@ -177,7 +177,7 @@ const act_resources = [
 
 						{#each act_resources as resource}
 
-							<Navigate to='/my/act/resources/{resource.id}' styles='navbar-item' on:click={closeActive}>
+							<Navigate to='/my/act/resources/resource/{resource.id}' styles='navbar-item' on:click={closeActive}>
 								<span>{resource.name}</span>
 							</Navigate>
 

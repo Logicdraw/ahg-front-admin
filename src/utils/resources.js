@@ -383,7 +383,7 @@ const resources_info = [
 			{
 				path: ['camp_instances_sc', 'year_start'],
 				name: 'Year Start',
-			}
+			},
 			{
 				path: ['camp_instances_sc', 'year_end'],
 				name: 'Year End',
@@ -422,7 +422,7 @@ const resources_info = [
 			{
 				path: ['program_instances_sc', 'year_start'],
 				name: 'Year Start',
-			}
+			},
 			{
 				path: ['program_instances_sc', 'year_end'],
 				name: 'Year End',
@@ -462,7 +462,7 @@ const resources_info = [
 			{
 				path: ['team_instances_sc', 'year_start'],
 				name: 'Year Start',
-			}
+			},
 			{
 				path: ['team_instances_sc', 'year_end'],
 				name: 'Year End',
@@ -483,4 +483,5 @@ const resources_info = [
 ]
 
 
+export { resources_info };
 

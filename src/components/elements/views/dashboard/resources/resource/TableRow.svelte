@@ -8,7 +8,7 @@ export let id_key = 'id';
 import { navigateTo } from 'svelte-router-spa';
 
 
-console.log(row);
+// console.log(row);
 
 
 let row_values = [];
@@ -17,8 +17,8 @@ for (var i = 0; i < columns.length; i++) {
 	let column = columns[i];
 	let row_value = row;
 	let column_full_str = '';
-	for (var j = 0; j < column.length; j++) {
-		let column_str = column[j];
+	for (var j = 0; j < column['path'].length; j++) {
+		let column_str = column['path'][j];
 		column_full_str += column_str;
 		try {
 			row_value = row_value[column_str];
@@ -28,8 +28,8 @@ for (var i = 0; i < columns.length; i++) {
 		}
 		column_str += ' > ';
 	}
-	column_full_str = column[column.length - 1];
-	row_values.push([column_full_str, row_value]);
+	// column_full_str = column[column.length - 1];
+	row_values.push([column['name'], row_value]);
 }
 
 

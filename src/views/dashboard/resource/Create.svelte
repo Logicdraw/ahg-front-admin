@@ -2,7 +2,7 @@
 export let currentRoute;
 
 
-import resources_info from 'utils/resources.js';
+import { resources_info } from 'utils/resources.js';
 
 const resource_info = resources_info[currentRoute.namedParams.resource_id];
 

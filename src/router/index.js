@@ -144,7 +144,7 @@ const routes = [
 						nestedRoutes: [
 							{
 								name: ':resource_id/edit/:resource_row_id',
-								component: DashboardACTResourceCampRegistrationsEdit,
+								component: DashboardACTResourceEdit,
 							},
 						],
 					},

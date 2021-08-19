@@ -53,7 +53,7 @@ td .arrow-divider:last-child {
 			{#each columns as column}
 				<td>
 					<span>
-						{column[column.length - 1]}
+						{column.name}
 					</span>
 				</td>
 			{/each}

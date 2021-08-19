@@ -1,12 +1,20 @@
 <script>
 export let currentRoute;
 
-import resources_info from 'utils/resources.js';
+import { resources_info } from 'utils/resources.js';
 
 
-const resource_info = resources_info[currentRoute.namedParams.resource_id];
+// const resource_info = resources_info.find(re => re.id === currentRoute.namedParams.resource_id);
 
-let columns = resources_info.default_columns;
+// let resource_info;
+
+let resource_info = resources_info.find(re => re.id === currentRoute.namedParams.resource_id);
+
+$: if (currentRoute) resource_info = resources_info.find(re => re.id === currentRoute.namedParams.resource_id);
+
+
+
+$: columns = resource_info.default_columns;
 
 
 import Loading from 'components/elements/Loading.svelte';
@@ -35,7 +43,7 @@ let at_last_page = false;
 
 let abort_controller = new AbortController();
 
-async function getRows(params) {
+async function getRows(resource_info, params) {
 
 	abort_controller.abort();
 
@@ -98,7 +106,7 @@ let params = {
 	limit: 25,
 }
 
-$: promise = getRows(params);
+$: promise = getRows(resource_info, params);
 
 
 </script>
@@ -130,7 +138,7 @@ $: promise = getRows(params);
 
 	<div class="container is-fullwidth">
 
-		<Tabs {params} />
+		<Tabs {params} resource_id={resource_info['id']} />
 
 	</div>
 
@@ -164,7 +172,7 @@ $: promise = getRows(params);
 
 		{:else}
 
-			<Table {rows} {columns} {resource_id} id_key={resource_info['id_key']} />
+			<Table {rows} {columns} resource_id={currentRoute.namedParams.resource_id} id_key={resource_info['id_key']} />
 
 		{/if}
 

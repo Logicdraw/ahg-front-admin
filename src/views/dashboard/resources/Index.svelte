@@ -7,7 +7,7 @@ import MsgCard from 'components/elements/MsgCard.svelte';
 import { Navigate } from 'svelte-router-spa';
 
 
-import resources_info from 'utils/resources.js';
+import { resources_info } from 'utils/resources.js';
 
 
 
@@ -48,7 +48,7 @@ import resources_info from 'utils/resources.js';
 
 				<div class="column is-3-desktop is-4-tablet is-6-mobile">
 
-					<Navigate styles='button is-medium is-fullwidth' to='/my/resources/{resource.id}'>
+					<Navigate styles='button is-medium is-fullwidth' to='/my/resources/resource/{resource.id}'>
 						<span>{resource.name}</span>
 					</Navigate>
 

@@ -12,7 +12,7 @@ import Loading from 'components/elements/Loading.svelte';
 import { Navigate } from 'svelte-router-spa';
 
 
-import resources_info from 'utils/resources.js';
+import { resources_info } from 'utils/resources.js';
 
 
 import { auth } from 'store/index.js';
