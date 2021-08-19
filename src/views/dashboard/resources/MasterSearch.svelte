@@ -5,7 +5,7 @@ export let currentRoute;
 import MsgCard from 'components/elements/MsgCard.svelte';
 import MasterSearchFilter from 'components/elements/views/dashboard/resources/master_search/Filter.svelte';
 
-import Table from 'components/elements/views/dashboard/resources/Table.svelte';
+import Table from 'components/elements/views/dashboard/resources/resource/Table.svelte';
 
 import Loading from 'components/elements/Loading.svelte';
 

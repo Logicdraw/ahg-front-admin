@@ -6,8 +6,8 @@ export let columns;
 export let id_key;
 
 
-import TableRow from 'components/elements/views/dashboard/resources/TableRow.svelte';
-import TableRowMobile from 'components/elements/views/dashboard/resources/TableRowMobile.svelte';
+import TableRow from 'components/elements/views/dashboard/resources/resource/TableRow.svelte';
+import TableRowMobile from 'components/elements/views/dashboard/resources/resource/TableRowMobile.svelte';
 
 
 

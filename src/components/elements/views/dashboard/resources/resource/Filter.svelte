@@ -3,7 +3,7 @@ export let params;
 export let at_last_page;
 
 
-import FilterModal from 'components/elements/views/dashboard/resources/FilterModal.svelte';
+import FilterModal from 'components/elements/views/dashboard/resources/resource/FilterModal.svelte';
 
 
 

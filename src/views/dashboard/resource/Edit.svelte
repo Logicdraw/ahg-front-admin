@@ -9,9 +9,10 @@ const resource_info = resources_info[currentRoute.namedParams.resource_id];
 
 import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
-import Form from 'components/forms/views/dashboard/resource/{resource_info.id}/edit/Form.svelte';
 
-import Tabs from 'components/elements/views/dashboard/resource/{resource_info.id}/edit/Tabs.svelte';
+const Form = import(`components/forms/views/dashboard/resource/${resource_info.id}/edit/Form.svelte`);
+
+const Tabs = import(`components/forms/views/dashboard/resource/${resource_info.id}/edit/Tabs.svelte`);
 
 
 import { auth } from 'store/index.js';
@@ -31,7 +32,7 @@ let abort_controller = new AbortController();
 
 async function getRow() {
 
-	const url = `${admin_api_url}/resources/${resource_info.id}/${currentRoute.namedParams.resource_id}`;
+	const url = `${admin_api_url}/resources/${resource_info.id}/${currentRoute.namedParams.resource_row_id}`;
 
 	const resp = await fetch(url, {
 		method: 'GET',
@@ -50,37 +51,12 @@ async function getRow() {
 
 }
 
-
-async function getAdditionalResource(resource_id) {
-
-	const url = `${admin_api_url}/resources/${resource_id}`;
-
-	const resp = await fetch(url, {
-		method: 'GET',
-		headers: {
-			Authorization: `Bearer ${token}`,
-		},
-	});
-
-	const result = await resp.json();
-
-	if (!resp.ok) {
-		throw new Error(result);
-	}
-
-	return result;
-}
 
 
 
 let promise_funcs = [
 	getRow(),
 ];
-
-
-for (var i = 0; i < resource_info.form_additional_data.length; i++) {
-	promise_funcs.push(getAdditionalResource(resource_info.form_additional_data[i].url));
-}
 
 
 const promise = Promise.all(promise_funcs);
@@ -133,7 +109,7 @@ let msg_text;
 
 <Loading />
 
-{:then resource}
+{:then results}
 
 <section class="section skinny-section">
 
@@ -149,7 +125,7 @@ let msg_text;
 
 					<div class="card-content">
 
-						<Form bind:msg_show={msg_show} bind:msg_type={msg_type} bind:msg_text={msg_text} {resource} resource_id={resource_info.id} />
+						<Form bind:msg_show={msg_show} bind:msg_type={msg_type} bind:msg_text={msg_text} resource={results[0]} resource_id={resource_info.id} />
 
 					</div>
 

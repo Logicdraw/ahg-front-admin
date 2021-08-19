@@ -28,72 +28,18 @@ import DashboardResourcesIndex from 'views/dashboard/resources/Index.svelte';
 import DashboardResourcesMasterSearch from 'views/dashboard/resources/MasterSearch.svelte';
 // 
 
-import DashboardResourcesAdultRepsIndex from 'views/dashboard/resources/adult_reps/Index.svelte';
+import DashboardResourcesResource from 'views/dashboard/resources/Resource.svelte';
 
-import DashboardResourcesCoachesIndex from 'views/dashboard/resources/coaches/Index.svelte';
-
-import DashboardResourcesGuardiansIndex from 'views/dashboard/resources/guardians/Index.svelte';
-
-import DashboardResourcesPlayersIndex from 'views/dashboard/resources/players/Index.svelte';
-
-import DashboardResourcesCampsIndex from 'views/dashboard/resources/camp_instances/Index.svelte';
-
-import DashboardResourcesProgramsIndex from 'views/dashboard/resources/program_instances/Index.svelte';
-
-import DashboardResourcesTeamsIndex from 'views/dashboard/resources/team_instances/Index.svelte';
-
-import DashboardResourcesCampRegistrationsIndex from 'views/dashboard/resources/camp_instance_registrations/Index.svelte';
-
-import DashboardResourcesProgramRegistrationsIndex from 'views/dashboard/resources/program_instance_registrations/Index.svelte';
-
-import DashboardResourcesTeamRegistrationsIndex from 'views/dashboard/resources/team_instance_registrations/Index.svelte';
-
-
-import DashboardResourceAdultRepsCreate from 'views/dashboard/resource/adult_reps/Create.svelte';
-import DashboardResourceAdultRepsEdit from 'views/dashboard/resource/adult_reps/Edit.svelte';
-
-import DashboardResourceCoachesCreate from 'views/dashboard/resource/coaches/Create.svelte';
-import DashboardResourceCoachesEdit from 'views/dashboard/resource/coaches/Edit.svelte';
-
-import DashboardResourceGuardiansCreate from 'views/dashboard/resource/guardians/Create.svelte';
-import DashboardResourceGuardiansEdit from 'views/dashboard/resource/guardians/Edit.svelte';
-
-import DashboardResourcePlayersCreate from 'views/dashboard/resource/players/Create.svelte';
-import DashboardResourcePlayersEdit from 'views/dashboard/resource/players/Edit.svelte';
-
-import DashboardResourceCampsCreate from 'views/dashboard/resource/camp_instances/Create.svelte';
-import DashboardResourceCampsEdit from 'views/dashboard/resource/camp_instances/Edit.svelte';
-
-import DashboardResourceProgramsCreate from 'views/dashboard/resource/program_instances/Create.svelte';
-import DashboardResourceProgramsEdit from 'views/dashboard/resource/program_instances/Edit.svelte';
-
-import DashboardResourceTeamsCreate from 'views/dashboard/resource/team_instances/Create.svelte';
-import DashboardResourceTeamsEdit from 'views/dashboard/resource/team_instances/Edit.svelte';
-
-import DashboardResourceCampRegistrationsCreate from 'views/dashboard/resource/camp_instance_registrations/Create.svelte';
-import DashboardResourceCampRegistrationsEdit from 'views/dashboard/resource/camp_instance_registrations/Edit.svelte';
-
-import DashboardResourceProgramRegistrationsCreate from 'views/dashboard/resource/program_instance_registrations/Create.svelte';
-import DashboardResourceProgramRegistrationsEdit from 'views/dashboard/resource/program_instance_registrations/Edit.svelte';
-
-import DashboardResourceTeamRegistrationsCreate from 'views/dashboard/resource/team_instance_registrations/Create.svelte';
-import DashboardResourceTeamRegistrationsEdit from 'views/dashboard/resource/team_instance_registrations/Edit.svelte';
+import DashboardResourceCreate from 'views/dashboard/resource/Create.svelte';
+import DashboardResourceEdit from 'views/dashboard/resource/Edit.svelte';
 
 
 // ACT
 
-import DashboardACTResourcesCampRegistrationsIndex from 'views/dashboard/act/resources/camp_registrations/Index.svelte';
-
-import DashboardACTResourcesCoachRegistrationsIndex from 'views/dashboard/act/resources/coach_registrations/Index.svelte';
-
-import DashboardACTResourcesTeamRegistrationsIndex from 'views/dashboard/act/resources/team_registrations/Index.svelte';
+import DashboardACTResourcesResource from 'views/dashboard/act/resources/Resource.svelte';
 
 
-import DashboardACTResourceCampRegistrationsEdit from 'views/dashboard/act/resource/camp_registrations/Edit.svelte';
-
-import DashboardACTResourceCoachRegistrationsEdit from 'views/dashboard/act/resource/coach_registrations/Edit.svelte';
-
-import DashboardACTResourceTeamRegistrationsEdit from 'views/dashboard/act/resource/team_registrations/Edit.svelte';
+import DashboardACTResourceEdit from 'views/dashboard/act/resource/Edit.svelte';
 
 
 
@@ -163,46 +109,8 @@ const routes = [
 					},
 					// Adult --
 					{
-						name: 'adult_reps',
-						component: DashboardResourcesAdultRepsIndex,
-					},
-					{
-						name: 'coaches',
-						component: DashboardResourcesCoachesIndex,
-					},
-					{
-						name: 'guardians',
-						component: DashboardResourcesGuardiansIndex,
-					},
-					{
-						name: 'players',
-						component: DashboardResourcesPlayersIndex,
-					},
-					// --
-					{
-						name: 'camp_instances',
-						component: DashboardResourcesCampsIndex,
-					},
-					{
-						name: 'program_instances',
-						component: DashboardResourcesProgramsIndex,
-					},
-					{
-						name: 'team_instances',
-						component: DashboardResourcesTeamsIndex,
-					},
-					// --
-					{
-						name: 'camp_instance_registrations',
-						component: DashboardResourcesCampRegistrationsIndex,
-					},
-					{
-						name: 'program_instance_registrations',
-						component: DashboardResourcesProgramRegistrationsIndex,
-					},
-					{
-						name: 'team_instance_registrations',
-						component: DashboardResourcesTeamRegistrationsIndex,
+						name: 'resource/:resource_id',
+						component: DashboardResourcesResource,
 					},
 				],
 			},
@@ -210,86 +118,12 @@ const routes = [
 				name: 'resource',
 				nestedRoutes: [
 					{
-						name: 'adult_reps/create',
-						component: DashboardResourceAdultRepsCreate,
+						name: ':resource_id/create',
+						component: DashboardResourceCreate,
 					},
 					{
-						name: 'adult_reps/edit/:resource_id',
-						component: DashboardResourceAdultRepsEdit,
-					},
-					{
-						name: 'coaches/create',
-						component: DashboardResourceCoachesCreate,
-					},
-					{
-						name: 'coaches/edit/:resource_id',
-						component: DashboardResourceCoachesEdit,
-					},
-					{
-						name: 'guardians/create',
-						component: DashboardResourceGuardiansCreate,
-					},
-					{
-						name: 'guardians/edit/:resource_id',
-						component: DashboardResourceGuardiansEdit,
-					},
-					{
-						name: 'players/create',
-						component: DashboardResourcePlayersCreate,
-					},
-					{
-						name: 'players/edit/:resource_id',
-						component: DashboardResourcePlayersEdit,
-					},
-					// --
-					{
-						name: 'camp_instances/create',
-						component: DashboardResourceCampsCreate,
-					},
-					{
-						name: 'camp_instances/edit/:resource_id',
-						component: DashboardResourceCampsEdit,
-					},
-					{
-						name: 'program_instances/create',
-						component: DashboardResourceProgramsCreate,
-					},
-					{
-						name: 'program_instances/edit/:resource_id',
-						component: DashboardResourceProgramsEdit,
-					},
-					{
-						name: 'team_instances/create',
-						component: DashboardResourceTeamsCreate,
-					},
-					{
-						name: 'team_instances/edit/:resource_id',
-						component: DashboardResourceTeamsEdit,
-					},
-					// --
-					{
-						name: 'camp_instance_registrations/create',
-						component: DashboardResourceCampRegistrationsCreate,
-					},
-					{
-						name: 'camp_instance_registrations/edit/:resource_id',
-						component: DashboardResourceCampRegistrationsEdit,
-					},
-					{
-						name: 'program_instance_registrations/create',
-						component: DashboardResourceProgramRegistrationsCreate,
-					},
-					{
-						name: 'program_instance_registrations/edit/:resource_id',
-						component: DashboardResourceProgramRegistrationsEdit,
-					},
-					{
-						name: 'team_instance_registrations/create',
-						component: DashboardResourceTeamRegistrationsCreate,
-					},
-					{
-						name: 'team_instance_registrations/edit/:resource_id',
-						component: DashboardResourceTeamRegistrationsEdit,
+						name: ':resource_id/edit/:resource_row_id',
+						component: DashboardResourceEdit,
 					},
 				],
 			},
@@ -300,16 +134,8 @@ const routes = [
 						name: 'resources',
 						nestedRoutes: [
 							{
-								name: 'camp_registrations',
-								component: DashboardACTResourcesCampRegistrationsIndex,
-							},
-							{
-								name: 'coach_registrations',
-								component: DashboardACTResourcesCoachRegistrationsIndex,
-							},
-							{
-								name: 'team_registrations',
-								component: DashboardACTResourcesTeamRegistrationsIndex,
+								name: ':resource_id',
+								component: DashboardACTResourcesResource,
 							},
 						],
 					},
@@ -317,16 +143,8 @@ const routes = [
 						name: 'resource',
 						nestedRoutes: [
 							{
-								name: 'camp_registrations/edit/:resource_id',
+								name: ':resource_id/edit/:resource_row_id',
 								component: DashboardACTResourceCampRegistrationsEdit,
-							},
-							{
-								name: 'coach_registrations/edit/:resource_id',
-								component: DashboardACTResourceCampRegistrationsEdit,
-							},
-							{
-								name: 'team_registrations/edit/:resource_id',
-								component: DashboardACTResourceTeamRegistrationsEdit,
 							},
 						],
 					},
@@ -344,7 +162,7 @@ const routes = [
 						component: DashboardFileTemplateCreate,
 					},
 					{
-						name: 'edit/:file_template_id',
+						name: 'edit/:file_template_row_id',
 						component: DashboardFileTemplateEdit,
 					},
 				],

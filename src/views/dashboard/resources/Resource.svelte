@@ -11,10 +11,10 @@ let columns = resources_info.default_columns;
 
 import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
-import Tabs from 'components/elements/views/dashboard/resources/Tabs.svelte';
+import Tabs from 'components/elements/views/dashboard/resources/resource/Tabs.svelte';
 
-import Table from 'components/elements/views/dashboard/resources/Table.svelte';
-import Filter from 'components/elements/views/dashboard/resources/Filter.svelte';
+import Table from 'components/elements/views/dashboard/resources/resource/Table.svelte';
+import Filter from 'components/elements/views/dashboard/resources/resource/Filter.svelte';
 
 
 

@@ -44,11 +44,6 @@ let msg_text;
 </section>
 
 
-{#await promise}
-
-
-{:then results}
-
 <section class="section">
 
 	<div class="container">
@@ -76,20 +71,6 @@ let msg_text;
 	</div>
 
 </section>
-
-{:catch error}
-
-<section class="section skinny-section" style="padding-top: 0.25rem !important;">
-
-	<div class="container is-fullwidth">
-
-		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={error.detail} />
-
-	</div>
-
-</section>
-
-{/await}
 
 
 

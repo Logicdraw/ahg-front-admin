@@ -2,8 +2,8 @@
 export let params;
 export let resource_id;
 
-import ExportModal from 'components/elements/views/dashboard/ExportModal.svelte';
-import SelectColumnsModal from 'components/elements/views/dashboard/resources/SelectColumnsModal.svelte';
+import ExportModal from 'components/elements/views/dashboard/resources/resource/ExportModal.svelte';
+import SelectColumnsModal from 'components/elements/views/dashboard/resources/resource/SelectColumnsModal.svelte';
 
 
 import { Navigate } from 'svelte-router-spa';
