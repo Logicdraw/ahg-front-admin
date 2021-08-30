@@ -98,7 +98,7 @@ const {
 
 async function submitForm(body_data) {
 
-	const url = `${admin_api_url}/resources/guardians/${guardian.id}`;
+	const url = `${admin_api_url}/guardians/${guardian.id}`;
 
 	const resp = await fetch(url, {
 		method: 'PUT',
@@ -118,55 +118,55 @@ async function submitForm(body_data) {
 
 
 
-const players_values = [];
+// const players_values = [];
 
-for (var i = 0; i < players.length; i++) {
+// for (var i = 0; i < players.length; i++) {
 
-	let player_label = players[i].first_name + ' ' + players[i].last_name;
+// 	let player_label = players[i].first_name + ' ' + players[i].last_name;
 
-	if (players[i].date_of_birth) {
-		player_label += ' (' + players[i].date_of_birth + ')';
-	}
+// 	if (players[i].date_of_birth) {
+// 		player_label += ' (' + players[i].date_of_birth + ')';
+// 	}
 
-	if (players[i].street_address_1) {
-		player_label += ' - ' + players[i].street_address_1 + ',';
-	}
+// 	if (players[i].street_address_1) {
+// 		player_label += ' - ' + players[i].street_address_1 + ',';
+// 	}
 
-	if (players[i].city) {
-		player_label += ' ' + players[i].city + ',';
-	}
+// 	if (players[i].city) {
+// 		player_label += ' ' + players[i].city + ',';
+// 	}
 
-	if (players[i].province) {
-		player_label += ' ' + players[i].province + '';
-	}
+// 	if (players[i].province) {
+// 		player_label += ' ' + players[i].province + '';
+// 	}
 
-	let player_value_obj = {
-		value: players[i].id,
-		label: player_label,
-	};
+// 	let player_value_obj = {
+// 		value: players[i].id,
+// 		label: player_label,
+// 	};
 
-	players_values.push(player_value_obj);
-}
+// 	players_values.push(player_value_obj);
+// }
 
 
 
-let selected_players = undefined;
+// let selected_players = undefined;
 
-function onSelectPlayer(event) {
-	selected_players = event.detail;
+// function onSelectPlayer(event) {
+// 	selected_players = event.detail;
 
-	let form_players_ids = [];
+// 	let form_players_ids = [];
 
-	if (event.detail) {
+// 	if (event.detail) {
 
-		for (var i = 0; i < event.detail.length; i++) {
-			form_players_ids.push(event.detail[i].value);
-		}
+// 		for (var i = 0; i < event.detail.length; i++) {
+// 			form_players_ids.push(event.detail[i].value);
+// 		}
 
-	}
+// 	}
 
-	$form.players_ids = form_players_ids;
-}
+// 	$form.players_ids = form_players_ids;
+// }
 
 
 </script>
@@ -273,7 +273,7 @@ form {
 
 			<label>Player(s)</label>
 
-			<Select items={players_values} isMulti={true} on:select={onSelectPlayer} bind:selectedValue={selected_players}></Select>
+			<!-- <Select items={players_values} isMulti={true} on:select={onSelectPlayer} bind:selectedValue={selected_players}></Select> -->
 
 
 			<!-- {#if $errors.players_ids}

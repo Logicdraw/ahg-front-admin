@@ -80,7 +80,7 @@ const {
 
 async function submitForm(body_data) {
 
-	const url = `${admin_api_url}/resources/team-instances/${team_instance.id}`;
+	const url = `${admin_api_url}/team-instances/${team_instance.id}`;
 
 	const resp = await fetch(url, {
 		method: 'PUT',

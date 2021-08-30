@@ -8,8 +8,6 @@ export let id_key = 'id';
 import { navigateTo } from 'svelte-router-spa';
 
 
-// console.log(row);
-
 
 let row_values = [];
 
@@ -34,7 +32,7 @@ for (var i = 0; i < columns.length; i++) {
 
 
 function navigateToRow() {
-	navigateTo(`/my/resource/${resource_id}/edit/${row[id_key]}`);
+	navigateTo(`/my/resource/edit/${resource_id}/${row[id_key]}`);
 }
 
 

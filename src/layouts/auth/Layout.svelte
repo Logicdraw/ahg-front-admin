@@ -27,7 +27,7 @@ const params = {};
 <style>
 
 #auth-layout {
-
+	margin-top: var(--navbar-height);
 }
 
 </style>

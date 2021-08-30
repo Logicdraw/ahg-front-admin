@@ -154,7 +154,7 @@ const act_resources = [
 
 						{#each resources as resource}
 
-							<Navigate to='/my/resource/{resource.id}/create' styles='navbar-item' on:click={closeActive}>
+							<Navigate to='/my/resource/create/{resource.id}' styles='navbar-item' on:click={closeActive}>
 								<span>{resource.name}</span>
 							</Navigate>
 

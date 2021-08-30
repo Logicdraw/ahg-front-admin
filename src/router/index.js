@@ -30,8 +30,34 @@ import DashboardResourcesMasterSearch from 'views/dashboard/resources/MasterSear
 
 import DashboardResourcesResource from 'views/dashboard/resources/Resource.svelte';
 
-import DashboardResourceCreate from 'views/dashboard/resource/Create.svelte';
-import DashboardResourceEdit from 'views/dashboard/resource/Edit.svelte';
+
+import DashboardResourceCreateLayout from 'layouts/dashboard/resource/create/Layout.svelte';
+
+import DashboardResourceCreateAdultReps from 'views/dashboard/resource/adult_reps/Create.svelte';
+import DashboardResourceCreateCampInstanceRegistrations from 'views/dashboard/resource/camp_instance_registrations/Create.svelte';
+import DashboardResourceCreateCampInstances from 'views/dashboard/resource/camp_instances/Create.svelte';
+import DashboardResourceCreateCoaches from 'views/dashboard/resource/coaches/Create.svelte';
+import DashboardResourceCreateGuardians from 'views/dashboard/resource/guardians/Create.svelte';
+import DashboardResourceCreatePlayers from 'views/dashboard/resource/players/Create.svelte';
+import DashboardResourceCreateProgramInstanceRegistrations from 'views/dashboard/resource/program_instance_registrations/Create.svelte';
+import DashboardResourceCreateProgramInstances from 'views/dashboard/resource/program_instances/Create.svelte';
+import DashboardResourceCreateTeamInstanceRegistrations from 'views/dashboard/resource/team_instance_registrations/Create.svelte';
+import DashboardResourceCreateTeamInstances from 'views/dashboard/resource/team_instances/Create.svelte';
+
+
+import DashboardResourceEditLayout from 'layouts/dashboard/resource/edit/Layout.svelte';
+
+import DashboardResourceEditAdultReps from 'views/dashboard/resource/adult_reps/Edit.svelte';
+import DashboardResourceEditCampInstanceRegistrations from 'views/dashboard/resource/camp_instance_registrations/Edit.svelte';
+import DashboardResourceEditCampInstances from 'views/dashboard/resource/camp_instances/Edit.svelte';
+import DashboardResourceEditCoaches from 'views/dashboard/resource/coaches/Edit.svelte';
+import DashboardResourceEditGuardians from 'views/dashboard/resource/guardians/Edit.svelte';
+import DashboardResourceEditPlayers from 'views/dashboard/resource/players/Edit.svelte';
+import DashboardResourceEditProgramInstanceRegistrations from 'views/dashboard/resource/program_instance_registrations/Edit.svelte';
+import DashboardResourceEditProgramInstances from 'views/dashboard/resource/program_instances/Edit.svelte';
+import DashboardResourceEditTeamInstanceRegistrations from 'views/dashboard/resource/team_instance_registrations/Edit.svelte';
+import DashboardResourceEditTeamInstances from 'views/dashboard/resource/team_instances/Edit.svelte';
+
 
 
 // ACT
@@ -118,12 +144,96 @@ const routes = [
 				name: 'resource',
 				nestedRoutes: [
 					{
-						name: ':resource_id/create',
-						component: DashboardResourceCreate,
+						name: 'create',
+						component: DashboardResourceCreateLayout,
+						nestedRoutes: [
+							{
+								name: 'adult_reps',
+								component: DashboardResourceCreateAdultReps,
+							},
+							{
+								name: 'camp_instance_registrations',
+								component: DashboardResourceCreateCampInstanceRegistrations,
+							},
+							{
+								name: 'camp_instances',
+								component: DashboardResourceCreateCampInstances,
+							},
+							{
+								name: 'coaches',
+								component: DashboardResourceCreateCoaches,
+							},
+							{
+								name: 'guardians',
+								component: DashboardResourceCreateGuardians,
+							},
+							{
+								name: 'players',
+								component: DashboardResourceCreatePlayers,
+							},
+							{
+								name: 'program_instance_registrations',
+								component: DashboardResourceCreateProgramInstanceRegistrations,
+							},
+							{
+								name: 'program_instances',
+								component: DashboardResourceCreateProgramInstances,
+							},
+							{
+								name: 'team_instance_registrations',
+								component: DashboardResourceCreateTeamInstanceRegistrations,
+							},
+							{
+								name: 'team_instances',
+								component: DashboardResourceCreateTeamInstances,
+							},
+						],
 					},
 					{
-						name: ':resource_id/edit/:resource_row_id',
-						component: DashboardResourceEdit,
+						name: 'edit',
+						component: DashboardResourceEditLayout,
+						nestedRoutes: [
+							{
+								name: 'adult_reps/:resource_row_id',
+								component: DashboardResourceEditAdultReps,
+							},
+							{
+								name: 'camp_instance_registrations/:resource_row_id',
+								component: DashboardResourceEditCampInstanceRegistrations,
+							},
+							{
+								name: 'camp_instances/:resource_row_id',
+								component: DashboardResourceEditCampInstances,
+							},
+							{
+								name: 'coaches/:resource_row_id',
+								component: DashboardResourceEditCoaches,
+							},
+							{
+								name: 'guardians/:resource_row_id',
+								component: DashboardResourceEditGuardians,
+							},
+							{
+								name: 'players/:resource_row_id',
+								component: DashboardResourceEditPlayers,
+							},
+							{
+								name: 'program_instance_registrations/:resource_row_id',
+								component: DashboardResourceEditProgramInstanceRegistrations,
+							},
+							{
+								name: 'program_instances/:resource_row_id',
+								component: DashboardResourceEditProgramInstances,
+							},
+							{
+								name: 'team_instance_registrations/:resource_row_id',
+								component: DashboardResourceEditTeamInstanceRegistrations,
+							},
+							{
+								name: 'team_instances/:resource_row_id',
+								component: DashboardResourceEditTeamInstances,
+							},
+						],
 					},
 				],
 			},

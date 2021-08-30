@@ -194,7 +194,7 @@ const {
 
 async function submitForm(body_data) {
 
-	const url = `${admin_api_url}/resources/program-instance-registrations`;
+	const url = `${admin_api_url}/program-instance-registrations`;
 
 	const resp = await fetch(url, {
 		method: 'POST',

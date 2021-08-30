@@ -86,7 +86,7 @@ const {
 
 async function submitForm(body_data) {
 
-	const url = `${admin_api_url}/resources/coaches/${coach.id}`;
+	const url = `${admin_api_url}/coaches/${coach.id}`;
 
 	const resp = await fetch(url, {
 		method: 'PUT',

@@ -34,7 +34,7 @@ for (var i = 0; i < columns.length; i++) {
 
 
 function navigateToRow() {
-	navigateTo(`/my/resource/${resource_id}/edit/${row[id_key]}`);
+	navigateTo(`/my/resource/edit/${resource_id}/${row[id_key]}`);
 }
 
 </script>

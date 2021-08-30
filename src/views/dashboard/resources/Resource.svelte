@@ -16,6 +16,8 @@ $: if (currentRoute) resource_info = resources_info.find(re => re.id === current
 
 $: columns = resource_info.default_columns;
 
+$: id_key = resource_info.id_key;
+
 
 import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
@@ -43,7 +45,7 @@ let at_last_page = false;
 
 let abort_controller = new AbortController();
 
-async function getRows(resource_info, params) {
+async function getRows(params) {
 
 	abort_controller.abort();
 
@@ -63,7 +65,7 @@ async function getRows(resource_info, params) {
 	let params_string = new URLSearchParams(cleaned_params).toString();
 
 
-	const url = `${admin_api_url}/resources/${resource_info.url}?${params_string}`;
+	const url = `${admin_api_url}/${resource_info.url}?${params_string}`;
 
 	try {
 
@@ -106,7 +108,20 @@ let params = {
 	limit: 25,
 }
 
-$: promise = getRows(resource_info, params);
+
+function resetParams(namedParams) {
+	params = {
+			q: '',
+			offset: 0,
+			limit: 25,
+		}
+}
+
+
+
+$: resetParams(currentRoute.namedParams.resource_id);
+
+$: promise = getRows(params);
 
 
 </script>
@@ -172,7 +187,7 @@ $: promise = getRows(resource_info, params);
 
 		{:else}
 
-			<Table {rows} {columns} resource_id={currentRoute.namedParams.resource_id} id_key={resource_info['id_key']} />
+			<Table {rows} {columns} resource_id={currentRoute.namedParams.resource_id} id_key={id_key} />
 
 		{/if}
 

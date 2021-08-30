@@ -68,7 +68,7 @@ async function openSelectColumnsModal() {
 
 		<div class="control">
 
-			<Navigate to='/my/resource/{resource_id}/create' styles="button is-normal">
+			<Navigate to='/my/resource/create/{resource_id}' styles="button is-normal">
 				Create
 				<i class="fal fa-plus"></i>
 			</Navigate>
