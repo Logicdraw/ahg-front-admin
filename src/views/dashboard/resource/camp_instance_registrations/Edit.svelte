@@ -12,6 +12,7 @@ import Loading from 'components/elements/Loading.svelte';
 
 import Form from 'components/forms/views/dashboard/resource/camp_instance_registrations/edit/Form.svelte';
 
+import CreatedUpdated from 'components/elements/views/dashboard/resource/CreatedUpdated.svelte';
 
 
 import { auth } from 'store/index.js';
@@ -89,6 +90,8 @@ async function getResourceRow() {
 		<div class="columns is-centered">
 
 			<div class="column is-9-desktop is-12-tablet is-12-mobile">
+
+				<CreatedUpdated row={resource_row} />
 
 				<div class="card form-card">
 

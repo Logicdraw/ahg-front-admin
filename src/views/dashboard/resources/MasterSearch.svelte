@@ -30,10 +30,11 @@ const token = get(auth).token;
 let abort_controller = new AbortController();
 
 
+let in_search = false;
 
 async function getResourceRows(resource_info, q) {
 
-	let resource_url = resource_info['url'];
+	let resource_url = resource_info['search_url'];
 
 	const url = `${admin_api_url}/${resource_url}?q=${q}&limit=5`;
 
@@ -77,20 +78,28 @@ let promise;
 
 
 $: {
-	if (q) {
+	if (q.length >= 3) {
 
 		abort_controller.abort();
 
 		abort_controller = new AbortController();
 
+
 		let resource_funcs = [];
 
 		resources_info.forEach((resource_info) => {
 			resource_funcs.push(getResourceRows(resource_info, q));
-		}) ;
+		});
+
+
+		in_search = true;
 
 
 		promise = Promise.all(resource_funcs);
+
+	} else {
+
+		in_search = false;
 
 	}
 }
@@ -122,7 +131,7 @@ $: {
 </section> -->
 
 
-<section class="section skinny-section" style="position: fixed; top: calc(var(--navbar-height)); width: 100%; border-bottom: 0px solid var(--border); z-index: 10010;">
+<section class="section skinny-section" style="position: fixed; top: calc(var(--navbar-height)); width: 100%; border-bottom: 0px solid var(--border); z-index: 1;">
 
 	<div class="container is-fullwidth">
 
@@ -144,7 +153,7 @@ $: {
 </section>
 
 
-{#if q === ''}
+{#if !in_search}
 
 <section class="section skinny-section" style="padding-top: 0.25rem !important;">
 
@@ -175,11 +184,13 @@ $: {
 
 		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={`No ${result[0].name} rows found!`} />
 
-		{/if}
+		{:else}
 
 		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={`${result[0].name}`} />
 
-		<Table rows={result[1]} columns={result[0].default_columns} resource_id={result[0].id} />
+		<Table rows={result[1]} columns={result[0].default_columns} resource_id={result[0].id} id_key={result[1].id_key} />
+
+		{/if}
 
 		{/each}
 

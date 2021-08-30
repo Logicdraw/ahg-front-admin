@@ -5,9 +5,24 @@ const resources_info = [
 	{
 		id: 'adult_reps',
 		url: 'adult-reps',
+		search_url: 'adult-reps-search',
 		name: 'Adult Reps',
 		name_singular: 'Adult Rep',
 		default_columns: [
+			{
+				path: ['full_name'],
+				name: 'Name',
+			},
+			{
+				path: ['email'],
+				name: 'Email',
+			},
+			{
+				path: ['mobile_phone'],
+				name: 'Mobile',
+			},
+		],
+		search_columns: [
 			{
 				path: ['full_name'],
 				name: 'Name',
@@ -45,9 +60,24 @@ const resources_info = [
 	{
 		id: 'coaches',
 		url: 'coaches',
+		search_url: 'coaches-search',
 		name: 'Coaches',
 		name_singular: 'Coach',
 		default_columns: [
+			{
+				path: ['full_name'],
+				name: 'Name',
+			},
+			{
+				path: ['email'],
+				name: 'Email',
+			},
+			{
+				path: ['mobile_phone'],
+				name: 'Mobile',
+			},
+		],
+		search_columns: [
 			{
 				path: ['full_name'],
 				name: 'Name',
@@ -92,9 +122,24 @@ const resources_info = [
 	{
 		id: 'guardians',
 		url: 'guardians',
+		search_url: 'guardians-search',
 		name: 'Guardians',
 		name_singular: 'Guardian',
 		default_columns: [
+			{
+				path: ['full_name'],
+				name: 'Name',
+			},
+			{
+				path: ['email'],
+				name: 'Email',
+			},
+			{
+				path: ['mobile_phone'],
+				name: 'Mobile',
+			},
+		],
+		search_columns: [
 			{
 				path: ['full_name'],
 				name: 'Name',
@@ -131,6 +176,7 @@ const resources_info = [
 	{
 		id: 'players',
 		url: 'players',
+		search_url: 'players-search',
 		name: 'Players',
 		name_singular: 'Player',
 		default_columns: [
@@ -149,6 +195,20 @@ const resources_info = [
 			{
 				path: ['gender'],
 				name: 'Gender',
+			},
+		],
+		search_columns: [
+			{
+				path: ['first_name'],
+				name: 'First',
+			},
+			{
+				path: ['last_name'],
+				name: 'Last',
+			},
+			{
+				path: ['email'],
+				name: 'Email',
 			},
 		],
 		more_filters: [
@@ -227,6 +287,7 @@ const resources_info = [
 	{
 		id: 'camp_instances',
 		url: 'camp-instances',
+		search_url: 'camp-instances-search',
 		name: 'Camps',
 		name_singular: 'Camp',
 		default_columns: [
@@ -241,6 +302,12 @@ const resources_info = [
 			{
 				path: ['year_end'],
 				name: 'Year End',
+			},
+		],
+		search_columns: [
+			{
+				path: ['camps_sc', 'name'],
+				name: 'Camp Name',
 			},
 		],
 		more_filters: [
@@ -273,6 +340,7 @@ const resources_info = [
 	{
 		id: 'program_instances',
 		url: 'program-instances',
+		search_url: 'program-instances-search',
 		name: 'Programs',
 		name_singular: 'Program',
 		default_columns: [
@@ -287,6 +355,12 @@ const resources_info = [
 			{
 				path: ['year_end'],
 				name: 'Year End',
+			},
+		],
+		search_columns: [
+			{
+				path: ['programs_sc', 'name'],
+				name: 'Program Name',
 			},
 		],
 		more_filters: [
@@ -319,12 +393,17 @@ const resources_info = [
 	{
 		id: 'team_instances',
 		url: 'team-instances',
+		search_url: 'team-instances-search',
 		name: 'Teams',
 		name_singular: 'Team',
 		default_columns: [
 			{
 				path: ['teams_sc', 'name'],
-				name: 'Team Name',
+				name: 'Team',
+			},
+			{
+				path: ['teams_sc', 'divisions_sc', 'name'],
+				name: 'Division',
 			},
 			{
 				path: ['year_start'],
@@ -333,6 +412,12 @@ const resources_info = [
 			{
 				path: ['year_end'],
 				name: 'Year End',
+			},
+		],
+		search_columns: [
+			{
+				path: ['teams_sc', 'name'],
+				name: 'Team Name',
 			},
 		],
 		more_filters: [
@@ -365,6 +450,7 @@ const resources_info = [
 	{
 		id: 'camp_instance_registrations',
 		url: 'camp-instances-camp-instance-registrations',
+		search_url: 'camp-instances-camp-instance-registrations-search',
 		name: 'Camp Registrations',
 		name_singular: 'Camp Registration',
 		default_columns: [
@@ -389,6 +475,7 @@ const resources_info = [
 				name: 'Year End',
 			}
 		],
+		// ...
 		more_filters: [],
 		form_additional_data: [
 			{
@@ -403,7 +490,9 @@ const resources_info = [
 	},
 	{
 		id: 'program_instance_registrations',
+		id_key: 'program_instance_registration_id',
 		url: 'program-instances-program-instance-registrations',
+		search_url: 'program-instances-program-instance-registrations-search',
 		name: 'Program Registrations',
 		name_singular: 'Program Registration',
 		default_columns: [
@@ -416,8 +505,8 @@ const resources_info = [
 				name: 'Last',
 			},
 			{
-				path: ['program_instances_sc', 'camps_sc', 'name'],
-				name: 'Camp',
+				path: ['program_instances_sc', 'programs_sc', 'name'],
+				name: 'Program',
 			},
 			{
 				path: ['program_instances_sc', 'year_start'],
@@ -444,6 +533,7 @@ const resources_info = [
 		id: 'team_instance_registrations',
 		id_key: 'team_instance_registration_id',
 		url: 'team-instances-team-instance-registrations',
+		search_url: 'team-instances-team-instance-registrations-search',
 		name: 'Team Registrations',
 		name_singular: 'Team Registration',
 		default_columns: [

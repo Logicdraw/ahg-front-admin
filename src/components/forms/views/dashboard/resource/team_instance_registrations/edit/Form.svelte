@@ -157,8 +157,11 @@ import FormFieldError from 'components/forms/FormFieldError.svelte';
 
 
 
-const adult_api_url = app_.env.ADULT_API_URL;
-// const hcaptcha_site_key = app_.env.HCAPTCHA_SITE_KEY;
+
+const admin_api_url = app_.env.ADMIN_API_URL;
+
+const token = get(auth).token;
+
 
 let loading = false;
 
@@ -289,6 +292,9 @@ async function submitForm(body_data) {
 	const resp = await fetch(url, {
 		method: 'POST',
 		body: body_data,
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
 	});
 
 	const result = await resp.json();

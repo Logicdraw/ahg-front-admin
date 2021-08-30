@@ -25,7 +25,10 @@ import Select from 'svelte-select';
 
 
 const admin_api_url = app_.env.ADMIN_API_URL;
-// const hcaptcha_site_key = app_.env.HCAPTCHA_SITE_KEY;
+
+const token = get(auth).token;
+
+
 
 let loading = false;
 
@@ -80,11 +83,14 @@ const {
 		submitForm(body_data).then(data => {
 
 			// ...
+			alert('Saved!');
 
 		}).catch(error => {
 
 			msg_type = 'error';
 			msg_show = true;
+
+			alert('Error!');
 
 		}).finally(() => {
 
@@ -103,6 +109,9 @@ async function submitForm(body_data) {
 	const resp = await fetch(url, {
 		method: 'PUT',
 		body: body_data,
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
 	});
 
 	const result = await resp.json();

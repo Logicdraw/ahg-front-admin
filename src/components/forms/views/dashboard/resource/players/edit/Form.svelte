@@ -22,7 +22,9 @@ import FormFieldError from 'components/forms/FormFieldError.svelte';
 
 
 const admin_api_url = app_.env.ADMIN_API_URL;
-// const hcaptcha_site_key = app_.env.HCAPTCHA_SITE_KEY;
+
+const token = get(auth).token;
+
 
 let loading = false;
 
@@ -38,15 +40,15 @@ const {
 	setField,
 } = createForm({
 	initialValues: {
-		first_name: player.first_name || '',
-		last_name: player.last_name || '',
-		email: player.email || '',
-		mobile_phone: player.mobile_phone || '',
-		date_of_birth: player.date_of_birth || '',
-		medicare_number: player.medicare_number || '',
-		street_address_1: player.street_address_1 || '',
-		street_address_2: player.street_address_2 || '',
-		postal_code: player.postal_code || '',
+		first_name: player.first_name || null,
+		last_name: player.last_name || null,
+		email: player.email || null,
+		mobile_phone: player.mobile_phone || null,
+		date_of_birth: player.date_of_birth || null,
+		medicare_number: player.medicare_number || null,
+		street_address_1: player.street_address_1 || null,
+		street_address_2: player.street_address_2 || null,
+		postal_code: player.postal_code || null,
 		country: player.country || 'Canada',
 		gender: player.gender || 'Male',
 		language: player.language || 'English',
@@ -104,12 +106,14 @@ const {
 
 		submitForm(body_data).then(data => {
 
-			// ...
+			alert('Saved!');
 
 		}).catch(error => {
 
 			msg_type = 'error';
 			msg_show = true;
+
+			alert('Error!');
 
 		}).finally(() => {
 
@@ -128,9 +132,13 @@ async function submitForm(body_data) {
 	const resp = await fetch(url, {
 		method: 'PUT',
 		body: body_data,
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
 	});
 
 	const result = await resp.json();
+
 
 	if (!resp.ok) {
 		msg_text = result.detail;

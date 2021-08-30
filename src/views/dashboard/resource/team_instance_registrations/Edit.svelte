@@ -9,6 +9,8 @@ import { Route } from 'svelte-router-spa';
 import MsgCard from 'components/elements/MsgCard.svelte';
 import Loading from 'components/elements/Loading.svelte';
 
+import CreatedUpdated from 'components/elements/views/dashboard/resource/CreatedUpdated.svelte';
+
 
 import Form from 'components/forms/views/dashboard/resource/team_instance_registrations/edit/Form.svelte';
 
@@ -89,6 +91,8 @@ async function getResourceRow() {
 		<div class="columns is-centered">
 
 			<div class="column is-9-desktop is-12-tablet is-12-mobile">
+
+				<CreatedUpdated row={resource_row} />
 
 				<div class="card form-card">
 
