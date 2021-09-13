@@ -18,6 +18,10 @@ import { onMount } from 'svelte';
 import FormFieldError from 'components/forms/FormFieldError.svelte';
 
 
+const admin_api_url = app_.env.ADMIN_API_URL;
+
+
+const token = get(auth).token;
 
 
 let loading = false;
@@ -53,12 +57,14 @@ const {
 
 		submitForm(body_data).then(data => {
 
-			// ...
+			alert('Saved!')
 
 		}).catch(error => {
 
 			msg_type = 'error';
 			msg_show = true;
+
+			alert('Error!');
 
 		}).finally(() => {
 
@@ -77,6 +83,9 @@ async function submitForm(body_data) {
 	const resp = await fetch(url, {
 		method: 'POST',
 		body: body_data,
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
 	});
 
 	const result = await resp.json();

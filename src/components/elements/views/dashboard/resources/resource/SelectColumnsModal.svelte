@@ -1,5 +1,5 @@
 <script>
-export let is_active;
+export let select_columns_modal_is_active;
 
 </script>
 
@@ -10,7 +10,7 @@ export let is_active;
 </style>
 
 
-<div class="modal" class:is-active={is_active}>
+<div class="modal" class:is-active={select_columns_modal_is_active}>
 
 	<div class="modal-background"></div>
 

@@ -33,7 +33,9 @@ const token = get(auth).token;
 let loading = false;
 
 
-
+let initial_team_instances_ids = [];
+let initial_program_instances_ids = [];
+let initial_camp_instances_ids = [];
 
 
 const {
@@ -46,9 +48,12 @@ const {
 	setField,
 } = createForm({
 	initialValues: {
-		full_name: coach.full_name || '',
-		email: coach.email || '',
-		mobile_phone: coach.mobile_phone || '',
+		full_name: coach.full_name || null,
+		email: coach.email || null,
+		mobile_phone: coach.mobile_phone || null,
+		team_instances_ids: initial_team_instances_ids,
+		program_instances_ids: initial_program_instances_ids,
+		camp_instances_ids: initial_camp_instances_ids,
 	},
 	validationSchema: yup.object().shape({
 		full_name: yup
@@ -61,6 +66,21 @@ const {
 		mobile_phone: yup
 			.string()
 			.nullable(),
+		team_instances_ids: yup
+			.array()
+			.of(
+				yup.number(),
+			),
+		program_instances_ids: yup
+			.array()
+			.of(
+				yup.number(),
+			),
+		camp_instances_ids: yup
+			.array()
+			.of(
+				yup.number(),
+			),
 	}),
 	onSubmit: values => {
 
@@ -70,12 +90,14 @@ const {
 
 		submitForm(body_data).then(data => {
 
-			// ...
+			alert('Saved!')
 
 		}).catch(error => {
 
 			msg_type = 'error';
 			msg_show = true;
+
+			alert('Error!');
 
 		}).finally(() => {
 

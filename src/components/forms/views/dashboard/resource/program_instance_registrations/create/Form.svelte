@@ -80,8 +80,10 @@ import FormFieldError from 'components/forms/FormFieldError.svelte';
 
 
 
-const adult_api_url = app_.env.ADULT_API_URL;
-// const hcaptcha_site_key = app_.env.HCAPTCHA_SITE_KEY;
+const admin_api_url = app_.env.ADMIN_API_URL;
+
+const token = get(auth).token;
+
 
 let loading = false;
 
@@ -97,7 +99,7 @@ const {
 	setField,
 } = createForm({
 	initialValues: {
-		program_instances_ids: '',
+		program_instances_ids: [],
 		player_id: '',
 
 		placed_at_datetime: '',
@@ -175,12 +177,14 @@ const {
 
 		submitForm(body_data).then(data => {
 
-			// ...
+			alert('Saved!')
 
 		}).catch(error => {
 
 			msg_type = 'error';
 			msg_show = true;
+
+			alert('Error!');
 
 		}).finally(() => {
 
@@ -199,6 +203,9 @@ async function submitForm(body_data) {
 	const resp = await fetch(url, {
 		method: 'POST',
 		body: body_data,
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
 	});
 
 	const result = await resp.json();
@@ -231,7 +238,7 @@ function onSelectPlayer(event) {
 
 let selected_program_instances = undefined;
 
-function onSelectprogramInstance(event) {
+function onSelectProgramInstance(event) {
 	selected_program_instances = event.detail;
 
 	console.log(event);
@@ -271,7 +278,7 @@ form {
 
 			<label>Program(s) (Required)</label>
 
-			<Select items={program_instances_values} isMulti={true} on:select={onSelectprogramInstance} bind:selectedValue={selected_program_instances}></Select>
+			<Select items={program_instances_values} isMulti={true} on:select={onSelectProgramInstance} bind:selectedValue={selected_program_instances}></Select>
 
 			{#if $errors.name}
 				<FormFieldError detail={$errors.name} />
@@ -411,7 +418,6 @@ form {
 
 			<label>$ Paid (Optional)</label>
 
-
 			<input placeholder="$ Paid" class="input" type="number" step=".01" id="paid" name="paid" on:change={handleChange} bind:value={$form.paid}>
 
 			{#if $errors.paid}
@@ -427,7 +433,6 @@ form {
 		<div class="control">
 
 			<label>$ Total (Optional)</label>
-
 
 			<input placeholder="$ Total" class="input" type="number" step=".01" id="total" name="total" on:change={handleChange} bind:value={$form.total}>
 
@@ -445,7 +450,6 @@ form {
 
 			<label>$ Owed (Optional)</label>
 
-
 			<input placeholder="$ Owed" class="input" type="number" step=".01" id="owed" name="owed" on:change={handleChange} bind:value={$form.owed}>
 
 			{#if $errors.owed}
@@ -461,7 +465,6 @@ form {
 		<div class="control">
 
 			<label>$ Discounts (Optional)</label>
-
 
 			<input placeholder="$ Discounts" class="input" type="number" step=".01" id="discounts" name="discounts" on:change={handleChange} bind:value={$form.discounts}>
 
@@ -497,7 +500,6 @@ form {
 		<div class="control">
 
 			<label>$ Refunds (Optional)</label>
-
 
 			<input placeholder="$ Refunds" class="input" type="number" step=".01" id="refunds" name="refunds" on:change={handleChange} bind:value={$form.refunds}>
 

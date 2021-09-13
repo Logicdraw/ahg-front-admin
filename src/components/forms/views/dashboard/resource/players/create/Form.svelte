@@ -3,6 +3,8 @@ export let msg_show;
 export let msg_text;
 export let msg_type;
 
+export let guardians;
+
 
 import { auth } from 'store/index.js';
 
@@ -19,8 +21,10 @@ import FormFieldError from 'components/forms/FormFieldError.svelte';
 
 
 
-const adult_api_url = app_.env.ADULT_API_URL;
-// const hcaptcha_site_key = app_.env.HCAPTCHA_SITE_KEY;
+const admin_api_url = app_.env.ADMIN_API_URL;
+
+const token = get(auth).token;
+
 
 let loading = false;
 
@@ -36,6 +40,7 @@ const {
 	setField,
 } = createForm({
 	initialValues: {
+		guardians_ids: [],
 		first_name: '',
 		last_name: '',
 		email: '',
@@ -50,6 +55,11 @@ const {
 		language: 'English',
 	},
 	validationSchema: yup.object().shape({
+		guardians_ids: yup
+			.array()
+			.of(
+				yup.number().required(),
+			),
 		first_name: yup
 			.string()
 			.required('First name required!'),
@@ -99,12 +109,14 @@ const {
 
 		submitForm(body_data).then(data => {
 
-			// ...
+			alert('Saved!')
 
 		}).catch(error => {
 
 			msg_type = 'error';
 			msg_show = true;
+
+			alert('Error!');
 
 		}).finally(() => {
 
@@ -123,6 +135,9 @@ async function submitForm(body_data) {
 	const resp = await fetch(url, {
 		method: 'POST',
 		body: body_data,
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
 	});
 
 	const result = await resp.json();

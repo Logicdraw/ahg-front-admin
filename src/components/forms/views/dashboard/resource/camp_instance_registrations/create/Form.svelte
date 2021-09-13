@@ -80,8 +80,10 @@ import FormFieldError from 'components/forms/FormFieldError.svelte';
 
 
 
-const adult_api_url = app_.env.ADULT_API_URL;
-// const hcaptcha_site_key = app_.env.HCAPTCHA_SITE_KEY;
+const admin_api_url = app_.env.ADMIN_API_URL;
+
+const token = get(auth).token;
+
 
 let loading = false;
 
@@ -97,7 +99,7 @@ const {
 	setField,
 } = createForm({
 	initialValues: {
-		camp_instances_ids: '',
+		camp_instances_ids: [],
 		player_id: '',
 
 		placed_at_datetime: '',
@@ -175,12 +177,14 @@ const {
 
 		submitForm(body_data).then(data => {
 
-			// ...
+			alert('Saved!')
 
 		}).catch(error => {
 
 			msg_type = 'error';
 			msg_show = true;
+
+			alert('Error!');
 
 		}).finally(() => {
 
@@ -194,11 +198,14 @@ const {
 
 async function submitForm(body_data) {
 
-	const url = `${admin_api_url}/program-instance-registrations`;
+	const url = `${admin_api_url}/camp-instance-registrations`;
 
 	const resp = await fetch(url, {
 		method: 'POST',
 		body: body_data,
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
 	});
 
 	const result = await resp.json();

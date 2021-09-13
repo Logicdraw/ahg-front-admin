@@ -32,6 +32,7 @@ const token = get(auth).token;
 
 let loading = false;
 
+let players_ids = [];
 
 
 const {
@@ -44,12 +45,12 @@ const {
 	setField,
 } = createForm({
 	initialValues: {
-		full_name: guardian.full_name || '',
-		email: guardian.email || '',
-		mobile_phone: guardian.mobile_phone || '',
-		home_phone: guardian.home_phone || '',
-		work_phone: guardian.work_phone || '',
-		players_ids: [],
+		full_name: guardian.full_name || null,
+		email: guardian.email || null,
+		mobile_phone: guardian.mobile_phone || null,
+		home_phone: guardian.home_phone || null,
+		work_phone: guardian.work_phone || null,
+		players_ids: initial_players_ids,
 	},
 	validationSchema: yup.object().shape({
 		full_name: yup
@@ -301,7 +302,7 @@ form {
 		<div class="control is-expanded">
 
 			<button class="button is-blue is-fullwidth">
-				<span>Create</span>
+				<span>Save Changes</span>
 				<i class="fas fa-circle-notch fa-spin" class:is-hidden={!loading}></i>
 			</button>
 

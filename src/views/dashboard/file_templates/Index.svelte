@@ -6,6 +6,8 @@ import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 // import Form from 'components/forms/views/dashboard/settings/Form.svelte';
 
+import Filter from 'components/elements/views/dashboard/file_templates/Filter.svelte';
+
 import SvelteSeo from 'svelte-seo';
 
 

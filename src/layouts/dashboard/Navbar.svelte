@@ -214,9 +214,36 @@ const act_resources = [
 				</div>
 
 
+				<div class="navbar-item has-dropdown is-hoverable" style="z-index: 100;">
+
+
+					<a class="navbar-link">
+						<span>Other</span>
+					</a>
+
+					<div class="navbar-dropdown is-right--" style="z-index: 10001;">
+
+						<Navigate to='/my/spng' styles='navbar-item' on:click={closeActive}>
+							<span>SportsEngine Helpers</span>
+						</Navigate>
+
+						<Navigate to='/my/gs' styles='navbar-item' on:click={closeActive}>
+							<span>GameSheet Helpers</span>
+						</Navigate>
+
+					</div>
+
+
+				</div>
+
+
+				<!--  -->
+
+
 				<Navigate styles="navbar-item" to="/my/resources/master-search" on:click={closeActive}>
 					<span on:click={closeActive}>Master Search</span>
 				</Navigate>
+
 
 				<!-- resources dropdown! -->
 

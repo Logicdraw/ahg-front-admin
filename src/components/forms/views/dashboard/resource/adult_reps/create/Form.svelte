@@ -19,8 +19,9 @@ import FormFieldError from 'components/forms/FormFieldError.svelte';
 
 
 
-const adult_api_url = app_.env.ADULT_API_URL;
-// const hcaptcha_site_key = app_.env.HCAPTCHA_SITE_KEY;
+const admin_api_url = app_.env.ADMIN_API_URL;
+
+const token = get(auth).token;
 
 let loading = false;
 
@@ -60,12 +61,14 @@ const {
 
 		submitForm(body_data).then(data => {
 
-			// ...
+			alert('Saved!')
 
 		}).catch(error => {
 
 			msg_type = 'error';
 			msg_show = true;
+
+			alert('Error!');
 
 		}).finally(() => {
 

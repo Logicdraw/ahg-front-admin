@@ -166,6 +166,9 @@ const token = get(auth).token;
 let loading = false;
 
 
+let initial_team_instances_ids = [];
+let initial_jersey_sponsors = [];
+
 
 const {
 	form,
@@ -177,24 +180,26 @@ const {
 	setField,
 } = createForm({
 	initialValues: {
-		team_instances_ids: '',
-		player_id: '',
+		team_instances_ids: initial_team_instances_ids,
+		player_id: team_instance_registration.player_id || null,
 
-		placed_at_datetime: '',
+		placed_at_datetime: team_instance_registration.placed_at_datetime || null,
 
-		comment: '',
-		coaches_comment: '',
-		player_submitted_notes: '',
+		comment: team_instance_registration.comment || null,
+		coaches_comment: team_instance_registration.coaches_comment || null,
+		player_submitted_notes: team_instance_registration.player_submitted_notes || null,
 
-		registration_insurance: '',
+		registration_insurance: team_instance_registration.registration_insurance || null,
 
-		paid: '',
-		total: '',
-		owes: '',
-		discounts: '',
-		discount_names: '',
-		refunds: '',
-		refund_reason: '',
+		paid: team_instance_registration.paid || null,
+		total: team_instance_registration.total || null,
+		owes: team_instance_registration.owes || null,
+		discounts: team_instance_registration.discounts || null,
+		discount_names: team_instance_registration.discount_names || null,
+		refunds: team_instance_registration.refunds || null,
+		refund_reason: team_instance_registration.refund_reason || null,
+
+		jersey_sponsors: initial_jersey_sponsors,
 	},
 	validationSchema: yup.object().shape({
 		team_instances_ids: yup
@@ -268,12 +273,14 @@ const {
 
 		submitForm(body_data).then(data => {
 
-			// ...
+			alert('Saved!')
 
 		}).catch(error => {
 
 			msg_type = 'error';
 			msg_show = true;
+
+			alert('Error!');
 
 		}).finally(() => {
 
@@ -694,7 +701,7 @@ form {
 		<div class="control is-expanded">
 
 			<button class="button is-blue is-fullwidth">
-				<span>Create</span>
+				<span>Save Changes</span>
 				<i class="fas fa-circle-notch fa-spin" class:is-hidden={!loading}></i>
 			</button>
 

@@ -3,6 +3,17 @@ export let currentRoute;
 
 import Form from 'components/forms/views/auth/password/begin-reset/Form.svelte';
 
+import MsgCard from 'components/elements/MsgCard.svelte';
+
+
+import SvelteSeo from 'svelte-seo';
+
+
+let msg_show = false;
+let msg_type;
+let msg_text;
+
+
 </script>
 
 
@@ -19,7 +30,7 @@ import Form from 'components/forms/views/auth/password/begin-reset/Form.svelte';
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				Reset your password!
+				Reset your password
 			</p>
 
 		</div>
@@ -35,9 +46,19 @@ import Form from 'components/forms/views/auth/password/begin-reset/Form.svelte';
 
 		<div class="columns is-variable is-centered">
 
-			<div class="column is-8-desktop is-10-tablet is-12-mobile">
+			<div class="column is-6-desktop is-9-tablet is-12-mobile">
 
-				<Form />
+				<MsgCard bind:msg_show={msg_show} bind:msg_type={msg_type} bind:msg_text={msg_text} />
+
+				<div class="card form-card">
+
+					<div class="card-content">
+
+						<Form bind:msg_show={msg_show} bind:msg_type={msg_type} bind:msg_text={msg_text} />
+
+					</div>
+
+				</div>
 
 			</div>
 

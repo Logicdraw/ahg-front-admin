@@ -41,9 +41,9 @@ const {
 	setField,
 } = createForm({
 	initialValues: {
-		name: team_instance.teams_sc.name || '',
-		year_start: team_instance.year_start || '',
-		year_end: team_instance.year_end || '',
+		name: team_instance.teams_sc.name || null,
+		year_start: team_instance.year_start || null,
+		year_end: team_instance.year_end || null,
 	},
 	validationSchema: yup.object().shape({
 		name: yup
@@ -64,12 +64,14 @@ const {
 
 		submitForm(body_data).then(data => {
 
-			// ...
+			alert('Saved!')
 
 		}).catch(error => {
 
 			msg_type = 'error';
 			msg_show = true;
+
+			alert('Error!');
 
 		}).finally(() => {
 
@@ -178,7 +180,7 @@ form {
 		<div class="control is-expanded">
 
 			<button class="button is-blue is-fullwidth">
-				<span>Create</span>
+				<span>Save Changes</span>
 				<i class="fas fa-circle-notch fa-spin" class:is-hidden={!loading}></i>
 			</button>
 

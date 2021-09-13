@@ -38,7 +38,7 @@ let msg_text;
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				Login!
+				Login
 			</p>
 
 		</div>

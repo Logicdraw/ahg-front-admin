@@ -81,6 +81,11 @@ import DashboardFileTemplateCreate from 'views/dashboard/file_template/Create.sv
 import DashboardFileTemplateEdit from 'views/dashboard/file_template/Edit.svelte';
 
 
+import DashboardGamesheetIndex from 'views/dashboard/other/gs/Index.svelte';
+
+import DashboardSpngIndex from 'views/dashboard/other/spng/Index.svelte';
+
+
 // Settings
 
 import DashboardSettingsIndex from 'views/dashboard/settings/Index.svelte';
@@ -276,6 +281,14 @@ const routes = [
 						component: DashboardFileTemplateEdit,
 					},
 				],
+			},
+			{
+				name: 'spng',
+				component: DashboardSpngIndex,
+			},
+			{
+				name: 'gs',
+				component: DashboardGamesheetIndex,
 			},
 			{
 				name: 'settings',

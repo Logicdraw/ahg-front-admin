@@ -5,6 +5,8 @@ export let msg_show;
 export let msg_text;
 export let msg_type;
 
+export let guardians;
+
 
 import { auth } from 'store/index.js';
 
@@ -28,6 +30,7 @@ const token = get(auth).token;
 
 let loading = false;
 
+let initial_guardians_ids = [];
 
 
 const {
@@ -40,6 +43,8 @@ const {
 	setField,
 } = createForm({
 	initialValues: {
+		guardians_ids: initial_guardians_ids,
+
 		first_name: player.first_name || null,
 		last_name: player.last_name || null,
 		email: player.email || null,
@@ -54,6 +59,11 @@ const {
 		language: player.language || 'English',
 	},
 	validationSchema: yup.object().shape({
+		guardians_ids: yup
+			.array()
+			.of(
+				yup.number().required(),
+			),
 		first_name: yup
 			.string()
 			.required('First name required!'),

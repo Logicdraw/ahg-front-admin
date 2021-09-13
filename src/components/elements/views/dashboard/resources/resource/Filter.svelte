@@ -6,13 +6,11 @@ export let at_last_page;
 import FilterModal from 'components/elements/views/dashboard/resources/resource/FilterModal.svelte';
 
 
-
 let filter_modal_is_active = false;
 
 async function openFilterModal() {
 	filter_modal_is_active = true;
 }
-
 
 
 function goToPrevPage() {
@@ -37,7 +35,8 @@ function goToNextPage() {
 </style>
 
 
-<FilterModal {params} bind:is_active={filter_modal_is_active} />
+<FilterModal {params} bind:filter_modal_is_active={filter_modal_is_active} />
+
 
 
 <div class="is-hidden-mobile">

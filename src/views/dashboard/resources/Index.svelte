@@ -75,7 +75,7 @@ import { resources_info } from 'utils/resources.js';
 
 				<div class="column is-3-desktop is-4-tablet is-6-mobile">
 
-					<Navigate styles='button is-medium is-fullwidth' to='/my/resource/{resource.id}/create'>
+					<Navigate styles='button is-medium is-fullwidth' to='/my/resource/create/{resource.id}'>
 						<span>{resource.name}</span>
 					</Navigate>
 

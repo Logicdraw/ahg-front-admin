@@ -32,8 +32,9 @@ async function openSelectColumnsModal() {
 
 
 
-<ExportModal bind:is_active={export_modal_is_active} {params} />
-<SelectColumnsModal bind:is_active={select_columns_modal_is_active} />
+<ExportModal bind:export_modal_is_active={export_modal_is_active} {params} />
+
+<SelectColumnsModal bind:select_columns_modal_is_active={select_columns_modal_is_active} />
 
 
 <div>
