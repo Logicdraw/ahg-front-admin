@@ -4,7 +4,8 @@ const act_resources_info = [
 	{
 		id: 'coaches',
 		url: 'coaches',
-		search_url: 'coaches-search',
+		search_url: 'coaches',
+		// search_url: 'coaches-search',
 		name: 'Coaches',
 		name_singular: 'Coach',
 		default_columns: [
@@ -48,7 +49,8 @@ const act_resources_info = [
 	{
 		id: 'spring_hockey_registrations',
 		url: 'spring-hockey-registrations',
-		search_url: 'spring-hockey-registrations-search',
+		search_url: 'spring-hockey-registrations',
+		// search_url: 'spring-hockey-registrations-search',
 		name: 'Spring Hockey Registrations',
 		name_singular: 'Spring Hockey Registration',
 		default_columns: [
@@ -110,7 +112,8 @@ const act_resources_info = [
 	{
 		id: 'hockey_school_registrations',
 		url: 'hockey-school-registrations',
-		search_url: 'hockey-school-registrations-search',
+		search_url: 'hockey-school-registrations',
+		// search_url: 'hockey-school-registrations-search',
 		name: 'Hockey School Registrations',
 		name_singular: 'Hockey School Registration',
 		default_columns: [

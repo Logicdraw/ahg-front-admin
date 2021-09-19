@@ -65,6 +65,9 @@ import DashboardResourceEditTeamInstances from 'views/dashboard/resource/team_in
 import DashboardACTResourcesResource from 'views/dashboard/act/resources/Resource.svelte';
 
 
+import DashboardACTResourcesMasterSearch from 'views/dashboard/act/resources/MasterSearch.svelte';
+
+
 import DashboardACTResourceCoachesView from 'views/dashboard/act/resource/coaches/View.svelte';
 import DashboardACTResourceHockeySchoolRegistrationsView from 'views/dashboard/act/resource/hockey_school_registrations/View.svelte';
 import DashboardACTResourceSpringHockeyRegistrationsView from 'views/dashboard/act/resource/spring_hockey_registrations/View.svelte';
@@ -257,10 +260,10 @@ const routes = [
 							// 	name: 'index',
 							// 	component: DashboardResourcesIndex,
 							// },
-							// {
-							// 	name: 'master-search',
-							// 	component: DashboardResourcesMasterSearch,
-							// },
+							{
+								name: 'master-search',
+								component: DashboardACTResourcesMasterSearch,
+							},
 							// Adult --
 							{
 								name: 'resource/:act_resource_id',

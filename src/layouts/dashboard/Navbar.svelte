@@ -128,6 +128,10 @@ import { act_resources_info } from 'utils/act_resources.js';
 
 						{/each}
 
+						<Navigate to='/my/act/resources/master-search' styles='navbar-item' on:click={closeActive}>
+							<span>Master Search</span>
+						</Navigate>
+
 					</div>
 
 
