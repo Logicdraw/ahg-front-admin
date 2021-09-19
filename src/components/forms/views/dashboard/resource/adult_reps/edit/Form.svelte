@@ -64,7 +64,7 @@ const {
 
 		submitForm(body_data).then(data => {
 
-			alert('Saved!')
+			alert('Saved!');
 
 		}).catch(error => {
 
@@ -92,6 +92,7 @@ async function submitForm(body_data) {
 		body: body_data,
 		headers: {
 			Authorization: `Bearer ${token}`,
+			'Content-Type': 'application/json',
 		},
 	});
 

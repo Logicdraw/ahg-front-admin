@@ -87,6 +87,10 @@ async function submitForm(body_data) {
 	const resp = await fetch(url, {
 		method: 'POST',
 		body: body_data,
+		headers: {
+			Authorization: `Bearer ${token}`,
+			'Content-Type': 'application/json',
+		},
 	});
 
 	const result = await resp.json();

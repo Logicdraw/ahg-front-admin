@@ -9,7 +9,12 @@ import { Navigate } from 'svelte-router-spa';
 
 // import { resources_info } from 'utils/resources.js';
 
-// const buttons = [];
+const resources = [
+	{
+		name: 'Surveys',
+		to: '/my/spng/surveys',
+	},
+];
 
 
 
@@ -42,21 +47,21 @@ import { Navigate } from 'svelte-router-spa';
 
 	<div class="container is-fullwidth">
 
-		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={'...'} />
+		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={'Helpers'} />
 
 		<div class="columns is-variable is-mobile is-multiline is-centered">
 
-			<!-- {#each resources_info as resource}
+			{#each resources as resource}
 
 				<div class="column is-3-desktop is-4-tablet is-6-mobile">
 
-					<Navigate styles='button is-medium is-fullwidth' to='/my/resources/resource/{resource.id}'>
+					<Navigate styles='button is-medium is-fullwidth' to='{resource.to}'>
 						<span>{resource.name}</span>
 					</Navigate>
 
 				</div>
 
-			{/each} -->
+			{/each}
 
 		</div>
 

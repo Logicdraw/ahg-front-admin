@@ -2,6 +2,7 @@
 export let resource_id;
 export let rows;
 export let columns;
+export let params;
 
 export let id_key;
 
@@ -9,6 +10,7 @@ export let id_key;
 import TableRow from 'components/elements/views/dashboard/resources/resource/TableRow.svelte';
 import TableRowMobile from 'components/elements/views/dashboard/resources/resource/TableRowMobile.svelte';
 
+import TableHeader from 'components/elements/TableHeader.svelte';
 
 
 
@@ -51,11 +53,7 @@ td .arrow-divider:last-child {
 	<thead>
 		<tr>
 			{#each columns as column}
-				<td>
-					<span>
-						{column.name}
-					</span>
-				</td>
+				<TableHeader {column} {params} />
 			{/each}
 		</tr>
 	</thead>

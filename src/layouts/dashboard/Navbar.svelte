@@ -19,67 +19,10 @@ function openActive() {
 }
 
 
-const resources = [
-	{
-		id: 'adult_reps',
-		name: 'Adult Reps',
-	},
-	{
-		id: 'coaches',
-		name: 'Coaches',
-	},
-	{
-		id: 'guardians',
-		name: 'Guardians',
-	},
-	{
-		id: 'players',
-		name: 'Players',
-	},
-	// --
-	{
-		id: 'camp_instances',
-		name: 'Camps',
-	},
-	{
-		id: 'program_instances',
-		name: 'Programs',
-	},
-	{
-		id: 'team_instances',
-		name: 'Teams',
-	},
-	// --
-	{
-		id: 'camp_instance_registrations',
-		name: 'Camp Registrations',
-	},
-	{
-		id: 'program_instance_registrations',
-		name: 'Program Registrations',
-	},
-	{
-		id: 'team_instance_registrations',
-		name: 'Team Registrations',
-	},
-	// 
-]
+import { resources_info } from 'utils/resources.js';
 
+import { act_resources_info } from 'utils/act_resources.js';
 
-const act_resources = [
-	{
-		id: 'camp_registrations',
-		name: 'Camp Registrations',
-	},
-	{
-		id: 'coach_registrations',
-		name: 'Coach Registrations',
-	},
-	{
-		id: 'team_registrations',
-		name: 'Team Registrations',
-	},
-]
 
 
 </script>
@@ -128,7 +71,7 @@ const act_resources = [
 
 					<div class="navbar-dropdown is-right--" style="z-index: 10001;">
 
-						{#each resources as resource}
+						{#each resources_info as resource}
 
 							<Navigate to='/my/resources/resource/{resource.id}' styles='navbar-item' on:click={closeActive}>
 								<span>{resource.name}</span>
@@ -152,11 +95,13 @@ const act_resources = [
 
 					<div class="navbar-dropdown is-right--" style="z-index: 10001;">
 
-						{#each resources as resource}
+						{#each resources_info as resource}
 
+							{#if resource.has_create_form}
 							<Navigate to='/my/resource/create/{resource.id}' styles='navbar-item' on:click={closeActive}>
 								<span>{resource.name}</span>
 							</Navigate>
+							{/if}
 
 						{/each}
 
@@ -175,7 +120,7 @@ const act_resources = [
 
 					<div class="navbar-dropdown is-right--" style="z-index: 10001;">
 
-						{#each act_resources as resource}
+						{#each act_resources_info as resource}
 
 							<Navigate to='/my/act/resources/resource/{resource.id}' styles='navbar-item' on:click={closeActive}>
 								<span>{resource.name}</span>

@@ -137,6 +137,7 @@ async function submitForm(body_data) {
 		body: body_data,
 		headers: {
 			Authorization: `Bearer ${token}`,
+			'Content-Type': 'application/json',
 		},
 	});
 
@@ -381,6 +382,21 @@ form {
 			{#if $errors.language}
 				<FormFieldError detail={$errors.language} />
 			{/if}
+
+		</div>
+
+	</div>
+
+
+	<div class="field">
+
+		<div class="control">
+
+			<label>Guardian(s) (Required)</label>
+
+			<!-- {#if $errors.guardians}
+				<FormFieldError detail={$errors.language} />
+			{/if} -->
 
 		</div>
 

@@ -4,6 +4,8 @@ export let currentRoute;
 import { resources_info } from 'utils/resources.js';
 
 
+import { cleanParams } from 'utils/index.js';
+
 // const resource_info = resources_info.find(re => re.id === currentRoute.namedParams.resource_id);
 
 // let resource_info;
@@ -51,12 +53,8 @@ async function getRows(params) {
 
 	abort_controller = new AbortController();
 
-	let cleaned_params = {};
-	for (let [key, value] of Object.entries(params)) {
-		if (!((value === null) || (value === undefined) || (value === ''))) {
-			cleaned_params[key] = value;
-		}
-	}
+	let cleaned_params = cleanParams(params);
+
 
 	if (cleaned_params['q']) {
 		cleaned_params['offset'] = 0;
@@ -109,12 +107,12 @@ let params = {
 }
 
 
-function resetParams(namedParams) {
+function resetParams(resource_id) {
 	params = {
-			q: '',
-			offset: 0,
-			limit: 25,
-		}
+		q: '',
+		offset: 0,
+		limit: 25,
+	}
 }
 
 
@@ -153,7 +151,7 @@ $: promise = getRows(params);
 
 	<div class="container is-fullwidth">
 
-		<Tabs {params} resource_id={resource_info['id']} />
+		<Tabs {params} resource_id={resource_info['id']} resource_has_create_form={resource_info['has_create_form']} />
 
 	</div>
 

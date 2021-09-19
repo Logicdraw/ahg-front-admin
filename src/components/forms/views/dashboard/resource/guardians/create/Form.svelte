@@ -108,6 +108,7 @@ async function submitForm(body_data) {
 		body: body_data,
 		headers: {
 			Authorization: `Bearer ${token}`,
+			'Content-Type': 'application/json',
 		},
 	});
 

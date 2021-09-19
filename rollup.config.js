@@ -86,6 +86,7 @@ export default {
 					IS_PROD: production,
 					AUTH_API_URL: process.env.AUTH_API_URL,
 					ADMIN_API_URL: process.env.ADMIN_API_URL,
+					ACT_API_URL: process.env.ACT_API_URL,
 					MAINTENANCE: process.env.MAINTENANCE,
 				}
 			}),

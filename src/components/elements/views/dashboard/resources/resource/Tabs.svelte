@@ -1,9 +1,11 @@
 <script>
 export let params;
 export let resource_id;
+export let resource_has_create_form;
 
-import ExportModal from 'components/elements/views/dashboard/resources/resource/ExportModal.svelte';
-import SelectColumnsModal from 'components/elements/views/dashboard/resources/resource/SelectColumnsModal.svelte';
+import ExportModal from 'components/elements/views/dashboard/resources/resource/modals/Export.svelte';
+import SelectColumnsModal from 'components/elements/views/dashboard/resources/resource/modals/SelectColumns.svelte';
+import FilterModal from 'components/elements/views/dashboard/resources/resource/modals/Filter.svelte';
 
 
 import { Navigate } from 'svelte-router-spa';
@@ -50,14 +52,14 @@ async function openSelectColumnsModal() {
 
 		</div>
 
-		<!-- <div class="control">
+		<div class="control">
 
 			<span class="button is-normal" on:click={openSelectColumnsModal}>
 				Select Columns
 			</span>
 
 		</div>
- -->
+
 		<!-- <div class="control">
 
 			<span class="button is-normal" on:click={SelectColumnsModal}>
@@ -67,6 +69,8 @@ async function openSelectColumnsModal() {
 
 		</div> -->
 
+		{#if resource_has_create_form}
+
 		<div class="control">
 
 			<Navigate to='/my/resource/create/{resource_id}' styles="button is-normal">
@@ -75,6 +79,8 @@ async function openSelectColumnsModal() {
 			</Navigate>
 
 		</div>
+
+		{/if}
 
 		<!-- <div class="control">
 

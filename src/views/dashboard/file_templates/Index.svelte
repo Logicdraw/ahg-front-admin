@@ -11,6 +11,10 @@ import Filter from 'components/elements/views/dashboard/file_templates/Filter.sv
 import SvelteSeo from 'svelte-seo';
 
 
+import { cleanParams } from 'utils/index.js';
+
+
+
 let msg_show = false;
 let msg_type;
 let msg_text;
@@ -36,12 +40,7 @@ async function getFileTemplates(params) {
 
 	abort_controller = new AbortController();
 
-	let cleaned_params = {};
-	for (let [key, value] of Object.entries(params)) {
-		if (!((value === null) || (value === undefined) || (value === ''))) {
-			cleaned_params[key] = value;
-		}
-	}
+	let cleaned_params = cleanParams(params);
 
 	let params_string = new URLSearchParams(cleaned_params).toString();
 

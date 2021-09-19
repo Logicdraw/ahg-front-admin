@@ -65,7 +65,10 @@ import DashboardResourceEditTeamInstances from 'views/dashboard/resource/team_in
 import DashboardACTResourcesResource from 'views/dashboard/act/resources/Resource.svelte';
 
 
-import DashboardACTResourceEdit from 'views/dashboard/act/resource/Edit.svelte';
+import DashboardACTResourceCoachesView from 'views/dashboard/act/resource/coaches/View.svelte';
+import DashboardACTResourceHockeySchoolRegistrationsView from 'views/dashboard/act/resource/hockey_school_registrations/View.svelte';
+import DashboardACTResourceSpringHockeyRegistrationsView from 'views/dashboard/act/resource/spring_hockey_registrations/View.svelte';
+
 
 
 
@@ -84,6 +87,8 @@ import DashboardFileTemplateEdit from 'views/dashboard/file_template/Edit.svelte
 import DashboardGamesheetIndex from 'views/dashboard/other/gs/Index.svelte';
 
 import DashboardSpngIndex from 'views/dashboard/other/spng/Index.svelte';
+
+import DashboardSpngSurveysIndex from 'views/dashboard/other/spng/surveys/Index.svelte';
 
 
 // Settings
@@ -248,8 +253,17 @@ const routes = [
 					{
 						name: 'resources',
 						nestedRoutes: [
+							// {
+							// 	name: 'index',
+							// 	component: DashboardResourcesIndex,
+							// },
+							// {
+							// 	name: 'master-search',
+							// 	component: DashboardResourcesMasterSearch,
+							// },
+							// Adult --
 							{
-								name: ':resource_id',
+								name: 'resource/:act_resource_id',
 								component: DashboardACTResourcesResource,
 							},
 						],
@@ -258,8 +272,16 @@ const routes = [
 						name: 'resource',
 						nestedRoutes: [
 							{
-								name: ':resource_id/edit/:resource_row_id',
-								component: DashboardACTResourceEdit,
+								name: 'coaches/:act_resource_row_id',
+								component: DashboardACTResourceCoachesView,
+							},
+							{
+								name: 'hockey_school_registrations/:act_resource_row_id',
+								component: DashboardACTResourceHockeySchoolRegistrationsView,
+							},
+							{
+								name: 'spring_hockey_registrations/:act_resource_row_id',
+								component: DashboardACTResourceSpringHockeyRegistrationsView,
 							},
 						],
 					},
@@ -284,7 +306,16 @@ const routes = [
 			},
 			{
 				name: 'spng',
-				component: DashboardSpngIndex,
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardSpngIndex,
+					},
+					{
+						name: 'surveys',
+						component: DashboardSpngSurveysIndex,
+					}
+				],
 			},
 			{
 				name: 'gs',

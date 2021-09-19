@@ -42,6 +42,12 @@ async function exportRows() {
 
 	<div class="modal-card">
 
+		<div class="modal-card-head">
+
+			<!-- ... -->
+
+		</div>
+
 		<div class="modal-card-body">
 
 			<MsgCard msg_type={'error'} msg_forever={true} msg_text={'Export rows!'} />

@@ -24,6 +24,8 @@ export let params;
 
 		</div>
 
+		<!-- other... -->
+
 		<!-- control -->
 
 	</div>
