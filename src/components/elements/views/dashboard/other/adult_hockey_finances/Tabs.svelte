@@ -7,15 +7,15 @@ export let divisions;
 
 // import CreateAdultPaymentTab from 'components/elements/views/dashboard/other/adult_hockey_finances/tabs/CreateAdultPayment.svelte';
 
-// import ExportAdultPaymentsTab from 'components/elements/views/dashboard/other/adult_hockey_finances/tabs/ExportAdultPayments.svelte';
+import ExportAdultPaymentsTab from 'components/elements/views/dashboard/other/adult_hockey_finances/tabs/ExportAdultPayments.svelte';
 
 
 import CreateAdultPaymentModal from 'components/elements/views/dashboard/other/adult_hockey_finances/modals/CreateAdultPayment.svelte';
 
-import ExportAdultPaymentsModal from 'components/elements/views/dashboard/other/adult_hockey_finances/modals/ExportAdultPayments.svelte';
+// import ExportAdultPaymentsModal from 'components/elements/views/dashboard/other/adult_hockey_finances/modals/ExportAdultPayments.svelte';
 
 
-let export_modal_is_active = false;
+// let export_modal_is_active = false;
 
 let create_modal_is_active = false;
 
@@ -30,7 +30,7 @@ let create_modal_is_active = false;
 
 
 
-<ExportAdultPaymentsModal bind:export_modal_is_active {url_params} />
+<!-- <ExportAdultPaymentsModal bind:export_modal_is_active {url_params} /> -->
 
 <CreateAdultPaymentModal bind:create_modal_is_active />
 
@@ -41,9 +41,7 @@ let create_modal_is_active = false;
 
 		<div class="control">
 
-			<span class="button is-normal" on:click={() => export_modal_is_active = true}>
-				Export Payments
-			</span>
+			<ExportAdultPaymentsTab {url_params} />
 
 		</div>
 

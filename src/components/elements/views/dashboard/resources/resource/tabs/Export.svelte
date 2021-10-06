@@ -1,14 +1,10 @@
 <script>
 export let url_params;
 
-// let export_with_params = true;
-
-let loading = false;
-
 
 async function exportRows() {
 
-	const url = `${admin_api_url}/_other/_adult_hockey_finances/adult-payments-xlsx`;
+	const url = `${admin_api_url}/${resource_info.url}/export-xlsx`;
 
 	const resp = await fetch(url, {
 		method: 'GET',
@@ -20,7 +16,6 @@ async function exportRows() {
 	const result = await resp.blob();
 
 	// download
-	// download();
 	return result;
 
 }
@@ -30,13 +25,13 @@ async function exportRows() {
 
 <style>
 
-
 </style>
 
 
-<span class="button is-normal" on:click={exportRows}>
-	Export Payments
-</span>
+<span class="button" on:click={}>
 
+	<!-- -- -->
+
+</span>
 
 

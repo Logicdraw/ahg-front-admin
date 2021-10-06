@@ -1,5 +1,5 @@
 <script>
-export let params;
+export let url_params;
 export let column;
 // tippy d
 
@@ -7,19 +7,19 @@ export let column;
 
 function setOrderBy() {
 	// ---
-	if (params['order_by_col'] === column.id) {
+	if (url_params['order_by_col'] === column.id) {
 
-		if (params['order_by_dir'] === 'asc') {
-			delete params['order_by_col'];
-			delete params['order_by_dir'];
+		if (url_params['order_by_dir'] === 'asc') {
+			delete url_params['order_by_col'];
+			delete url_params['order_by_dir'];
 		} else {
-			params['order_by_dir'] = 'asc';
+			url_params['order_by_dir'] = 'asc';
 		}
 
 	} else {
 
-		params['order_by_col'] = column.id;
-		params['order_by_dir'] = 'desc';
+		url_params['order_by_col'] = column.id;
+		url_params['order_by_dir'] = 'desc';
 
 	}
 }

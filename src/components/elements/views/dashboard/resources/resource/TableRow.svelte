@@ -45,12 +45,63 @@ tr:hover {
 	cursor: pointer;
 }
 
+span.id {
+	text-decoration: underline;
+	color: var(--text-grey);
+	/*font-weight: 500;*/
+}
+
+.card {
+	margin-bottom: 1.5rem;
+}
+
+.card .columns {
+	margin-bottom: 0.75rem !important;
+	padding-bottom: 0.25rem !important;
+	border-bottom: 1px solid var(--border-light);
+	margin-bottom: 1rem;
+}
+
+.card .columns:last-child {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+	border-bottom: 0 !important;
+}
+
 </style>
 
 
+<div class="card is-hidden-desktop is-hidden-tablet" on:click={navigateToRow}>
+
+	<div class="card-content">
+
+		{#each row_values as row_value}
+
+			<div class="columns is-variable is-mobile is-1">
+
+				<div class="column">
+					<span class="id">
+						{row_value[0]}
+					</span>
+				</div>
+
+				<div class="column is-narrow">
+					<span>
+						{row_value[1] || 'N/A'}
+					</span>
+				</div>
+
+			</div>
+
+		{/each}
+
+	</div>
+
+</div>
 
 
-<tr on:click={navigateToRow}>
+
+<tr on:click={navigateToRow} class="is-hidden-mobile">
 	{#each row_values as row_value}
 		<td>
 			{row_value[1] || 'N/A'}

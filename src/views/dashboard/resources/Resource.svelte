@@ -47,13 +47,13 @@ let at_last_page = false;
 
 let abort_controller = new AbortController();
 
-async function getRows(params) {
+async function getRows(url_params) {
 
 	abort_controller.abort();
 
 	abort_controller = new AbortController();
 
-	let cleaned_params = cleanParams(params);
+	let cleaned_params = cleanParams(url_params);
 
 	let params_string = new URLSearchParams(cleaned_params).toString();
 
@@ -95,26 +95,25 @@ async function getRows(params) {
 }
 
 
-let params = {
+const default_url_params = {
 	q: '',
 	offset: 0,
-	limit: 25,
+	limit: 50,
 }
 
 
+let url_params = default_url_params;
+
+
 function resetParams(resource_id) {
-	params = {
-		q: '',
-		offset: 0,
-		limit: 25,
-	}
+	url_params = default_url_params;
 }
 
 
 
 $: resetParams(currentRoute.namedParams.resource_id);
 
-$: promise = getRows(params);
+$: promise = getRows(url_params);
 
 
 </script>
@@ -146,7 +145,7 @@ $: promise = getRows(params);
 
 	<div class="container is-fullwidth">
 
-		<Tabs {params} resource_id={resource_info['id']} resource_has_create_form={resource_info['has_create_form']} />
+		<Tabs {url_params} resource_id={resource_info['id']} resource_has_create_form={resource_info['has_create_form']} />
 
 	</div>
 
@@ -157,7 +156,7 @@ $: promise = getRows(params);
 
 	<div class="container is-fullwidth">
 
-		<Filter bind:params={params} {at_last_page} />
+		<Filter bind:url_params {at_last_page} />
 
 	</div>
 

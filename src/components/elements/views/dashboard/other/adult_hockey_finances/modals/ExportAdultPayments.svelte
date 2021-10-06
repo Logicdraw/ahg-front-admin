@@ -1,6 +1,7 @@
 <script>
 export let export_modal_is_active;
 export let params;
+// resource_info;
 
 
 import Loading from 'components/elements/Loading.svelte';
@@ -8,17 +9,13 @@ import MsgCard from 'components/elements/MsgCard.svelte';
 
 
 
-// ...
-
 let export_with_params = true;
 
 let loading = false;
 
 async function exportRows() {
 
-	// 
-
-	const url = `${admin_api_url}/${resource_info.url}/export-xlsx`;
+	const url = `${admin_api_url}/_other/_adult_hockey_finances/adult-payments-xlsx`;
 
 	const resp = await fetch(url, {
 		method: 'GET',

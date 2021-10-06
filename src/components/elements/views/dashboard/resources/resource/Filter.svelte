@@ -1,5 +1,5 @@
 <script>
-export let params;
+export let url_params;
 export let at_last_page;
 
 
@@ -14,15 +14,15 @@ async function openFilterModal() {
 
 
 function goToPrevPage() {
-	if (params.offset > 0) {
-		params.offset = params.offset - params.limit;
+	if (url_params.offset > 0) {
+		url_params.offset = url_params.offset - url_params.limit;
 	}
 }
 
 
 function goToNextPage() {
 	if (!at_last_page) {
-		params.offset = params.offset + params.limit;
+		url_params.offset = url_params.offset + url_params.limit;
 	}
 }
 
@@ -35,7 +35,7 @@ function goToNextPage() {
 </style>
 
 
-<FilterModal {params} bind:filter_modal_is_active={filter_modal_is_active} />
+<FilterModal {url_params} bind:filter_modal_is_active={filter_modal_is_active} />
 
 
 
@@ -45,7 +45,7 @@ function goToNextPage() {
 
 		<div class="control is-expanded has-icons-right">
 
-			<input class="input" placeholder="Search" bind:value={params['q']} on:input={() => params['offset'] = 0}>
+			<input class="input" placeholder="Search" bind:value={url_params['q']} on:input={() => url_params['offset'] = 0}>
 
 			<span class="icon is-right">
 				<i class="fas fa-search"></i>
@@ -65,7 +65,7 @@ function goToNextPage() {
 
 			<div class="buttons">
 
-				{#if params.offset > 0}
+				{#if url_params.offset > 0}
 
 				<a class="button paginate-button" on:click={goToPrevPage}>
 					<i class="far fa-angle-left"></i>
@@ -112,7 +112,7 @@ function goToNextPage() {
 
 		<div class="control is-expanded has-icons-right">
 
-			<input class="input" placeholder="Search" bind:value={params['q']} on:input={() => params['offset'] = 0}>
+			<input class="input" placeholder="Search" bind:value={url_params['q']} on:input={() => url_params['offset'] = 0}>
 
 			<span class="icon is-right">
 				<i class="fas fa-search"></i>
@@ -136,7 +136,7 @@ function goToNextPage() {
 
 			<div class="buttons">
 
-				{#if params.offset > 0}
+				{#if url_params.offset > 0}
 
 				<a class="button paginate-button" on:click={goToPrevPage}>
 					<i class="far fa-angle-left"></i>

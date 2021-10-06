@@ -7,7 +7,6 @@ export let id_key;
 
 
 import TableRow from 'components/elements/views/dashboard/resources/resource/TableRow.svelte';
-import TableRowMobile from 'components/elements/views/dashboard/resources/resource/TableRowMobile.svelte';
 
 
 
@@ -66,11 +65,6 @@ td .arrow-divider:last-child {
 		{/each}
 	</tbody>
 </table>
-
-
-{#each rows as row}
-	<TableRowMobile {row} {columns} {resource_id} {id_key} />
-{/each}
 
 
 

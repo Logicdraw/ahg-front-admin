@@ -25,9 +25,9 @@ let select_columns_modal_is_active = false;
 
 
 
-<ExportModal bind:export_modal_is_active={export_modal_is_active} {params} />
+<ExportModal bind:export_modal_is_active {params} />
 
-<SelectColumnsModal bind:select_columns_modal_is_active={select_columns_modal_is_active} />
+<SelectColumnsModal bind:select_columns_modal_is_active />
 
 
 <div>
