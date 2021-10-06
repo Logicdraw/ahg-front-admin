@@ -11,19 +11,10 @@ import FilterModal from 'components/elements/views/dashboard/resources/resource/
 import { Navigate } from 'svelte-router-spa';
 
 
+
 let export_modal_is_active = false;
 
-async function openExportModal() {
-	export_modal_is_active = true;
-}
-
-
 let select_columns_modal_is_active = false;
-
-async function openSelectColumnsModal() {
-	select_columns_modal_is_active = true;
-}
-
 
 </script>
 
@@ -45,7 +36,7 @@ async function openSelectColumnsModal() {
 
 		<div class="control">
 
-			<span class="button is-normal" on:click={openExportModal}>
+			<span class="button is-normal" on:click={() => export_modal_is_active = true}>
 				Export Rows
 				<i class="far fa-file-export"></i>
 			</span>
@@ -54,20 +45,12 @@ async function openSelectColumnsModal() {
 
 		<div class="control">
 
-			<span class="button is-normal" on:click={openSelectColumnsModal}>
+			<span class="button is-normal" on:click={() => select_columns_modal_is_active = true}>
 				Select Columns
 			</span>
 
 		</div>
 
-		<!-- <div class="control">
-
-			<span class="button is-normal" on:click={SelectColumnsModal}>
-				Create Player
-				<i class="fal fa-file-plus"></i>
-			</span>
-
-		</div> -->
 
 		{#if resource_has_create_form}
 
@@ -82,16 +65,9 @@ async function openSelectColumnsModal() {
 
 		{/if}
 
-		<!-- <div class="control">
-
-		</div> -->
 
 	</div>
 
 </div>
-
-<!-- ... -->
-
-<!-- Filter button... -->
 
 

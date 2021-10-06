@@ -34,6 +34,8 @@ let in_search = false;
 
 async function getResourceRows(resource_info, q) {
 
+	let resource_parent_url = resource_info['parent_url'];
+
 	let resource_url = resource_info['search_url'];
 
 	const url = `${admin_api_url}/${resource_url}?q=${q}&limit=5`;

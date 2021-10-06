@@ -3,10 +3,10 @@ export let msg_show;
 export let msg_text;
 export let msg_type;
 
-export let conference_instances;
-export let division_instances;
-export let team_instances;
-export let players;
+export let conference_instances = [];
+export let division_instances = [];
+export let team_instances = [];
+export let players = [];
 
 
 

@@ -8,6 +8,8 @@ import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 
 
+let export_with_params = true;
+
 let loading = false;
 
 async function exportRows() {
@@ -24,6 +26,7 @@ async function exportRows() {
 	const result = await resp.blob();
 
 	// download
+	return result;
 
 }
 

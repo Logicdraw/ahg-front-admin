@@ -32,7 +32,7 @@ const retries_503 = 1;
 
 async function testAccessToken(token) {
 
-	const test_token_url = `${auth_api_url}/login/test-token/admin`;
+	const test_token_url = `${auth_api_url}/_login/test-token/admin`;
 
 	let resp = await fetch(test_token_url, {
 		method: 'POST',

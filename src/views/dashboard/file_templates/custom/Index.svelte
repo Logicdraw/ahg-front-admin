@@ -6,12 +6,12 @@ import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 // import Form from 'components/forms/views/dashboard/settings/Form.svelte';
 
-import Filter from 'components/elements/views/dashboard/file_templates/Filter.svelte';
+import Filter from 'components/elements/views/dashboard/file_templates/created/Filter.svelte';
 
 import SvelteSeo from 'svelte-seo';
 
 
-import { cleanParams } from 'utils/index.js';
+import { cleanParams } from 'utils/_random.js';
 
 
 
@@ -34,7 +34,7 @@ const token = get(auth).token;
 
 let abort_controller = new AbortController();
 
-async function getFileTemplates(params) {
+async function getCreatedFileTemplates(params) {
 
 	abort_controller.abort();
 
@@ -80,12 +80,13 @@ async function getFileTemplates(params) {
 
 
 
+
 let params = {
 	q: '',
 	offset: 0,
 }
 
-$: promise = getFileTemplates(params);
+$: promise = getCreatedFileTemplates(params);
 
 </script>
 
@@ -103,7 +104,7 @@ $: promise = getFileTemplates(params);
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				<span>File Templates</span>
+				<span>Created File Templates</span>
 			</p>
 
 		</div>
@@ -132,7 +133,7 @@ $: promise = getFileTemplates(params);
 
 <section class="section skinny-section">
 	
-	<div class="container">
+	<div class="container is-fullwidth">
 
 		<!-- ... -->
 

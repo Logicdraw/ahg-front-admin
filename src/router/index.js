@@ -77,14 +77,25 @@ import DashboardACTResourceSpringHockeyRegistrationsView from 'views/dashboard/a
 
 // Files
 
-import DashboardFileTemplatesIndex from 'views/dashboard/file_templates/Index.svelte';
+import DashboardFileTemplatesCreatedIndex from 'views/dashboard/file_templates/created/Index.svelte';
+
+import DashboardFileTemplatesCustomIndex from 'views/dashboard/file_templates/custom/Index.svelte';
+
+import DashboardFileTemplatesCreatedCreate from 'views/dashboard/file_templates/created/Create.svelte';
 
 
 // File
 
-import DashboardFileTemplateCreate from 'views/dashboard/file_template/Create.svelte';
+import DashboardFileTemplateCreatedEdit from 'views/dashboard/file_template/created/Edit.svelte';
 
-import DashboardFileTemplateEdit from 'views/dashboard/file_template/Edit.svelte';
+
+
+
+// Other
+
+import DashboardAdultHockeyFinances from 'views/dashboard/other/adult_hockey/Finances.svelte';
+
+import DashboardJerseySponsorsSpring from 'views/dashboard/other/jersey_sponsors/Spring.svelte';
 
 
 import DashboardGamesheetIndex from 'views/dashboard/other/gs/Index.svelte';
@@ -92,6 +103,7 @@ import DashboardGamesheetIndex from 'views/dashboard/other/gs/Index.svelte';
 import DashboardSpngIndex from 'views/dashboard/other/spng/Index.svelte';
 
 import DashboardSpngSurveysIndex from 'views/dashboard/other/spng/surveys/Index.svelte';
+
 
 
 // Settings
@@ -291,21 +303,39 @@ const routes = [
 				],
 			},
 			{
-				name: 'file_templates',
-				component: DashboardFileTemplatesIndex,
+				name: 'file_templates/created',
+				component: DashboardFileTemplatesCreatedIndex,
+			},
+			{
+				name: 'file_templates/created/create',
+				component: DashboardFileTemplatesCreatedCreate,
+			},
+			{
+				name: 'file_templates/custom',
+				component: DashboardFileTemplatesCustomIndex,
 			},
 			{
 				name: 'file_template',
 				nestedRoutes: [
 					{
-						name: 'create',
-						component: DashboardFileTemplateCreate,
-					},
-					{
-						name: 'edit/:file_template_row_id',
-						component: DashboardFileTemplateEdit,
+						name: 'created',
+						nestedRoutes: [
+							{
+								name: 'edit/:file_template_row_id',
+								component: DashboardFileTemplateCreatedEdit,
+							},
+						],
 					},
 				],
+			},
+			// Other
+			{
+				name: 'adult_hockey_finances',
+				component: DashboardAdultHockeyFinances,
+			},
+			{
+				name: 'jersey_sponsors/spring/:year_start',
+				component: DashboardJerseySponsorsSpring,
 			},
 			{
 				name: 'spng',

@@ -4,7 +4,7 @@ export let currentRoute;
 import { act_resources_info } from 'utils/act_resources.js';
 
 
-import { cleanParams } from 'utils/index.js';
+import { cleanParams } from 'utils/_random.js';
 
 // const resource_info = resources_info.find(re => re.id === currentRoute.namedParams.resource_id);
 
@@ -55,10 +55,6 @@ async function getRows(params) {
 	let cleaned_params = cleanParams(params);
 
 
-	if (cleaned_params['q']) {
-		cleaned_params['offset'] = 0;
-	}
-
 	let params_string = new URLSearchParams(cleaned_params).toString();
 
 
@@ -106,21 +102,23 @@ async function getRows(params) {
 let params = {
 	q: '',
 	offset: 0,
-	limit: 25,
+	limit: 50,
 }
 
 
-function resetParams(resource_id) {
+
+
+function resetParams(act_resource_id) {
 	params = {
 		q: '',
 		offset: 0,
-		limit: 25,
+		limit: 50,
 	}
 }
 
 
 
-$: resetParams(currentRoute.namedParams.resource_id);
+$: resetParams(currentRoute.namedParams.act_resource_id);
 
 $: promise = getRows(params);
 

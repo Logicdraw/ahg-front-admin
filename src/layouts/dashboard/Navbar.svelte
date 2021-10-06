@@ -180,6 +180,37 @@ import { act_resources_info } from 'utils/act_resources.js';
 							<span>GameSheet Helpers</span>
 						</Navigate>
 
+
+						<Navigate to='/my/adult_hockey_finances' styles='navbar-item' on:click={closeActive}>
+							<span>Adult League Finances</span>
+						</Navigate>
+
+						<!-- Jersey Sponsors -->
+						<Navigate to='/my/jersey_sponsors/spring/2021' styles='navbar-item' on:click={closeActive}>
+							<span>Jersey Sponsors 2021 Spring</span>
+						</Navigate>
+
+						<!-- /// -->
+
+						<a href="https://coach.ahg.software" target="_blank" rel="noopener" class="navbar-item">
+							<span>Coach Portal</span>
+						</a>
+
+						<a href="https://adult-rep.ahg.software" target="_blank" rel="noopener" class="navbar-item">
+							<span>Adult Rep Portal</span>
+						</a>
+
+						<a href="https://orders.ahg.software" target="_blank" rel="noopener" class="navbar-item">
+							<span>Orders Portal</span>
+						</a>
+
+						<a href="https://forms.ahg.software" target="_blank" rel="noopener" class="navbar-item">
+							<span>Forms Portal</span>
+						</a>
+
+
+						<!--  -->
+
 					</div>
 
 
@@ -190,7 +221,7 @@ import { act_resources_info } from 'utils/act_resources.js';
 
 
 				<Navigate styles="navbar-item" to="/my/resources/master-search" on:click={closeActive}>
-					<span on:click={closeActive}>Master Search</span>
+					<span on:click={closeActive}>Search</span>
 				</Navigate>
 
 

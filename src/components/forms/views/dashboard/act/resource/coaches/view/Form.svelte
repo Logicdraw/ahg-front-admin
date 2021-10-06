@@ -63,17 +63,134 @@ form {
 	</div>
 
 
-	<!-- <div class="field">
+	<div class="field">
 
 		<div class="control">
 
-			<label>Last Name</label>
+			<label>Address</label>
 
-			<input type="text" name="" readonly value="{coach.l_name}" class="input">
+			<input type="text" name="" readonly value="{coach.address}" class="input">
 
 		</div>
 
-	</div> -->
+	</div>
+
+
+	<div class="field">
+
+		<div class="control">
+
+			<label>City</label>
+
+			<input type="text" name="" readonly value="{coach.city}" class="input">
+
+		</div>
+
+	</div>
+
+
+	<div class="field">
+
+		<div class="control">
+
+			<label>Province</label>
+
+			<input type="text" name="" readonly value="{coach.province}" class="input">
+
+		</div>
+
+	</div>
+
+
+	<div class="field">
+
+		<div class="control">
+
+			<label>Postal Code</label>
+
+			<input type="text" name="" readonly value="{coach.postcode}" class="input">
+
+		</div>
+
+	</div>
+
+
+	<div class="field">
+
+		<div class="control">
+
+			<label>Program</label>
+
+			<input type="text" name="" readonly value="{coach.team}" class="input">
+
+		</div>
+
+	</div>
+
+
+	<div class="field">
+
+		<div class="control">
+
+			<label>Team</label>
+
+			<input type="text" name="" readonly value="{coach.program}" class="input">
+
+		</div>
+
+	</div>
+
+
+	<div class="field">
+
+		<div class="control">
+
+			<label>Division Coaching</label>
+
+			<input type="text" name="" readonly value="{coach.div_coaching}" class="input">
+
+		</div>
+
+	</div>
+
+
+	<div class="field">
+
+		<div class="control">
+
+			<label>Position</label>
+
+			<input type="text" name="" readonly value="{coach.position}" class="input">
+
+		</div>
+
+	</div>
+
+
+	<div class="field">
+
+		<div class="control">
+
+			<label>Salary</label>
+
+			<input type="text" name="" readonly value="{coach.salary}" class="input">
+
+		</div>
+
+	</div>
+
+
+	<div class="field">
+
+		<div class="control">
+
+			<label>Comment</label>
+
+			<input type="text" name="" readonly value="{coach.comment}" class="input">
+
+		</div>
+
+	</div>
 
 
 	<br>

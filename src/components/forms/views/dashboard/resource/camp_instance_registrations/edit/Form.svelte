@@ -5,8 +5,8 @@ export let msg_show;
 export let msg_text;
 export let msg_type;
 
-export let camp_instances;
-export let players;
+export let camp_instances = [];
+export let players = [];
 
 
 const camp_instances_values = [];

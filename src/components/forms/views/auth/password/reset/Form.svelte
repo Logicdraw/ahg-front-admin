@@ -58,7 +58,7 @@ const { form, errors, state, handleChange, handleSubmit } = createForm({
 
 async function submitForm(email) {
 
-	const url = `${auth_api_url}/password/begin-reset/${email}/admin`;
+	const url = `${auth_api_url}/_password/begin-reset/${email}/admin`;
 
 	const response = await fetch(url, {
 		method: 'POST',

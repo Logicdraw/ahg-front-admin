@@ -4,7 +4,7 @@ export let currentRoute;
 import { resources_info } from 'utils/resources.js';
 
 
-import { cleanParams } from 'utils/index.js';
+import { cleanParams } from 'utils/_random.js';
 
 // const resource_info = resources_info.find(re => re.id === currentRoute.namedParams.resource_id);
 
@@ -55,15 +55,10 @@ async function getRows(params) {
 
 	let cleaned_params = cleanParams(params);
 
-
-	if (cleaned_params['q']) {
-		cleaned_params['offset'] = 0;
-	}
-
 	let params_string = new URLSearchParams(cleaned_params).toString();
 
 
-	const url = `${admin_api_url}/${resource_info.url}?${params_string}`;
+	const url = `${admin_api_url}/_resources/${resource_info.url}?${params_string}`;
 
 	try {
 

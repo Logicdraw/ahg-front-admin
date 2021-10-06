@@ -13,7 +13,7 @@ import Tabs from 'components/elements/views/dashboard/other/spng/surveys/team_in
 
 import { auth } from 'store/index.js';
 
-import { cleanParams } from 'utils/index.js';
+import { cleanParams } from 'utils/_random.js';
 
 
 

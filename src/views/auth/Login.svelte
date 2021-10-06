@@ -26,7 +26,7 @@ let msg_text;
 
 
 <SvelteSeo
-	title='Login! | AHG Coaches'
+	title='Login! | AHG Database'
 	description='Login!'
 />
 

@@ -8,6 +8,8 @@ import Loading from 'components/elements/Loading.svelte';
 
 import ViewForm from 'components/forms/views/dashboard/act/resource/coaches/view/Form.svelte';
 
+import CreatedUpdated from 'components/elements/views/dashboard/act/resource/CreatedUpdated.svelte';
+
 // Form
 
 import { auth } from 'store/index.js';
@@ -86,6 +88,8 @@ async function getACTResourceRow() {
 		<div class="columns is-centered">
 
 			<div class="column is-9-desktop is-12-tablet is-12-mobile">
+
+				<CreatedUpdated row={act_resource_row} />
 
 				<MsgCard msg_forever={true} msg_show={true} msg_type={'error'} msg_text={'This is readonly!'} />
 

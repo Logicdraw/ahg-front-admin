@@ -83,13 +83,17 @@ async function getResourceRow() {
 
 {:then resource_row}
 
-<section class="section">
+<section class="section skinny-section">
 
 	<div class="container">
 
 		<div class="columns is-centered">
 
 			<div class="column is-9-desktop is-12-tablet is-12-mobile">
+
+				{#if resource_row.spng_survey_result_id}
+					<MsgCard msg_type={'error'} msg_show={true} msg_text={`<a href="https://ahgcentral.sportngin.com/survey_result/show/${resource_row.spng_survey_result_id}" target="_blank" class="link" rel="noopener">View registration on SportsEngine!</a>`} msg_forever={true} />
+				{/if}
 
 				<CreatedUpdated row={resource_row} />
 

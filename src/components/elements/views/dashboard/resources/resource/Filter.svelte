@@ -45,7 +45,7 @@ function goToNextPage() {
 
 		<div class="control is-expanded has-icons-right">
 
-			<input class="input" placeholder="Search" bind:value={params['q']}>
+			<input class="input" placeholder="Search" bind:value={params['q']} on:input={() => params['offset'] = 0}>
 
 			<span class="icon is-right">
 				<i class="fas fa-search"></i>
@@ -112,7 +112,7 @@ function goToNextPage() {
 
 		<div class="control is-expanded has-icons-right">
 
-			<input class="input" placeholder="Search" bind:value={params['q']}>
+			<input class="input" placeholder="Search" bind:value={params['q']} on:input={() => params['offset'] = 0}>
 
 			<span class="icon is-right">
 				<i class="fas fa-search"></i>

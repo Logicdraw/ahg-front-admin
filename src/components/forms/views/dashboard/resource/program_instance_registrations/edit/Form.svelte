@@ -5,8 +5,8 @@ export let msg_show;
 export let msg_text;
 export let msg_type;
 
-export let program_instances;
-export let players;
+export let program_instances = [];
+export let players = [];
 
 
 const program_instances_values = [];

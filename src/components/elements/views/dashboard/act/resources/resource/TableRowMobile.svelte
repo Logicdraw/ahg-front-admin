@@ -1,5 +1,5 @@
 <script>
-export let resource_id;
+export let act_resource_id;
 export let row;
 export let columns;
 

@@ -79,7 +79,7 @@ const {
 
 async function submitForm(form_data) {
 
-	const url = `${auth_api_url}/login/access-token/admin`;
+	const url = `${auth_api_url}/_login/access-token/admin`;
 
 	const resp = await fetch(url, {
 		method: 'POST',
