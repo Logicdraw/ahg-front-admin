@@ -43,13 +43,13 @@ let select_columns_modal_is_active = false;
 
 		</div>
 
-		<div class="control">
+		<!-- <div class="control">
 
 			<span class="button is-normal" on:click={() => select_columns_modal_is_active = true}>
 				Select Columns
 			</span>
 
-		</div>
+		</div> -->
 
 
 		{#if resource_has_create_form}

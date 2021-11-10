@@ -130,7 +130,7 @@ const {
 
 async function submitForm(body_data) {
 
-	const url = `${admin_api_url}/players`;
+	const url = `${admin_api_url}/_resources/_persons/_player/players`;
 
 	const resp = await fetch(url, {
 		method: 'POST',

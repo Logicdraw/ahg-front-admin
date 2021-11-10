@@ -84,7 +84,7 @@ const {
 
 async function submitForm(body_data) {
 
-	const url = `${admin_api_url}/camp-instances/${camp_instance.id}`;
+	const url = `${admin_api_url}/_resources/_programs/_camp_instance/camp-instances/${camp_instance.id}`;
 
 	const resp = await fetch(url, {
 		method: 'PUT',

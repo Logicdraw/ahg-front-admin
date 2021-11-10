@@ -198,7 +198,7 @@ const {
 	validationSchema: yup.object().shape({
 		team_instances_ids: yup
 			.number()
-			.required('team(s) required!'),
+			.required('Team(s) required!'),
 		player_id: yup
 			.number()
 			.required('Player(s) required!'),

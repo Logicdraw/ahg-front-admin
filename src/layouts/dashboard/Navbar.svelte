@@ -99,7 +99,7 @@ import { act_resources_info } from 'utils/act_resources.js';
 
 							{#if resource.has_create_form}
 							<Navigate to='/my/resource/create/{resource.id}' styles='navbar-item' on:click={closeActive}>
-								<span>{resource.name}</span>
+								<span>{resource.name_singular}</span>
 							</Navigate>
 							{/if}
 
@@ -144,7 +144,7 @@ import { act_resources_info } from 'utils/act_resources.js';
 
 
 					<a class="navbar-link">
-						<span>File Templates</span>
+						<span>Files</span>
 					</a>
 
 					<div class="navbar-dropdown is-right--" style="z-index: 10001;">
@@ -185,12 +185,32 @@ import { act_resources_info } from 'utils/act_resources.js';
 							<span>Adult League Finances</span>
 						</Navigate>
 
+						<Navigate to='/my/adult_hockey_free_agents' styles='navbar-item' on:click={closeActive}>
+							<span>Adult League Free Agents</span>
+						</Navigate>
+
 						<!-- Jersey Sponsors -->
 						<Navigate to='/my/jersey_sponsors/spring/2021' styles='navbar-item' on:click={closeActive}>
 							<span>Jersey Sponsors 2021 Spring</span>
 						</Navigate>
 
-						<!-- /// -->
+
+						<!--  -->
+
+					</div>
+
+
+				</div>
+
+
+				<div class="navbar-item has-dropdown is-hoverable" style="z-index: 100;">
+
+
+					<a class="navbar-link">
+						<span>Portals</span>
+					</a>
+
+					<div class="navbar-dropdown is-right--" style="z-index: 10001;">
 
 						<a href="https://coach.ahg.software" target="_blank" rel="noopener" class="navbar-item">
 							<span>Coach Portal</span>

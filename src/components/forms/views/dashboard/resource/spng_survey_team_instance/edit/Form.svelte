@@ -83,7 +83,7 @@ const {
 
 async function submitForm(body_data) {
 
-	const url = `${admin_api_url}/spng-survey-team-instances/${spng_survey_team_instance.id}`;
+	const url = `${admin_api_url}/_resources/_spng_surveys/spng-survey-team-instances/${spng_survey_team_instance.id}`;
 
 	const resp = await fetch(url, {
 		method: 'PUT',

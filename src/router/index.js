@@ -93,7 +93,14 @@ import DashboardFileTemplateCreatedEdit from 'views/dashboard/file_template/crea
 
 // Other
 
+import DashboardAdultHockeyFinancesLayout from 'layouts/dashboard/other/adult_hockey/finances/Layout.svelte';
+
+
 import DashboardAdultHockeyFinances from 'views/dashboard/other/adult_hockey/Finances.svelte';
+
+import DashboardAdultHockeyFinancesSum from 'views/dashboard/other/adult_hockey/FinancesSum.svelte';
+
+import DashboardAdultHockeyFreeAgents from 'views/dashboard/other/adult_hockey/FreeAgents.svelte';
 
 import DashboardJerseySponsorsSpring from 'views/dashboard/other/jersey_sponsors/Spring.svelte';
 
@@ -331,7 +338,21 @@ const routes = [
 			// Other
 			{
 				name: 'adult_hockey_finances',
-				component: DashboardAdultHockeyFinances,
+				component: DashboardAdultHockeyFinancesLayout,
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardAdultHockeyFinances,
+					},
+				],
+			},
+			{
+				name: 'adult_hockey_finances_sum',
+				component: DashboardAdultHockeyFinancesSum,
+			},
+			{
+				name: 'adult_hockey_free_agents',
+				component: DashboardAdultHockeyFreeAgents,
 			},
 			{
 				name: 'jersey_sponsors/spring/:year_start',

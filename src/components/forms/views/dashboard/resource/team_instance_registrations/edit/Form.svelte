@@ -204,7 +204,7 @@ const {
 	validationSchema: yup.object().shape({
 		team_instances_ids: yup
 			.number()
-			.required('team(s) required!'),
+			.required('Team(s) required!'),
 		player_id: yup
 			.number()
 			.required('Player(s) required!'),
@@ -294,7 +294,7 @@ const {
 
 async function submitForm(body_data) {
 
-	const url = `${admin_api_url}/team-instance-registrations`;
+	const url = `${admin_api_url}/_resources/_registrations/_team_instance_registration/team-instance-registrations`;
 
 	const resp = await fetch(url, {
 		method: 'POST',

@@ -2,19 +2,29 @@
 export let url_params;
 export let at_last_page;
 
-export let league_instances;
-export let division_instances;
+// export let league_instances;
+// export let division_instances;
 export let team_instances;
 
 
-let active_league_instances = [];
+import { onMount } from 'svelte';
+
+
+
+// console.log(league_instances);
+
+
+// let active_league_instances = league_instances;
+// // for
+
+// let active_division_instances = division_instances;
+// // for
+
+let active_team_instances = team_instances;
 // for
 
-let active_division_instances = [];
-// for
 
-let active_team_instances = [];
-// for
+
 
 
 function goToPrevPage() {
@@ -45,7 +55,7 @@ function goToNextPage() {
 
 		<div class="control is-expanded has-icons-right">
 
-			<input class="input" placeholder="Search Adult Payments" bind:value={url_params['q']}>
+			<input class="input" placeholder="Search by first name + last name, email" bind:value={url_params['q']}>
 
 			<span class="icon is-right">
 				<i class="fas fa-search"></i>
@@ -54,7 +64,7 @@ function goToNextPage() {
 		</div>
 
 
-		<div class="control">
+		<!-- <div class="control">
 
 			<div class="select">
 				<select bind:value={url_params['league_instance_id']}>
@@ -78,15 +88,21 @@ function goToNextPage() {
 				</select>
 			</div>
 
-		</div>
+		</div> -->
 
 		<div class="control">
 
 			<div class="select">
-				<select bind:value={url_params['team_instance_id']}>
+				<!-- <select bind:value={url_params['team_instance_id']}>
 					<option value="">Team</option>
 					{#each active_team_instances as active_team_instance}
 						<option value="{active_team_instance.id}">{active_team_instance.name}</option>
+					{/each}
+				</select> -->
+				<select bind:value={url_params['team_instance_id']}>
+					<option value="">Team</option>
+					{#each active_team_instances as active_team_instance}
+						<option value="{active_team_instance.id}">{active_team_instance.teams_sc.name}</option>
 					{/each}
 				</select>
 			</div>
@@ -146,7 +162,7 @@ function goToNextPage() {
 
 		<div class="control is-expanded has-icons-right">
 
-			<input class="input" placeholder="Search Adult Payments" bind:value={url_params['q']}>
+			<input class="input" placeholder="Search by first name + last name" bind:value={url_params['q']}>
 
 			<span class="icon is-right">
 				<i class="fas fa-search"></i>
@@ -199,7 +215,7 @@ function goToNextPage() {
 
 	<div class="field is-grouped">
 
-		<div class="control">
+		<!-- <div class="control">
 
 			<div class="select">
 				<select bind:value={url_params['league_instance_id']}>
@@ -223,15 +239,21 @@ function goToNextPage() {
 				</select>
 			</div>
 
-		</div>
+		</div> -->
 
 		<div class="control">
 
 			<div class="select">
-				<select bind:value={url_params['team_instance_id']}>
+				<!-- <select bind:value={url_params['team_instance_id']}>
 					<option value="">Team</option>
 					{#each active_team_instances as active_team_instance}
 						<option value="{active_team_instance.id}">{active_team_instance.name}</option>
+					{/each}
+				</select> -->
+				<select bind:value={url_params['team_instance_id']}>
+					<option value="">Team</option>
+					{#each active_team_instances as active_team_instance}
+						<option value="{active_team_instance.id}">{active_team_instance.teams_sc.name}</option>
 					{/each}
 				</select>
 			</div>
@@ -250,7 +272,7 @@ function goToNextPage() {
 
 		<div class="control is-expanded has-icons-right">
 
-			<input class="input" placeholder="Search Adult Payments" bind:value={url_params['q']}>
+			<input class="input" placeholder="Search by first name + last name" bind:value={url_params['q']}>
 
 			<span class="icon is-right">
 				<i class="fas fa-search"></i>
@@ -300,7 +322,7 @@ function goToNextPage() {
 
 	</div>
 
-	<div class="field is-grouped">
+	<!-- <div class="field is-grouped">
 
 		<div class="control">
 
@@ -315,9 +337,9 @@ function goToNextPage() {
 
 		</div>
 
-	</div>
+	</div> -->
 
-	<div class="field is-grouped">
+	<!-- <div class="field is-grouped">
 
 		<div class="control">
 
@@ -332,17 +354,23 @@ function goToNextPage() {
 
 		</div>
 
-	</div>
+	</div> -->
 
 	<div class="field is-grouped">
 
 		<div class="control">
 
 			<div class="select">
-				<select bind:value={url_params['team_instance_id']}>
+				<!-- <select bind:value={url_params['team_instance_id']}>
 					<option value="">Team</option>
 					{#each active_team_instances as active_team_instance}
 						<option value="{active_team_instance.id}">{active_team_instance.name}</option>
+					{/each}
+				</select> -->
+				<select bind:value={url_params['team_instance_id']}>
+					<option value="">Team</option>
+					{#each active_team_instances as active_team_instance}
+						<option value="{active_team_instance.id}">{active_team_instance.teams_sc.name}</option>
 					{/each}
 				</select>
 			</div>

@@ -105,7 +105,7 @@ const {
 
 async function submitForm(body_data) {
 
-	const url = `${admin_api_url}/guardians/${guardian.id}`;
+	const url = `${admin_api_url}/_resources/_persons/_guardian/guardians/${guardian.id}`;
 
 	const resp = await fetch(url, {
 		method: 'PUT',

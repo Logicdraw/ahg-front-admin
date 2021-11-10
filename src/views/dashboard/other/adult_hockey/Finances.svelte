@@ -1,11 +1,14 @@
 <script>
 export let currentRoute;
+export let params;
 
 import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 
-import Tabs from 'components/elements/views/dashboard/other/adult_hockey_finances/Tabs.svelte';
-import Filter from 'components/elements/views/dashboard/other/adult_hockey_finances/Filter.svelte';
+import Tabs from 'components/elements/views/dashboard/other/adult_hockey/finances/Tabs.svelte';
+import Filter from 'components/elements/views/dashboard/other/adult_hockey/finances/Filter.svelte';
+
+import Table from 'components/elements/views/dashboard/other/adult_hockey/finances/Table.svelte';
 
 
 import { Navigate } from 'svelte-router-spa';
@@ -78,17 +81,29 @@ async function getRows(url_params) {
 }
 
 
+
 let url_params = {
 	q: '',
 	league_instance_id: null,
 	division_instance_id: null,
-	team_instances_id: null,
+	team_instance_id: null,
+	order_by_dir: 'desc',
+	order_by_label: 'id',
 	// --
 	offset: 0,
-	limit: 25,
+	limit: 50,
 }
 
 $: promise = getRows(url_params);
+
+
+
+import { setContext } from 'svelte';
+
+setContext('refresh_adult_payments_table', {
+	refreshTable: () => url_params = url_params
+});
+
 
 </script>
 
@@ -98,21 +113,6 @@ $: promise = getRows(url_params);
 </style>
 
 
-<section class="hero bg-grey">
-
-	<div class="hero-body">
-
-		<div class="container">
-
-			<p class="hero-subtitle has-text-centered">
-				<span>Adult League Finances</span>
-			</p>
-
-		</div>
-
-	</div>
-
-</section>
 
 
 <section class="section skinny-section" style="padding-bottom: 0 !important;">
@@ -130,7 +130,8 @@ $: promise = getRows(url_params);
 
 	<div class="container is-fullwidth">
 
-		<Filter bind:url_params={url_params} {at_last_page} />
+		<Filter bind:url_params {at_last_page} team_instances={params['team_instances']} />
+		<!-- division_instances={params['division_instances']} league_instances={params['league_instances']}  -->
 
 	</div>
 
@@ -153,7 +154,7 @@ $: promise = getRows(url_params);
 
 		{:else}
 
-			<Table {rows} />
+			<Table {rows} team_instances={params['team_instances']} />
 
 		{/if}
 
@@ -166,8 +167,6 @@ $: promise = getRows(url_params);
 <section class="section skinny-section" style="padding-top: 0.5rem !important;">
 
 	<div class="container is-fullwidth">
-
-		{error}
 
 		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={error.detail} />
 

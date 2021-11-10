@@ -366,7 +366,7 @@ const resources_info = [
 		search_columns_str: 'Name',
 		name: 'Camps',
 		name_singular: 'Camp',
-		has_create_form: true,
+		has_create_form: false,
 		default_columns: [
 			{
 				path: ['camps_sc', 'name'],
@@ -432,7 +432,7 @@ const resources_info = [
 		search_columns_str: 'Name',
 		name: 'Programs',
 		name_singular: 'Program',
-		has_create_form: true,
+		has_create_form: false,
 		default_columns: [
 			{
 				path: ['programs_sc', 'name'],
@@ -498,7 +498,7 @@ const resources_info = [
 		search_columns_str: 'Name, Division',
 		name: 'Teams',
 		name_singular: 'Team',
-		has_create_form: true,
+		has_create_form: false,
 		default_columns: [
 			{
 				path: ['teams_sc', 'name'],
