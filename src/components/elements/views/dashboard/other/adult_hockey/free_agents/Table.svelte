@@ -8,7 +8,7 @@ import MsgCard from 'components/elements/MsgCard.svelte';
 
 import TableRow from 'components/elements/views/dashboard/other/adult_hockey/free_agents/TableRow.svelte';
 
-import DeleteAdultFreeAgentModal from 'components/elements/views/dashboard/other/adult_hockey/finances/modals/DeleteAdultFreeAgent.svelte';
+import DeleteAdultFreeAgentModal from 'components/elements/views/dashboard/other/adult_hockey/free_agents/modals/DeleteAdultFreeAgent.svelte';
 
 
 

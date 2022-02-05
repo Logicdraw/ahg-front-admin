@@ -14,7 +14,7 @@ let loading = false;
 
 async function exportRows() {
 
-	const url = `${admin_api_url}/${resource_info.url}/export-xlsx`;
+	const url = `${admin_api_url}/_resources/${resource_info.url}/export-xlsx`;
 
 	const resp = await fetch(url, {
 		method: 'GET',

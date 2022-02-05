@@ -5,14 +5,14 @@ export let leagues;
 export let divisions;
 
 
-// import CreateAdultPaymentTab from 'components/elements/views/dashboard/other/adult_hockey/finances/tabs/CreateAdultPayment.svelte';
+// import CreateAdultPaymentTab from 'components/elements/views/dashboard/other/adult_hockey/payments/tabs/CreateAdultPayment.svelte';
 
-import ExportAdultPaymentsTab from 'components/elements/views/dashboard/other/adult_hockey/finances/tabs/ExportAdultPayments.svelte';
+import ExportAdultPaymentsTab from 'components/elements/views/dashboard/other/adult_hockey/payments/tabs/ExportAdultPayments.svelte';
 
 
-import CreateAdultPaymentModal from 'components/elements/views/dashboard/other/adult_hockey/finances/modals/CreateAdultPayment.svelte';
+import CreateAdultPaymentModal from 'components/elements/views/dashboard/other/adult_hockey/payments/modals/CreateAdultPayment.svelte';
 
-// import ExportAdultPaymentsModal from 'components/elements/views/dashboard/other/adult_hockey/finances/modals/ExportAdultPayments.svelte';
+// import ExportAdultPaymentsModal from 'components/elements/views/dashboard/other/adult_hockey/payments/modals/ExportAdultPayments.svelte';
 
 
 // let export_modal_is_active = false;

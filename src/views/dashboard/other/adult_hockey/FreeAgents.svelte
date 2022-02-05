@@ -43,7 +43,7 @@ async function getRows(url_params) {
 	let params_string = new URLSearchParams(cleaned_params).toString();
 
 
-	const url = `${admin_api_url}/_other/_adult_hockey_finances/adult-payments?${params_string}`;
+	const url = `${admin_api_url}/_other/_adult_hockey/free-agents?${params_string}`;
 
 	try {
 
@@ -87,6 +87,9 @@ let url_params = {
 	division_instance_id: null,
 	team_instances_id: null,
 	// --
+	order_by_dir: 'desc',
+	order_by_label: 'id',
+	// --
 	offset: 0,
 	limit: 50,
 }
@@ -97,7 +100,7 @@ $: promise = getRows(url_params);
 
 import { setContext } from 'svelte';
 
-setContext('refresh_adult_payments_table', {
+setContext('refresh_table', {
 	refreshTable: () => url_params = url_params
 });
 
@@ -110,21 +113,21 @@ setContext('refresh_adult_payments_table', {
 </style>
 
 
-<section class="hero bg-grey">
+<!-- <section class="hero bg-grey">
 
 	<div class="hero-body">
 
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				<span>Adult League Free Agents</span>
+				<span>Adult Hockey Free Agents</span>
 			</p>
 
 		</div>
 
 	</div>
 
-</section>
+</section> -->
 
 
 <section class="section skinny-section" style="padding-bottom: 0 !important;">
@@ -161,7 +164,7 @@ setContext('refresh_adult_payments_table', {
 
 		{#if rows.length === 0}
 
-			<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={'No payments found!'} />
+			<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={'No free agents found!'} />
 
 		{:else}
 

@@ -3,11 +3,12 @@ export let currentRoute;
 
 
 import MsgCard from 'components/elements/MsgCard.svelte';
+import Loading from 'components/elements/Loading.svelte';
+
 import MasterSearchFilter from 'components/elements/views/dashboard/resources/master_search/Filter.svelte';
 
 import Table from 'components/elements/views/dashboard/resources/resource/Table.svelte';
 
-import Loading from 'components/elements/Loading.svelte';
 
 import { Navigate } from 'svelte-router-spa';
 
@@ -38,7 +39,7 @@ async function getResourceRows(resource_info, q) {
 
 	let resource_url = resource_info['search_url'];
 
-	const url = `${admin_api_url}/${resource_url}?q=${q}&limit=5`;
+	const url = `${admin_api_url}/_resources/${resource_url}?q=${q}&limit=5`;
 
 	try {
 
@@ -107,6 +108,12 @@ $: {
 }
 
 
+let search_items_str = '';
+
+resources_info.forEach((resource_info) => {
+	search_items_str += resource_info['name'] + ', '
+});
+
 
 </script>
 
@@ -161,7 +168,7 @@ $: {
 
 	<div class="container is-fullwidth">
 
-		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={'Search for: adult reps, coaches, guardians, players, programs, teams, camps, program registrations, camp registrations, team registrations.'} />
+		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={`Search for: ${search_items_str}`} />
 
 	</div>
 

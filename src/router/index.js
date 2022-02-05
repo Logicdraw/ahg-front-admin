@@ -93,16 +93,53 @@ import DashboardFileTemplateCreatedEdit from 'views/dashboard/file_template/crea
 
 // Other
 
-import DashboardAdultHockeyFinancesLayout from 'layouts/dashboard/other/adult_hockey/finances/Layout.svelte';
+import DashboardAdultHockeyFinancesTeamsLayout from 'layouts/dashboard/other/adult_hockey/finances_teams/Layout.svelte';
+
+import DashboardAdultHockeyFreeAgentsLayout from 'layouts/dashboard/other/adult_hockey/free_agents/Layout.svelte';
+
+import DashboardAdultHockeyPaymentsLayout from 'layouts/dashboard/other/adult_hockey/payments/Layout.svelte';
+
+import DashboardAdultHockeyRepsLayout from 'layouts/dashboard/other/adult_hockey/reps/Layout.svelte';
 
 
-import DashboardAdultHockeyFinances from 'views/dashboard/other/adult_hockey/Finances.svelte';
-
-import DashboardAdultHockeyFinancesSum from 'views/dashboard/other/adult_hockey/FinancesSum.svelte';
+import DashboardAdultHockeyFinancesTeams from 'views/dashboard/other/adult_hockey/FinancesTeams.svelte';
 
 import DashboardAdultHockeyFreeAgents from 'views/dashboard/other/adult_hockey/FreeAgents.svelte';
 
-import DashboardJerseySponsorsSpring from 'views/dashboard/other/jersey_sponsors/Spring.svelte';
+import DashboardAdultHockeyPayments from 'views/dashboard/other/adult_hockey/Payments.svelte';
+
+import DashboardAdultHockeyReps from 'views/dashboard/other/adult_hockey/Reps.svelte';
+
+
+import DashboardAlertsOneLayout from 'layouts/dashboard/other/alerts/one/Layout.svelte';
+
+import DashboardAlertsSumLayout from 'layouts/dashboard/other/alerts/sum/Layout.svelte';
+
+
+import DashboardAlertsOne from 'views/dashboard/other/alerts/One.svelte';
+
+import DashboardAlertsSum from 'views/dashboard/other/alerts/Sum.svelte';
+
+
+import DashboardSpringHockeyCoachesLayout from 'layouts/dashboard/other/spring_hockey/coaches/Layout.svelte';
+
+import DashboardSpringHockeyFinancesLayout from 'layouts/dashboard/other/spring_hockey/finances/Layout.svelte';
+
+import DashboardSpringHockeyFreeAgentsLayout from 'layouts/dashboard/other/spring_hockey/free_agents/Layout.svelte';
+
+import DashboardSpringHockeyJerseySponsorsLayout from 'layouts/dashboard/other/spring_hockey/jersey_sponsors/Layout.svelte';
+
+
+import DashboardSpringHockeyCoaches from 'views/dashboard/other/spring_hockey/Coaches.svelte';
+
+import DashboardSpringHockeyFinances from 'views/dashboard/other/spring_hockey/Finances.svelte';
+
+import DashboardSpringHockeyFreeAgents from 'views/dashboard/other/spring_hockey/FreeAgents.svelte';
+
+import DashboardSpringHockeyJerseySponsors from 'views/dashboard/other/spring_hockey/JerseySponsors.svelte';
+
+
+import DashboardLoginsIndex from 'views/dashboard/other/logins/Index.svelte';
 
 
 import DashboardGamesheetIndex from 'views/dashboard/other/gs/Index.svelte';
@@ -337,26 +374,104 @@ const routes = [
 			},
 			// Other
 			{
-				name: 'adult_hockey_finances',
-				component: DashboardAdultHockeyFinancesLayout,
+				name: 'adult_hockey/payments',
+				component: DashboardAdultHockeyPaymentsLayout,
 				nestedRoutes: [
 					{
 						name: 'index',
-						component: DashboardAdultHockeyFinances,
+						component: DashboardAdultHockeyPayments,
 					},
 				],
 			},
 			{
-				name: 'adult_hockey_finances_sum',
-				component: DashboardAdultHockeyFinancesSum,
+				name: 'adult_hockey/finances_teams',
+				component: DashboardAdultHockeyFinancesTeamsLayout,
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardAdultHockeyFinancesTeams,
+					},
+				],
 			},
 			{
-				name: 'adult_hockey_free_agents',
-				component: DashboardAdultHockeyFreeAgents,
+				name: 'adult_hockey/free_agents',
+				component: DashboardAdultHockeyFreeAgentsLayout,
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardAdultHockeyFreeAgents,
+					},
+				],
 			},
 			{
-				name: 'jersey_sponsors/spring/:year_start',
-				component: DashboardJerseySponsorsSpring,
+				name: 'adult_hockey/reps',
+				component: DashboardAdultHockeyRepsLayout,
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardAdultHockeyReps,
+					},
+				],
+			},
+			{
+				name: 'spring_hockey/coaches',
+				component: DashboardSpringHockeyCoachesLayout,
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardSpringHockeyCoaches,
+					},
+				],
+			},
+			{
+				name: 'spring_hockey/finances',
+				component: DashboardSpringHockeyFinancesLayout,
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardSpringHockeyFinances,
+					},
+				],
+			},
+			{
+				name: 'spring_hockey/free_agents',
+				component: DashboardSpringHockeyFreeAgentsLayout,
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardSpringHockeyFreeAgents,
+					},
+				],
+			},
+			{
+				name: 'spring_hockey/jersey_sponsors',
+				component: DashboardSpringHockeyJerseySponsorsLayout,
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardSpringHockeyJerseySponsors,
+					},
+				],
+			},
+			{
+				name: 'alerts/one',
+				component: DashboardAlertsOneLayout,
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardAlertsOne,
+					},
+				],
+			},
+			{
+				name: 'alerts/sum',
+				component: DashboardAlertsSumLayout,
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardAlertsSum,
+					},
+				],
 			},
 			{
 				name: 'spng',
