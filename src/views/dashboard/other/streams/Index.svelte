@@ -101,7 +101,7 @@ $: promise = getRows(url_params);
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				<span>Streams</span>
+				<span>Streams Helpers</span>
 			</p>
 
 		</div>
@@ -112,7 +112,7 @@ $: promise = getRows(url_params);
 
 
 
-<section class="section skinny-section">
+<!-- <section class="section skinny-section">
 
 	<div class="container is-fullwidth">
 
@@ -132,7 +132,7 @@ $: promise = getRows(url_params);
 
 	</div>
 
-</section>
+</section> -->
 
 
 {#await promise}

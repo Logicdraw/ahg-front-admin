@@ -588,6 +588,10 @@ const routes = [
 				component: DashboardGamesheetIndex,
 			},
 			{
+				name: 'streams',
+				component: DashboardStreamsIndex,
+			},
+			{
 				name: 'settings',
 				component: DashboardSettingsIndex,
 			},
