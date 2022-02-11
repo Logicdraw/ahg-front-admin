@@ -54,7 +54,7 @@ let msg_text;
 
 		<div class="columns is-centered">
 
-			<div class="column is-6-desktop is-9-tablet is-12-mobile">
+			<div class="column is-6-desktop is-8-tablet is-12-mobile">
 
 				<MsgCard bind:msg_show={msg_show} bind:msg_type={msg_type} bind:msg_text={msg_text} />
 

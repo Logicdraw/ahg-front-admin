@@ -1,6 +1,6 @@
 <script>
 export let currentRoute;
-
+export let params;
 
 import MsgCard from 'components/elements/MsgCard.svelte';
 import Loading from 'components/elements/Loading.svelte';
@@ -189,17 +189,17 @@ resources_info.forEach((resource_info) => {
 
 		{#each results as result}
 
-		{#if result[1].length === 0}
+			{#if result[1].length === 0}
 
-		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={`No ${result[0].name} rows found!`} />
+				<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={`No ${result[0].name} rows found!`} />
 
-		{:else}
+			{:else}
 
-		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={`${result[0].name}`} />
+				<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={`${result[0].name}`} />
 
-		<Table rows={result[1]} columns={result[0].default_columns} resource_id={result[0].id} id_key={result[1].id_key} />
+				<Table rows={result[1]} columns={result[0].default_columns} resource_id={result[0].id} id_key={result[1].id_key} />
 
-		{/if}
+			{/if}
 
 		{/each}
 

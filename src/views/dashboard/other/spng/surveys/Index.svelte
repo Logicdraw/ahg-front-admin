@@ -1,14 +1,15 @@
 <script>
 export let currentRoute;
+export let params;
 
 import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 
 
-import Table from 'components/elements/views/dashboard/other/spng/surveys/Table.svelte';
+import Table from 'components/elements/views/dashboard/other/spng/surveys/index/Table.svelte';
 
-import Filter from 'components/elements/views/dashboard/other/spng/surveys/Filter.svelte';
-import Tabs from 'components/elements/views/dashboard/other/spng/surveys/Tabs.svelte';
+import Filter from 'components/elements/views/dashboard/other/spng/surveys/index/Filter.svelte';
+import Tabs from 'components/elements/views/dashboard/other/spng/surveys/index/Tabs.svelte';
 
 
 import { auth } from 'store/index.js';
@@ -84,7 +85,7 @@ async function getSurveys(params) {
 }
 
 
-let params = {
+let url_params = {
 	q: '',
 	offset: 0,
 	limit: 25,
@@ -92,7 +93,7 @@ let params = {
 
 
 function resetParams(resource_id) {
-	params = {
+	url_params = {
 		q: '',
 		offset: 0,
 		limit: 25,
@@ -103,7 +104,7 @@ function resetParams(resource_id) {
 
 $: resetParams(currentRoute.namedParams.resource_id);
 
-$: promise = getSurveys(params);
+$: promise = getSurveys(url_params);
 
 
 </script>
@@ -122,7 +123,7 @@ $: promise = getSurveys(params);
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				<span>SportsEngine Forms</span>
+				<span>SportsEngine Form Integrations</span>
 			</p>
 
 		</div>
@@ -130,6 +131,7 @@ $: promise = getSurveys(params);
 	</div>
 
 </section>
+
 
 <section class="section skinny-section" style="padding-bottom: 0 !important; display: none;">
 

@@ -1,5 +1,6 @@
 <script>
 export let currentRoute;
+// export let params;
 
 
 import Navbar from 'layouts/dashboard/Navbar.svelte';
@@ -60,6 +61,7 @@ async function testAccessToken(token) {
 
 
 
+// $: currentRoute ... (on page change)
 
 testAccessToken(token).then(data => {
 	if (!data.ok) throw new Error('Could not login!');
@@ -100,7 +102,6 @@ testAccessToken(token).then(data => {
 <div id="dashboard-layout" class="layout">
 	<Route {currentRoute} {params} />
 </div>
-
 {/if}
 
 

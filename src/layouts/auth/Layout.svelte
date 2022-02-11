@@ -1,5 +1,6 @@
 <script>
 export let currentRoute;
+// export let params;
 
 
 import Navbar from 'layouts/auth/Navbar.svelte';

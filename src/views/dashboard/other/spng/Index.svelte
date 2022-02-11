@@ -11,8 +11,16 @@ import { Navigate } from 'svelte-router-spa';
 
 const resources = [
 	{
-		name: 'Surveys',
+		name: 'SportsEngine Form Integrations',
 		to: '/my/spng/surveys',
+	},
+	{
+		name: 'SportsEngine Form Integration Setup',
+		to: '/my/spng/surveys/setup',
+	},
+	{
+		name: 'Non Integrated SportsEngine Forms',
+		to: '/my/spng/surveys/non_integrated',
 	},
 ];
 
@@ -47,7 +55,7 @@ const resources = [
 
 	<div class="container is-fullwidth">
 
-		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={'Helpers'} />
+		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={'...'} />
 
 		<div class="columns is-variable is-mobile is-multiline is-centered">
 

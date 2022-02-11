@@ -1,0 +1,33 @@
+
+
+.textarea {
+	border: 1px solid var(--border) !important;
+	border-radius: 3px !important;
+}
+
+
+.paginate-button i {
+	margin: 0 !important;
+}
+
+
+.selectContainer {
+	font-family: 'Inter' !important;
+}
+
+.selectContainer input {
+	font-family: 'Inter' !important;
+
+}
+
+.selectContainer:not(.multiSelect) input {
+	border-radius: 3px !important;
+	border: 1px solid var(--border) !important;
+}
+
+.listContainer {
+	border: 1px solid var(--border) !important;
+}
+
+
+

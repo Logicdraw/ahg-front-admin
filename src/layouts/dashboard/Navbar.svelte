@@ -168,7 +168,6 @@ import { act_resources_info } from 'utils/act_resources.js';
 				</Navigate>
 
 
-
 				<div class="navbar-item has-dropdown is-hoverable" style="z-index: 100;">
 
 
@@ -179,7 +178,19 @@ import { act_resources_info } from 'utils/act_resources.js';
 					<div class="navbar-dropdown is-right--" style="z-index: 10001;">
 
 						<Navigate styles="navbar-item" to="/my/resources/master-search" on:click={closeActive}>
-							<span on:click={closeActive}>Master Search</span>
+							<span>Master Search</span>
+						</Navigate>
+
+						<Navigate styles="navbar-item" to="/my/logins" on:click={closeActive}>
+							<span>Logins Helpers</span>
+						</Navigate>
+
+						<Navigate to='/my/spring_hockey' styles='navbar-item' on:click={closeActive}>
+							<span>Spring Hockey Helpers</span>
+						</Navigate>
+
+						<Navigate to='/my/adult_hockey' styles='navbar-item' on:click={closeActive}>
+							<span>Adult Hockey Helpers</span>
 						</Navigate>
 
 						<Navigate to='/my/spng' styles='navbar-item' on:click={closeActive}>
@@ -190,44 +201,13 @@ import { act_resources_info } from 'utils/act_resources.js';
 							<span>GameSheet Helpers</span>
 						</Navigate>
 
-
-						<Navigate to='/my/adult_hockey/payments' styles='navbar-item' on:click={closeActive}>
-							<span>Adult Hockey Payments</span>
+						<Navigate to='/my/alerts' styles='navbar-item' on:click={closeActive}>
+							<span>Alerts Helpers</span>
 						</Navigate>
 
-						<Navigate to='/my/adult_hockey/finances_teams' styles='navbar-item' on:click={closeActive}>
-							<span>Adult Hockey Finances Teams</span>
+						<Navigate to='/my/streams' styles='navbar-item' on:click={closeActive}>
+							<span>Streams Helpers</span>
 						</Navigate>
-
-						<Navigate to='/my/adult_hockey/free_agents' styles='navbar-item' on:click={closeActive}>
-							<span>Adult Hockey Free Agents</span>
-						</Navigate>
-
-						<Navigate to='/my/adult_hockey/reps' styles='navbar-item' on:click={closeActive}>
-							<span>Adult Hockey Reps</span>
-						</Navigate>
-
-
-						<Navigate to='/my/spring_hockey/coaches' styles='navbar-item' on:click={closeActive}>
-							<span>Spring Hockey Coaches</span>
-						</Navigate>
-
-
-						<Navigate to='/my/spring_hockey/finances' styles='navbar-item' on:click={closeActive}>
-							<span>Spring Hockey Finances</span>
-						</Navigate>
-
-
-						<Navigate to='/my/spring_hockey/free_agents' styles='navbar-item' on:click={closeActive}>
-							<span>Spring Hockey Free Agents</span>
-						</Navigate>
-
-
-						<Navigate to='/my/spring_hockey/jersey_sponsors' styles='navbar-item' on:click={closeActive}>
-							<span>Spring Hockey Jersey Sponsors</span>
-						</Navigate>
-
-						<!--  -->
 
 					</div>
 
@@ -245,23 +225,29 @@ import { act_resources_info } from 'utils/act_resources.js';
 					<div class="navbar-dropdown is-right--" style="z-index: 10001;">
 
 						<a href="https://coach.ahg.software" target="_blank" rel="noopener" class="navbar-item">
-							<span>Coach Portal (ext)</span>
+							<span>Coach Portal</span>
 						</a>
 
 						<a href="https://adult-rep.ahg.software" target="_blank" rel="noopener" class="navbar-item">
-							<span>Adult Rep Portal (ext)</span>
+							<span>Adult Rep Portal</span>
 						</a>
 
 						<a href="https://orders.ahg.software" target="_blank" rel="noopener" class="navbar-item">
-							<span>Orders Portal (ext)</span>
+							<span>Orders Portal</span>
 						</a>
 
 						<a href="https://forms.ahg.software" target="_blank" rel="noopener" class="navbar-item">
-							<span>Forms Portal (ext)</span>
+							<span>Forms Portal</span>
 						</a>
 
+						<a href="https://accounting.ahg.software" target="_blank" rel="noopener" class="navbar-item">
+							<span>Accounting Portal</span>
+						</a>
 
-						<!--  -->
+						<a href="https://schedules.ahg.software" target="_blank" rel="noopener" class="navbar-item">
+							<span>Schedules Portal</span>
+						</a>
+
 
 					</div>
 

@@ -9,11 +9,10 @@ import { Route } from 'svelte-router-spa';
 import MsgCard from 'components/elements/MsgCard.svelte';
 import Loading from 'components/elements/Loading.svelte';
 
+
+import Form from 'components/forms/views/dashboard/resource/camp_instance_registrations/edit/Form.svelte';
+
 import CreatedUpdated from 'components/elements/views/dashboard/resource/CreatedUpdated.svelte';
-
-
-import Form from 'components/forms/views/dashboard/resource/team_instance_registrations/edit/Form.svelte';
-
 
 
 import { auth } from 'store/index.js';
@@ -29,12 +28,12 @@ const token = get(auth).token;
 
 
 
-let promise = getResourceRow();
+let promise = getCampInstanceRegistration();
 
 
-async function getResourceRow() {
+async function getCampInstanceRegistration() {
 
-	const url = `${admin_api_url}/team-instance-registrations/${currentRoute.namedParams.resource_row_id}`;
+	const url = `${admin_api_url}/camp-instance-registrations/${currentRoute.namedParams.camp_instance_registration_id}`;
 
 	const resp = await fetch(url, {
 		method: 'GET',
@@ -62,27 +61,11 @@ async function getResourceRow() {
 </style>
 
 
-<section class="hero bg-grey">
-
-	<div class="hero-body">
-
-		<div class="container">
-
-			<p class="hero-subtitle has-text-centered">
-				<span>Edit Team Registration</span>
-			</p>
-
-		</div>
-
-	</div>
-
-</section>
-
 {#await promise}
 
 <Loading />
 
-{:then resource_row}
+{:then camp_instance_registration}
 
 <section class="section skinny-section">
 
@@ -92,17 +75,17 @@ async function getResourceRow() {
 
 			<div class="column is-9-desktop is-12-tablet is-12-mobile">
 
-				{#if resource_row.spng_survey_result_id}
-					<MsgCard msg_type={'error'} msg_show={true} msg_text={`<a href="https://ahgcentral.sportngin.com/survey_result/show/${resource_row.spng_survey_result_id}" target="_blank" class="link" rel="noopener">View registration on SportsEngine!</a>`} msg_forever={true} />
+				{#if camp_instance_registration.spng_survey_result_id}
+					<MsgCard msg_type={'error'} msg_show={true} msg_text={`<a href="https://ahgcentral.sportngin.com/survey_result/show/${camp_instance_registration.spng_survey_result_id}" target="_blank" class="link" rel="noopener">View registration on SportsEngine!</a>`} msg_forever={true} />
 				{/if}
 
-				<CreatedUpdated row={resource_row} />
+				<CreatedUpdated row={camp_instance_registration} />
 
 				<div class="card form-card">
 
 					<div class="card-content">
 
-						<Form team_instance_registration={resource_row} />
+						<Form {camp_instance_registration} />
 
 					</div>
 

@@ -54,8 +54,7 @@ function openActive() {
 
 			<div class="navbar-start">
 
-
-				<!-- resources dropdown! -->
+				<!-- ... -->
 
 			</div>
 

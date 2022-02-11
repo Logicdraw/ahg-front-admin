@@ -6,7 +6,7 @@ export let adult_payment_id;
 import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 
-import Form from 'components/forms/views/dashboard/other/adult_hockey/payments/adult_payments/delete/Form.svelte';
+import Form from 'components/forms/views/dashboard/other/adult_hockey/payments/index/adult_payments/delete/Form.svelte';
 
 
 $: console.log(adult_payment_id);

@@ -5,7 +5,7 @@ export let create_modal_is_active;
 import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 
-import Form from 'components/forms/views/dashboard/other/adult_hockey/payments/adult_payments/create/Form.svelte';
+import Form from 'components/forms/views/dashboard/other/adult_hockey/payments/index/adult_payments/create/Form.svelte';
 
 
 

@@ -13,23 +13,7 @@ import Form from 'components/forms/views/dashboard/resource/camp_instance_regist
 
 
 
-<section class="hero bg-grey">
-
-	<div class="hero-body">
-
-		<div class="container">
-
-			<p class="hero-subtitle has-text-centered">
-				<span>Create new Camp Registration</span>
-			</p>
-
-		</div>
-
-	</div>
-
-</section>
-
-<section class="section">
+<section class="section skinny-section">
 
 	<div class="container">
 

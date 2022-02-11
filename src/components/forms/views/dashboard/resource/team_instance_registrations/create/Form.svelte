@@ -194,6 +194,16 @@ const {
 		discount_names: '',
 		refunds: '',
 		refund_reason: '',
+
+		jersey_sponsors: [
+			{
+				name_of_sponsor: '',
+				no_sponsor_bar: false,
+				sponsor_line_1: '',
+				sponsor_line_2: '',
+				amount: null,
+			},
+		],
 	},
 	validationSchema: yup.object().shape({
 		team_instances_ids: yup
@@ -250,13 +260,54 @@ const {
 			.array()
 			.of(
 				yup.object().shape({
-					name: yup
-							.string()
-							.required(),
+					name_of_sponsor: yup
+								.string()
+								.required('Name of sponsor required!'),
+					no_sponsor_bar: yup
+									.bool()
+									.nullable(),
+					sponsor_line_1: yup
+									.string()
+									.max(20, '20 Characters Maximum!')
+									.test(
+										'not-no-sponsor-bar',
+										'You selected no sponsor bar!',
+										function(v) {
+											if (!!this.parent.no_sponsor_bar) {
+												return (!v);
+											}
+											return true;
+										}
+									),
+					sponsor_line_2: yup
+									.string()
+									.max(20, '20 Characters Maximum!')
+									.test(
+										'not-no-sponsor-bar',
+										'You selected no sponsor bar!',
+										function(v) {
+											if (!!this.parent.no_sponsor_bar) {
+												return (!v);
+											}
+											return true;
+										}
+									)
+									.test(
+										'sponsor-line-1-must-be-given',
+										'Sponsor line 1 must be given',
+										function(v) {
+										if (!this.parent.sponsor_line_1) {
+											return (!v);
+										}
+										return true;
+									}),
 					amount: yup
 							.number()
-							.required(),
-				})
+							.typeError('Must be valid amount!')
+							.required('Must be valid amount!')
+							// .nullable()
+							.label('Tag'),
+				}),
 			),
 	}),
 	onSubmit: values => {
@@ -387,6 +438,38 @@ function onSelectTeamInstance(event) {
 
 	$form.team_instances_ids = form_team_instances_ids;
 }
+
+
+
+function addNewJerseySponsor() {
+
+	$form.jersey_sponsors = [...$form.jersey_sponsors, {
+		name_of_sponsor: '',
+		no_sponsor_bar: false,
+		sponsor_line_1: '',
+		sponsor_line_2: '',
+		amount: null,
+	}];
+
+
+}
+
+
+function removeJerseySponsor(i) {
+
+	// ---
+	$form.jersey_sponsors.splice(i, 1);
+
+	$form.jersey_sponsors = $form.jersey_sponsors;
+
+	$errors.jersey_sponsors.splice(i, 1);
+
+	$errors.jersey_sponsors = $errors.jersey_sponsors;
+
+	// console.log($errors.jersey_sponsors);
+
+}
+
 
 
 </script>
@@ -688,6 +771,125 @@ form {
 		</div>
 
 	</div>
+
+	<br>
+
+	<br>
+
+	<!-- if spring hockey -->
+
+	<!-- jersey sponsors -->
+	{#each $form.jersey_sponsors as jersey_sponsor, i}
+
+		<div class="field">
+
+			<div class="control">
+
+				<div class="columns is-variable is-vcentered is-2">
+
+					<div class="column">
+						<label style="margin-bottom: 0 !important; font-size: 1.225rem !important; color: #3c3c3c;">
+							Sponsor {i + 1}
+						</label>
+					</div>
+
+					<div class="column is-narrow">
+						{#if $form.jersey_sponsors.length === 1}
+						<span class="button is-custom-red is-small is-invisible" style="margin-top: 0 !important;">
+							Remove
+						</span>
+						{:else}
+						<span class="button is-custom-red is-small" style="margin-top: 0 !important;" on:click={() => removeJerseySponsor(i)}>
+							Remove
+						</span>
+						{/if}
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="field">
+
+			<div class="control">
+
+				<input placeholder="Name of Sponsor" class="input" type="text" id="jersey_sponsors.{i}.name_of_sponsor" name="jersey_sponsors.{i}.name_of_sponsor" on:change={handleChange} bind:value={$form.jersey_sponsors[i].name_of_sponsor} disabled={loading}>
+
+				{#if $errors.jersey_sponsors[i]}
+					{#if $errors.jersey_sponsors[i].name_of_sponsor}
+					<FormFieldError detail={$errors.jersey_sponsors[i].name_of_sponsor} />
+					{/if}
+				{/if}
+
+			</div>
+
+		</div>
+
+
+		<!-- -- -->
+
+
+		<div class="field">
+
+			<div class="control">
+
+				<input placeholder="Sponsor Line 1" class="input" type="text" id="jersey_sponsors.{i}.sponsor_line_1" name="jersey_sponsors.{i}.sponsor_line_1" on:change={handleChange} bind:value={$form.jersey_sponsors[i].sponsor_line_1} disabled={loading}>
+
+				{#if $errors.jersey_sponsors[i]}
+					{#if $errors.jersey_sponsors[i].sponsor_line_1}
+					<FormFieldError detail={$errors.jersey_sponsors[i].sponsor_line_1} />
+					{/if}
+				{/if}
+
+			</div>
+
+		</div>
+
+
+		<div class="field">
+
+			<div class="control">
+
+				<input placeholder="Sponsor Line 2" class="input" type="text" id="jersey_sponsors.{i}.sponsor_line_2" name="jersey_sponsors.{i}.sponsor_line_2" on:change={handleChange} bind:value={$form.jersey_sponsors[i].sponsor_line_2} disabled={loading}>
+
+				{#if $errors.jersey_sponsors[i]}
+					{#if $errors.jersey_sponsors[i].sponsor_line_2}
+					<FormFieldError detail={$errors.jersey_sponsors[i].sponsor_line_2} />
+					{/if}
+				{/if}
+
+			</div>
+
+		</div>
+
+
+		<div class="field">
+
+			<div class="control">
+
+				<input placeholder="Sponsor Amount" class="input" type="number" id="jersey_sponsors.{i}.amount" name="jersey_sponsors.{i}.amount" on:change={handleChange} bind:value={$form.jersey_sponsors[i].amount} disabled={loading}>
+
+				{#if $errors.jersey_sponsors[i]}
+					{#if $errors.jersey_sponsors[i].amount}
+					<FormFieldError detail={$errors.jersey_sponsors[i].amount} />
+					{/if}
+				{/if}
+
+			</div>
+
+		</div>
+
+
+		{#if $form.jersey_sponsors.length > 1 && i !== $form.jersey_sponsors.length - 1}
+		<hr style="">
+		{/if}
+
+
+	{/each}
+
 
 	<br>
 

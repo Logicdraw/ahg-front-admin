@@ -1,6 +1,6 @@
 <script>
 export let currentRoute;
-
+export let params;
 
 import MsgCard from 'components/elements/MsgCard.svelte';
 
