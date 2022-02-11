@@ -2,367 +2,367 @@
 // params ...
 
 const resources_info = [
-	{
-		id: 'adult_reps',
-		url: '_persons/_adult_rep/adult-reps',
-		search_url: '_persons/_adult_rep/adult-reps',
-		search_columns_str: 'Full name, email, phone',
-		name: 'Adult Reps',
-		name_singular: 'Adult Rep',
-		// has_create_form: true,
-		has_create_form: false,
-		default_columns: [
-			{
-				path: ['full_name'],
-				id: 'full_name',
-				name: 'Name',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['email'],
-				id: 'email',
-				name: 'Email',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['mobile_phone'],
-				id: 'mobile_phone',
-				name: 'Mobile',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-		],
-		search_columns: [
-			{
-				path: ['full_name'],
-				id: 'full_name',
-				name: 'Name',
-			},
-			{
-				path: ['email'],
-				id: 'email',
-				name: 'Email',
-			},
-			{
-				path: ['mobile_phone'],
-				id: 'mobile_phone',
-				name: 'Mobile',
-			},
-		],
-		more_filters: [
-			// {
-			// 	id: '',
-			// 	name: '',
-			// 	type: '',
-			// 	dropdown_options: [
-			// 		{
-			// 			id: '',
-			// 			value: '',
-			// 		},
-			// 	],
-			// },
-		],
-		// filters...
-		form_additional_data: [
-			{
-				id: 'team_instances',
-				url: 'team-instances',
-			},
-		],
-	},
-	{
-		id: 'coaches',
-		url: '_persons/_coach/coaches',
-		search_url: '_persons/_coach/coaches',
-		search_columns_str: 'Full name, email, phone',
-		name: 'Coaches',
-		name_singular: 'Coach',
-		// has_create_form: true,
-		has_create_form: false,
-		default_columns: [
-			{
-				path: ['full_name'],
-				id: 'full_name',
-				name: 'Name',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['email'],
-				id: 'email',
-				name: 'Email',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['mobile_phone'],
-				id: 'mobile_phone',
-				name: 'Mobile',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-		],
-		search_columns: [
-			{
-				path: ['full_name'],
-				id: 'full_name',
-				name: 'Name',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['email'],
-				id: 'email',
-				name: 'Email',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['mobile_phone'],
-				id: 'mobile_phone',
-				name: 'Mobile',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-		],
-		more_filters: [
-			// {
-			// 	id: '',
-			// 	name: '',
-			// 	type: '',
-			// 	dropdown_options: [
-			// 		{
-			// 			id: '',
-			// 			value: '',
-			// 		},
-			// 	],
-			// },
-		],
-		form_additional_data: [
-			{
-				id: 'camp_instances',
-				url: 'camp-instances',
-			},
-			{
-				id: 'program_instances',
-				url: 'program-instances',
-			},
-			{
-				id: 'team_instances',
-				url: 'team-instances',
-			},
-		],
-	},
-	{
-		id: 'guardians',
-		url: '_persons/_guardian/guardians',
-		search_url: 'guardians',
-		search_columns_str: 'Full name, email, phone',
-		name: 'Guardians',
-		name_singular: 'Guardian',
-		// has_create_form: true,
-		has_create_form: false,
-		default_columns: [
-			{
-				path: ['full_name'],
-				id: 'full_name',
-				name: 'Name',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['email'],
-				name: 'Email',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['mobile_phone'],
-				name: 'Mobile',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-		],
-		search_columns: [
-			{
-				path: ['full_name'],
-				id: 'full_name',
-				name: 'Name',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['email'],
-				id: 'email',
-				name: 'Email',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['mobile_phone'],
-				id: 'mobile_phone',
-				name: 'Mobile',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-		],
-		more_filters: [
-			// {
-			// 	id: '',
-			// 	name: '',
-			// 	type: '',
-			// 	dropdown_options: [
-			// 		{
-			// 			id: '',
-			// 			value: '',
-			// 		},
-			// 	],
-			// },
-		],
-		form_additional_data: [
-			{
-				id: 'players',
-				url: 'players',
-			},
-		],
-	},
-	{
-		id: 'players',
-		url: '_persons/_player/players',
-		search_url: '_persons/_player/players',
-		search_columns_str: 'Full name, email, phone',
-		name: 'Players',
-		name_singular: 'Player',
-		// has_create_form: true,
-		has_create_form: false,
-		default_columns: [
-			{
-				path: ['first_name'],
-				id: 'first_name',
-				name: 'First',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['last_name'],
-				id: 'last_name',
-				name: 'Last',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['date_of_birth'],
-				id: 'date_of_birth',
-				name: 'Date of Birth',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['gender'],
-				id: 'gender',
-				name: 'Gender',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-		],
-		search_columns: [
-			{
-				path: ['first_name'],
-				id: 'first_name',
-				name: 'First',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['last_name'],
-				id: 'last_name',
-				name: 'Last',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-			{
-				path: ['email'],
-				id: 'email',
-				name: 'Email',
-				ordering_option: true,
-				highlight_row_items: false,
-			},
-		],
-		more_filters: [
-			{
-				id: 'date_of_birth_start',
-				name: 'Date of Birth Start',
-				type: 'date',
-				dropdown_options: [
-					{
-						id: '',
-						value: '',
-					},
-				],
-			},
-			{
-				id: 'date_of_birth_end',
-				name: 'Date of Birth End',
-				type: 'date',
-				dropdown_options: [
-					{
-						id: '',
-						value: '',
-					},
-				],
-			},
-			{
-				id: 'gender',
-				name: 'Gender',
-				type: 'dropdown',
-				dropdown_options: [
-					{
-						id: 'male',
-						value: 'Male',
-					},
-					{
-						id: 'female',
-						value: 'Female',
-					},
-				],
-			},
-			{
-				id: 'province',
-				name: 'Province',
-				type: 'dropdown',
-				dropdown_options: [
-					{
-						id: 'NB',
-						value: 'NB',
-					},
-					{
-						id: 'NS',
-						value: 'NS',
-					},
-					{
-						id: 'PE',
-						value: 'PE',
-					},
-					{
-						id: 'NL',
-						value: 'NL',
-					},
-					{
-						id: 'QC',
-						value: 'QC',
-					},
-				],
-			},
-		],
-		form_additional_data: [
-			{
-				id: 'guardians',
-				url: 'guardians',
-			},
-		],
-	},
+	// {
+	// 	id: 'adult_reps',
+	// 	url: '_persons/_adult_rep/adult-reps',
+	// 	search_url: '_persons/_adult_rep/adult-reps',
+	// 	search_columns_str: 'Full name, email, phone',
+	// 	name: 'Adult Reps',
+	// 	name_singular: 'Adult Rep',
+	// 	// has_create_form: true,
+	// 	has_create_form: false,
+	// 	default_columns: [
+	// 		{
+	// 			path: ['full_name'],
+	// 			id: 'full_name',
+	// 			name: 'Name',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['email'],
+	// 			id: 'email',
+	// 			name: 'Email',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['mobile_phone'],
+	// 			id: 'mobile_phone',
+	// 			name: 'Mobile',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 	],
+	// 	search_columns: [
+	// 		{
+	// 			path: ['full_name'],
+	// 			id: 'full_name',
+	// 			name: 'Name',
+	// 		},
+	// 		{
+	// 			path: ['email'],
+	// 			id: 'email',
+	// 			name: 'Email',
+	// 		},
+	// 		{
+	// 			path: ['mobile_phone'],
+	// 			id: 'mobile_phone',
+	// 			name: 'Mobile',
+	// 		},
+	// 	],
+	// 	more_filters: [
+	// 		// {
+	// 		// 	id: '',
+	// 		// 	name: '',
+	// 		// 	type: '',
+	// 		// 	dropdown_options: [
+	// 		// 		{
+	// 		// 			id: '',
+	// 		// 			value: '',
+	// 		// 		},
+	// 		// 	],
+	// 		// },
+	// 	],
+	// 	// filters...
+	// 	form_additional_data: [
+	// 		{
+	// 			id: 'team_instances',
+	// 			url: 'team-instances',
+	// 		},
+	// 	],
+	// },
+	// {
+	// 	id: 'coaches',
+	// 	url: '_persons/_coach/coaches',
+	// 	search_url: '_persons/_coach/coaches',
+	// 	search_columns_str: 'Full name, email, phone',
+	// 	name: 'Coaches',
+	// 	name_singular: 'Coach',
+	// 	// has_create_form: true,
+	// 	has_create_form: false,
+	// 	default_columns: [
+	// 		{
+	// 			path: ['full_name'],
+	// 			id: 'full_name',
+	// 			name: 'Name',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['email'],
+	// 			id: 'email',
+	// 			name: 'Email',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['mobile_phone'],
+	// 			id: 'mobile_phone',
+	// 			name: 'Mobile',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 	],
+	// 	search_columns: [
+	// 		{
+	// 			path: ['full_name'],
+	// 			id: 'full_name',
+	// 			name: 'Name',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['email'],
+	// 			id: 'email',
+	// 			name: 'Email',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['mobile_phone'],
+	// 			id: 'mobile_phone',
+	// 			name: 'Mobile',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 	],
+	// 	more_filters: [
+	// 		// {
+	// 		// 	id: '',
+	// 		// 	name: '',
+	// 		// 	type: '',
+	// 		// 	dropdown_options: [
+	// 		// 		{
+	// 		// 			id: '',
+	// 		// 			value: '',
+	// 		// 		},
+	// 		// 	],
+	// 		// },
+	// 	],
+	// 	form_additional_data: [
+	// 		{
+	// 			id: 'camp_instances',
+	// 			url: 'camp-instances',
+	// 		},
+	// 		{
+	// 			id: 'program_instances',
+	// 			url: 'program-instances',
+	// 		},
+	// 		{
+	// 			id: 'team_instances',
+	// 			url: 'team-instances',
+	// 		},
+	// 	],
+	// },
+	// {
+	// 	id: 'guardians',
+	// 	url: '_persons/_guardian/guardians',
+	// 	search_url: 'guardians',
+	// 	search_columns_str: 'Full name, email, phone',
+	// 	name: 'Guardians',
+	// 	name_singular: 'Guardian',
+	// 	// has_create_form: true,
+	// 	has_create_form: false,
+	// 	default_columns: [
+	// 		{
+	// 			path: ['full_name'],
+	// 			id: 'full_name',
+	// 			name: 'Name',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['email'],
+	// 			name: 'Email',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['mobile_phone'],
+	// 			name: 'Mobile',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 	],
+	// 	search_columns: [
+	// 		{
+	// 			path: ['full_name'],
+	// 			id: 'full_name',
+	// 			name: 'Name',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['email'],
+	// 			id: 'email',
+	// 			name: 'Email',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['mobile_phone'],
+	// 			id: 'mobile_phone',
+	// 			name: 'Mobile',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 	],
+	// 	more_filters: [
+	// 		// {
+	// 		// 	id: '',
+	// 		// 	name: '',
+	// 		// 	type: '',
+	// 		// 	dropdown_options: [
+	// 		// 		{
+	// 		// 			id: '',
+	// 		// 			value: '',
+	// 		// 		},
+	// 		// 	],
+	// 		// },
+	// 	],
+	// 	form_additional_data: [
+	// 		{
+	// 			id: 'players',
+	// 			url: 'players',
+	// 		},
+	// 	],
+	// },
+	// {
+	// 	id: 'players',
+	// 	url: '_persons/_player/players',
+	// 	search_url: '_persons/_player/players',
+	// 	search_columns_str: 'Full name, email, phone',
+	// 	name: 'Players',
+	// 	name_singular: 'Player',
+	// 	// has_create_form: true,
+	// 	has_create_form: false,
+	// 	default_columns: [
+	// 		{
+	// 			path: ['first_name'],
+	// 			id: 'first_name',
+	// 			name: 'First',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['last_name'],
+	// 			id: 'last_name',
+	// 			name: 'Last',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['date_of_birth'],
+	// 			id: 'date_of_birth',
+	// 			name: 'Date of Birth',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['gender'],
+	// 			id: 'gender',
+	// 			name: 'Gender',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 	],
+	// 	search_columns: [
+	// 		{
+	// 			path: ['first_name'],
+	// 			id: 'first_name',
+	// 			name: 'First',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['last_name'],
+	// 			id: 'last_name',
+	// 			name: 'Last',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 		{
+	// 			path: ['email'],
+	// 			id: 'email',
+	// 			name: 'Email',
+	// 			ordering_option: true,
+	// 			highlight_row_items: false,
+	// 		},
+	// 	],
+	// 	more_filters: [
+	// 		{
+	// 			id: 'date_of_birth_start',
+	// 			name: 'Date of Birth Start',
+	// 			type: 'date',
+	// 			dropdown_options: [
+	// 				{
+	// 					id: '',
+	// 					value: '',
+	// 				},
+	// 			],
+	// 		},
+	// 		{
+	// 			id: 'date_of_birth_end',
+	// 			name: 'Date of Birth End',
+	// 			type: 'date',
+	// 			dropdown_options: [
+	// 				{
+	// 					id: '',
+	// 					value: '',
+	// 				},
+	// 			],
+	// 		},
+	// 		{
+	// 			id: 'gender',
+	// 			name: 'Gender',
+	// 			type: 'dropdown',
+	// 			dropdown_options: [
+	// 				{
+	// 					id: 'male',
+	// 					value: 'Male',
+	// 				},
+	// 				{
+	// 					id: 'female',
+	// 					value: 'Female',
+	// 				},
+	// 			],
+	// 		},
+	// 		{
+	// 			id: 'province',
+	// 			name: 'Province',
+	// 			type: 'dropdown',
+	// 			dropdown_options: [
+	// 				{
+	// 					id: 'NB',
+	// 					value: 'NB',
+	// 				},
+	// 				{
+	// 					id: 'NS',
+	// 					value: 'NS',
+	// 				},
+	// 				{
+	// 					id: 'PE',
+	// 					value: 'PE',
+	// 				},
+	// 				{
+	// 					id: 'NL',
+	// 					value: 'NL',
+	// 				},
+	// 				{
+	// 					id: 'QC',
+	// 					value: 'QC',
+	// 				},
+	// 			],
+	// 		},
+	// 	],
+	// 	form_additional_data: [
+	// 		{
+	// 			id: 'guardians',
+	// 			url: 'guardians',
+	// 		},
+	// 	],
+	// },
 	{
 		id: 'camp_instances',
 		url: '_programs/_camp_instance/camp-instances',

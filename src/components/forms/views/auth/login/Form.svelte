@@ -155,13 +155,13 @@ form {
 
 		</div>
 
-		<div class="control">
+		<!-- <div class="control">
 
 			<Navigate styles="form-card-link" to="/password/begin-reset">
 				<span>Forgot Password?</span>
 			</Navigate>
 
-		</div>
+		</div> -->
 
 	</div>
 

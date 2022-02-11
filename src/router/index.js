@@ -243,16 +243,16 @@ const routes = [
 		component: AuthLogout,
 		layout: AuthLayout,
 	},
-	{
-		name: 'password/begin-reset',
-		component: AuthPasswordBeginReset,
-		layout: AuthLayout,
-	},
-	{
-		name: 'password/reset',
-		component: AuthPasswordReset,
-		layout: AuthLayout,
-	},
+	// {
+	// 	name: 'password/begin-reset',
+	// 	component: AuthPasswordBeginReset,
+	// 	layout: AuthLayout,
+	// },
+	// {
+	// 	name: 'password/reset',
+	// 	component: AuthPasswordReset,
+	// 	layout: AuthLayout,
+	// },
 	// Dashboard
 	{
 		name: 'my',
