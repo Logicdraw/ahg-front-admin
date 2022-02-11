@@ -66,7 +66,7 @@ const resources = [
 
 			{#each resources as resource}
 
-				<div class="column is-3-desktop is-4-tablet is-6-mobile">
+				<div class="column is-4-desktop is-4-tablet is-6-mobile">
 
 					<Navigate styles='button is-medium is-fullwidth' to='{resource.to}'>
 						<span>{resource.name}</span>

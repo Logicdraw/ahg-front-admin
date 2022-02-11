@@ -46,7 +46,7 @@ import { resources_info } from 'utils/resources.js';
 
 			<!-- {#each resources_info as resource}
 
-				<div class="column is-3-desktop is-4-tablet is-6-mobile">
+				<div class="column is-4-desktop is-4-tablet is-6-mobile">
 
 					<Navigate styles='button is-medium is-fullwidth' to='/my/resources/resource/{resource.id}'>
 						<span>{resource.name}</span>
@@ -58,7 +58,7 @@ import { resources_info } from 'utils/resources.js';
 
 			{#each resources_info as resource}
 				{#if resource.has_create_form}
-				<div class="column is-3-desktop is-4-tablet is-6-mobile">
+				<div class="column is-4-desktop is-4-tablet is-6-mobile">
 
 					<Navigate styles='button is-medium is-fullwidth' to='/my/resource/create/{resource.id}'>
 						<span>{resource.name_singular}</span>
@@ -85,7 +85,7 @@ import { resources_info } from 'utils/resources.js';
 
 			{#each resources_info as resource}
 
-				<div class="column is-3-desktop is-4-tablet is-6-mobile">
+				<div class="column is-4-desktop is-4-tablet is-6-mobile">
 
 					<Navigate styles='button is-medium is-fullwidth' to='/my/resources/resource/{resource.id}'>
 						<span>{resource.name}</span>

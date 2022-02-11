@@ -49,7 +49,7 @@ import MsgCard from 'components/elements/MsgCard.svelte';
 
 				{#if login.has_create_form}
 
-					<div class="column is-3-desktop is-4-tablet is-6-mobile">
+					<div class="column is-4-desktop is-4-tablet is-6-mobile">
 
 						<Navigate styles='button is-medium is-fullwidth' to='/my/resources/resource/{login.id}'>
 							<span>{login.name_singular}</span>
@@ -80,7 +80,7 @@ import MsgCard from 'components/elements/MsgCard.svelte';
 
 			{#each logins_info as login}
 
-				<div class="column is-3-desktop is-4-tablet is-6-mobile">
+				<div class="column is-4-desktop is-4-tablet is-6-mobile">
 
 					<Navigate styles='button is-medium is-fullwidth' to='/my/resources/resource/{login.id}'>
 						<span>{login.name}</span>

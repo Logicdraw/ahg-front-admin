@@ -46,7 +46,7 @@ import { act_resources_info } from 'utils/act_resources.js';
 
 			{#each act_resources_info as act_resource}
 
-				<div class="column is-3-desktop is-4-tablet is-6-mobile">
+				<div class="column is-4-desktop is-4-tablet is-6-mobile">
 
 					<Navigate styles='button is-medium is-fullwidth' to='/my/act/resources/resource/{act_resource.id}'>
 						<span>{act_resource.name}</span>
