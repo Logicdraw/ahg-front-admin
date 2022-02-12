@@ -13,7 +13,7 @@ import { Navigate } from 'svelte-router-spa';
 const resources = [
 	{
 		name: 'Spring Hockey Coaches',
-		to: '/my/spring_hockey/coaches',
+		to: '/my/spring_hockey_coaches',
 	},
 	{
 		name: 'Spring Hockey Finances',
@@ -56,11 +56,11 @@ const resources = [
 </section>
 
 
-<section class="section" style="padding-bottom: 1.5rem !important;">
+<section class="section skinny-section" style="padding-bottom: 1.5rem !important;">
 
 	<div class="container is-fullwidth">
 
-		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={'...'} />
+		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={'Views:'} />
 
 		<div class="columns is-variable is-mobile is-multiline is-centered">
 

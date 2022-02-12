@@ -17,6 +17,70 @@ import { get } from 'svelte/store';
 import SvelteSeo from 'svelte-seo';
 
 
+
+
+
+async function getSeasonInstances() {
+
+	const url = ``;
+
+}
+
+
+async function getLeagueInstances() {
+
+	const url = ``;
+
+}
+
+
+async function getConferenceInstances() {
+
+	const url = ``;
+
+}
+
+
+async function getDivisionInstances() {
+
+	const url = ``;
+
+}
+
+
+async function getTeamInstances() {
+
+	const url = ``;
+	
+}
+
+
+async function getProgramInstances() {
+
+	const url = ``;
+
+}
+
+
+async function getCampInstances() {
+
+	const url = ``;
+
+}
+
+
+
+let promise = Promise.all([
+	getSeasonInstances(),
+	getLeagueInstances(),
+	getConferenceInstances(),
+	getDivisionInstances(),
+	getTeamInstances(),
+	getProgramInstances(),
+	getCampInstances(),
+]);
+
+
 </script>
 
 
@@ -26,6 +90,12 @@ import SvelteSeo from 'svelte-seo';
 
 
 
+{#await promise}
+
+<Loading />
+
+{:then data}
+
 <section class="hero bg-grey">
 
 	<div class="hero-body">
@@ -33,7 +103,7 @@ import SvelteSeo from 'svelte-seo';
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				<span>Create Group Receipts</span>
+				<span>Create Group Receipt</span>
 			</p>
 
 		</div>
@@ -43,28 +113,22 @@ import SvelteSeo from 'svelte-seo';
 </section>
 
 
-<!-- <MsgCard msg_show={true} msg_text={'...'} msg_type={'error'} msg_forever={true} /> -->
+<MsgCard msg_show={true} msg_text={'...'} msg_type={'error'} msg_forever={true} />
 
 
+<Route {currentRoute} {params} />
+
+{:catch error}
 
 <section class="section skinny-section">
 
 	<div class="container">
 
-		<div class="columns is-centered">
-
-			<div class="column is-9-desktop">
-
-				<!-- ... -->
-
-			</div>
-
-		</div>
+		<MsgCard msg_show={true} msg_text={'Error viewing data!'} msg_type={'error'} msg_forever={true} />
 
 	</div>
 
 </section>
 
-
-
+{/await}
 

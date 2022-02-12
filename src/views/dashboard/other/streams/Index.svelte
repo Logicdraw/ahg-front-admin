@@ -101,7 +101,7 @@ $: promise = getRows(url_params);
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				<span>Streams Helpers</span>
+				<span>Streams</span>
 			</p>
 
 		</div>

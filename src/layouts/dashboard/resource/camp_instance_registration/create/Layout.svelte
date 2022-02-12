@@ -88,7 +88,7 @@ let promise = Promise.all([
 	
 </section>
 
-<MsgCard msg_show={true} msg_text={'...'} msg_type={'error'} msg_forever={true} />
+<!-- <MsgCard msg_show={true} msg_text={'...'} msg_type={'error'} msg_forever={true} /> -->
 
 
 <Route {currentRoute} {params} />

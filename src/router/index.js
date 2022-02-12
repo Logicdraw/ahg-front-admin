@@ -158,7 +158,21 @@ import DashboardSpringHockeyJerseySponsorsIndex from 'views/dashboard/other/spri
 
 import DashboardLoginsIndexLayout from 'layouts/dashboard/other/logins/index/Layout.svelte';
 
+import DashboardLoginsLoginLayout from 'layouts/dashboard/other/logins/login/Layout.svelte';
+
+import DashboardLoginsMasterSearchLayout from 'layouts/dashboard/other/logins/master_search/Layout.svelte';
+
+
 import DashboardLoginsIndex from 'views/dashboard/other/logins/Index.svelte';
+
+import DashboardLoginsLogin from 'views/dashboard/other/logins/Login.svelte';
+
+import DashboardLoginsMasterSearch from 'views/dashboard/other/logins/MasterSearch.svelte';
+
+
+import DashboardMeetingSheetsIndexLayout from 'layouts/dashboard/other/meeting_sheets/index/Layout.svelte';
+
+import DashboardMeetingSheetsIndex from 'views/dashboard/other/meeting_sheets/Index.svelte';
 
 
 import DashboardReceiptCreateLayout from 'layouts/dashboard/other/receipt/create/Layout.svelte';
@@ -186,6 +200,8 @@ import DashboardSpngIndexLayout from 'layouts/dashboard/other/spng/index/Layout.
 
 import DashboardSpngFinancesIndexLayout from 'layouts/dashboard/other/spng/finances/index/Layout.svelte';
 
+import DashboardSpngManageTeamsIndexLayout from 'layouts/dashboard/other/spng/manage_teams/index/Layout.svelte';
+
 import DashboardSpngSurveysIndexLayout from 'layouts/dashboard/other/spng/surveys/index/Layout.svelte';
 
 import DashboardSpngSurveysSetupLayout from 'layouts/dashboard/other/spng/surveys/setup/Layout.svelte';
@@ -198,7 +214,9 @@ import DashboardSpngSurveysNonIntegratedIndexLayout from 'layouts/dashboard/othe
 
 import DashboardSpngIndex from 'views/dashboard/other/spng/Index.svelte';
 
-import DashboardFinancesIndex from 'views/dashboard/other/spng/finances/Index.svelte';
+import DashboardSpngFinancesIndex from 'views/dashboard/other/spng/finances/Index.svelte';
+
+import DashboardSpngManageTeamsIndex from 'views/dashboard/other/spng/manage_teams/Index.svelte';
 
 import DashboardSpngSurveysIndex from 'views/dashboard/other/spng/surveys/Index.svelte';
 
@@ -289,7 +307,13 @@ const routes = [
 							// },
 							{
 								name: 'camp_instance_registrations',
-								component: DashboardResourceCreateCampInstanceRegistrations,
+								component: DashboardResourceCreateCampInstanceRegistrationsLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardResourceCreateCampInstanceRegistrations,
+									},
+								],
 							},
 							{
 								name: 'camp_instances',
@@ -309,7 +333,13 @@ const routes = [
 							// },
 							{
 								name: 'program_instance_registrations',
-								component: DashboardResourceCreateProgramInstanceRegistrations,
+								component: DashboardResourceCreateProgramInstanceRegistrationsLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardResourceCreateProgramInstanceRegistrations,
+									},
+								],
 							},
 							{
 								name: 'program_instances',
@@ -317,7 +347,13 @@ const routes = [
 							},
 							{
 								name: 'team_instance_registrations',
-								component: DashboardResourceCreateTeamInstanceRegistrations,
+								component: DashboardResourceCreateTeamInstanceRegistrationsLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardResourceCreateTeamInstanceRegistrations,
+									},
+								],
 							},
 							{
 								name: 'team_instances',
@@ -442,101 +478,99 @@ const routes = [
 			// Other
 			{
 				name: 'adult_hockey',
-				component: DashboardAdultHockeyIndexLayout,
 				nestedRoutes: [
 					{
 						name: 'index',
 						component: DashboardAdultHockeyIndex,
 					},
-				],
-			},
-			{
-				name: 'adult_hockey/payments',
-				component: DashboardAdultHockeyPaymentsIndexLayout,
-				nestedRoutes: [
 					{
-						name: 'index',
-						component: DashboardAdultHockeyPaymentsIndex,
+						name: 'payments',
+						component: DashboardAdultHockeyPaymentsIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardAdultHockeyPaymentsIndex,
+							},
+						],
 					},
-				],
-			},
-			{
-				name: 'adult_hockey/finances_teams',
-				component: DashboardAdultHockeyFinancesTeamsIndexLayout,
-				nestedRoutes: [
 					{
-						name: 'index',
-						component: DashboardAdultHockeyFinancesTeamsIndex,
+						name: 'finances_teams',
+						component: DashboardAdultHockeyFinancesTeamsIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardAdultHockeyFinancesTeamsIndex,
+							},
+						],
 					},
-				],
-			},
-			{
-				name: 'adult_hockey/free_agents',
-				component: DashboardAdultHockeyFreeAgentsIndexLayout,
-				nestedRoutes: [
 					{
-						name: 'index',
-						component: DashboardAdultHockeyFreeAgentsIndex,
+						name: 'free_agents',
+						component: DashboardAdultHockeyFreeAgentsIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardAdultHockeyFreeAgentsIndex,
+							},
+						],
 					},
-				],
-			},
-			{
-				name: 'adult_hockey/reps',
-				component: DashboardAdultHockeyRepsIndexLayout,
-				nestedRoutes: [
 					{
-						name: 'index',
-						component: DashboardAdultHockeyRepsIndex,
+						name: 'reps',
+						component: DashboardAdultHockeyRepsIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardAdultHockeyRepsIndex,
+							},
+						],
 					},
 				],
 			},
 			{
 				name: 'spring_hockey',
-				component: DashboardSpringHockeyIndexLayout,
 				nestedRoutes: [
 					{
 						name: 'index',
 						component: DashboardSpringHockeyIndex,
 					},
-				],
-			},
-			{
-				name: 'spring_hockey/coaches',
-				component: DashboardSpringHockeyCoachesIndexLayout,
-				nestedRoutes: [
 					{
-						name: 'index',
-						component: DashboardSpringHockeyCoachesIndex,
+						name: 'coaches',
+						component: DashboardSpringHockeyCoachesIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardSpringHockeyCoachesIndex,
+							},
+						],
 					},
-				],
-			},
-			{
-				name: 'spring_hockey/finances',
-				component: DashboardSpringHockeyFinancesIndexLayout,
-				nestedRoutes: [
 					{
-						name: 'index',
-						component: DashboardSpringHockeyFinancesIndex,
+						name: 'finances',
+						component: DashboardSpringHockeyFinancesIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardSpringHockeyFinancesIndex,
+							},
+						],
 					},
-				],
-			},
-			{
-				name: 'spring_hockey/free_agents',
-				component: DashboardSpringHockeyFreeAgentsIndexLayout,
-				nestedRoutes: [
 					{
-						name: 'index',
-						component: DashboardSpringHockeyFreeAgentsIndex,
+						name: 'free_agents',
+						component: DashboardSpringHockeyFreeAgentsIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardSpringHockeyFreeAgentsIndex,
+							},
+						],
 					},
-				],
-			},
-			{
-				name: 'spring_hockey/jersey_sponsors',
-				component: DashboardSpringHockeyJerseySponsorsIndexLayout,
-				nestedRoutes: [
 					{
-						name: 'index',
-						component: DashboardSpringHockeyJerseySponsorsIndex,
+						name: 'jersey_sponsors',
+						component: DashboardSpringHockeyJerseySponsorsIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardSpringHockeyJerseySponsorsIndex,
+							},
+						],
 					},
 				],
 			},
@@ -548,52 +582,162 @@ const routes = [
 						name: 'index',
 						component: DashboardLoginsIndex,
 					},
-				],
-			},
-			{
-				name: 'alerts/one',
-				component: DashboardAlertsOneIndexLayout,
-				nestedRoutes: [
 					{
-						name: 'index',
-						component: DashboardAlertsOneIndex,
+						name: 'login/:login_id',
+						component: DashboardLoginsLoginLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardLoginsLogin,
+							},
+						],
+					},
+					{
+						name: 'master-search',
+						component: DashboardLoginsMasterSearchLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardLoginsMasterSearch,
+							},
+						],
 					},
 				],
 			},
 			{
-				name: 'alerts/sum',
-				component: DashboardAlertsSumIndexLayout,
+				name: 'meeting_sheets',
+				component: DashboardMeetingSheetsIndexLayout,
 				nestedRoutes: [
 					{
 						name: 'index',
-						component: DashboardAlertsSumIndex,
+						component: DashboardMeetingSheetsIndex,
+					},
+				],
+			},
+			{
+				name: 'alerts',
+				nestedRoutes: [
+					{
+						name: 'one',
+						component: DashboardAlertsOneIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardAlertsOneIndex,
+							},
+						],
+					},
+					{
+						name: 'sum',
+						component: DashboardAlertsSumIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardAlertsSumIndex,
+							},
+						],
 					},
 				],
 			},
 			{
 				name: 'spng',
+				// component: DashboardSpng
 				nestedRoutes: [
 					{
 						name: 'index',
 						component: DashboardSpngIndex,
 					},
 					{
+						name: 'finances',
+						component: DashboardSpngFinancesIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardSpngFinancesIndex,
+							},
+						],
+					},
+					{
+						name: 'manage_teams',
+						component: DashboardSpngManageTeamsIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardSpngManageTeamsIndex,
+							},
+						],
+					},
+					{
 						name: 'surveys',
-						component: DashboardSpngSurveysIndex,
-					}
+						component: DashboardSpngSurveysIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardSpngSurveysIndex,
+							},
+						],
+					},
+					{
+						name: 'edit',
+						component: DashboardSpngSurveysIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardSpngSurveysIndex,
+							},
+						],
+					},
+					{
+						name: 'setup',
+						component: DashboardSpngSurveysIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardSpngSurveysIndex,
+							},
+						],
+					},
+					{
+						name: 'non-integrated',
+						component: DashboardSpngSurveysNonIntegratedIndexLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardSpngSurveysNonIntegratedIndex,
+							},
+						],
+					},
 				],
 			},
 			{
 				name: 'gs',
-				component: DashboardGamesheetIndex,
+				// ...
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardGamesheetIndex,
+					},
+				],
 			},
 			{
 				name: 'streams',
-				component: DashboardStreamsIndex,
+				// ...
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardStreamsIndex,
+					},
+				],
 			},
 			{
 				name: 'settings',
-				component: DashboardSettingsIndex,
+				// ...
+				nestedRoutes: [
+					{
+						name: 'index',
+						component: DashboardSettingsIndex,
+					},
+				],
 			},
 		],
 	},

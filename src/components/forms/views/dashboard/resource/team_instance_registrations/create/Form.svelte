@@ -3,10 +3,10 @@ export let msg_show;
 export let msg_text;
 export let msg_type;
 
-export let conference_instances;
-export let division_instances;
-export let team_instances;
-export let players;
+export let conference_instances = [];
+export let division_instances = [];
+export let team_instances = [];
+export let players = [];
 
 
 
@@ -544,7 +544,7 @@ form {
 
 	</div>
 
-	<br>
+	<!-- <br>
 
 	<div class="field">
 
@@ -560,7 +560,7 @@ form {
 
 		</div>
 
-	</div>
+	</div> -->
 
 	<br>
 
@@ -777,6 +777,9 @@ form {
 	<br>
 
 	<!-- if spring hockey -->
+
+	<MsgCard msg_text={'Jersey Sponsors'} />
+
 
 	<!-- jersey sponsors -->
 	{#each $form.jersey_sponsors as jersey_sponsor, i}

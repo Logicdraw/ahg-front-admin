@@ -149,7 +149,7 @@ $: promise = getRows(url_params);
 
 	<div class="container">
 
-		<MsgCard msg_show={true} msg_text={'Error viewing data!'} msg_type={'error'} msg_forever={true} />
+		<MsgCard msg_show={true} msg_text={error.detail} msg_type={'error'} msg_forever={true} />
 
 	</div>
 

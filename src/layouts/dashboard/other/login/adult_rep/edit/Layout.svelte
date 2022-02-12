@@ -94,6 +94,8 @@ let promise = Promise.all([
 </style>
 
 
+<!-- resend. -->
+
 
 {#await promise}
 

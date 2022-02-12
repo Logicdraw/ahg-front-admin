@@ -34,6 +34,13 @@ if (!params) {
 
 
 
+async function getSpngSurveyQuestionElements() {
+
+	const url = ``;
+
+}
+
+
 async function getSeasonInstances() {
 
 	const url = ``;
@@ -85,6 +92,7 @@ async function getCampInstances() {
 
 
 let promise = Promise.all([
+	getSpngSurveyQuestionElements(),
 	getSeasonInstances(),
 	getLeagueInstances(),
 	getConferenceInstances(),

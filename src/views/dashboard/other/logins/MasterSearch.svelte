@@ -5,9 +5,9 @@ export let params;
 import MsgCard from 'components/elements/MsgCard.svelte';
 import Loading from 'components/elements/Loading.svelte';
 
-import MasterSearchFilter from 'components/elements/views/dashboard/logins/master_search/Filter.svelte';
+// import MasterSearchFilter from 'components/elements/views/dashboard/logins/master_search/Filter.svelte';
 
-import Table from 'components/elements/views/dashboard/logins/login/Table.svelte';
+// import Table from 'components/elements/views/dashboard/logins/login/Table.svelte';
 
 
 import { Navigate } from 'svelte-router-spa';
@@ -146,7 +146,7 @@ logins_info.forEach((login_info) => {
 
 	<div class="container is-fullwidth">
 
-		<MasterSearchFilter bind:q={q} />
+		<!-- <MasterSearchFilter bind:q={q} /> -->
 
 	</div>
 
@@ -157,7 +157,7 @@ logins_info.forEach((login_info) => {
 
 	<div class="container is-fullwidth">
 
-		<MasterSearchFilter />
+		<!-- <MasterSearchFilter /> -->
 
 	</div>
 

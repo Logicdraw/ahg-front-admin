@@ -140,7 +140,7 @@ import { act_resources_info } from 'utils/act_resources.js';
 
 
 
-				<div class="navbar-item has-dropdown is-hoverable" style="z-index: 100;">
+				<!-- <div class="navbar-item has-dropdown is-hoverable" style="z-index: 100;">
 
 
 					<a class="navbar-link">
@@ -160,7 +160,7 @@ import { act_resources_info } from 'utils/act_resources.js';
 					</div>
 
 
-				</div>
+				</div> -->
 
 
 				<Navigate styles="navbar-item" to="/my/forms" on:click={closeActive}>
@@ -205,8 +205,12 @@ import { act_resources_info } from 'utils/act_resources.js';
 							<span>Alerts Helpers</span>
 						</Navigate>
 
+						<Navigate to='/my/meeting_sheets' styles='navbar-item' on:click={closeActive}>
+							<span>Meeting Sheets</span>
+						</Navigate>
+
 						<Navigate to='/my/streams' styles='navbar-item' on:click={closeActive}>
-							<span>Streams Helpers</span>
+							<span>Streams</span>
 						</Navigate>
 
 					</div>

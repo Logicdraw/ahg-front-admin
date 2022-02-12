@@ -64,12 +64,50 @@ async function getLeagueInstances() {
 }
 
 
+
+async function getConferenceInstances() {
+
+	let url_params = {
+		season_instance_id: '2',
+		order_by_label: 'id',
+		order_by_dir: 'desc',
+		limit: 100000,
+	}
+
+	let params_string = new URLSearchParams(url_params).toString();
+
+	const url = `${admin_api_url}/_resources/_programs/_team_instance/conference-instances?${params_string}`;
+
+	const resp = await fetch(url, {
+		method: 'GET',
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
+	});
+
+	const result = await resp.json();
+
+	if (!resp.ok) {
+		throw new Error(result.detail);
+	}
+
+	params['conference_instances'] = result;
+
+	console.log(result);
+
+	return result;
+
+}
+
+
+
 async function getDivisionInstances() {
 
 	let url_params = {
 		season_instance_id: '2',
+		order_by_label: 'id',
+		order_by_dir: 'desc',
 		limit: 10000,
-		order_by_label: 'league_instance_id',
 	}
 
 	let params_string = new URLSearchParams(url_params).toString();
@@ -100,6 +138,7 @@ async function getDivisionInstances() {
 
 let promise = Promise.all([
 	getLeagueInstances(),
+	// getConferenceInstances(),
 	getDivisionInstances(),
 ]);
 

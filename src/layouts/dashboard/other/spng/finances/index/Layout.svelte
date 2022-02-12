@@ -42,7 +42,11 @@ let promise = Promise.all([
 
 {:then data}
 
-<!-- msgcard -->
+
+<MsgCard msg_show={true} msg_text={'...'} msg_type={'error'} msg_forever={true} />
+
+
+<Route {currentRoute} {params} />
 
 {:catch error}
 

@@ -135,6 +135,7 @@ $: promise = getRows(url_params);
 
 		{:else}
 
+			<!-- cols: teams, divisions, registered, paid_in_full, paid_somewhat, total_owing -->
 			<Table {rows} />
 
 		{/if}

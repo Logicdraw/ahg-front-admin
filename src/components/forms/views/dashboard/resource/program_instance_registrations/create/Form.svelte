@@ -3,8 +3,8 @@ export let msg_show;
 export let msg_text;
 export let msg_type;
 
-export let program_instances;
-export let players;
+export let program_instances = [];
+export let players = [];
 
 
 const program_instances_values = [];
@@ -102,7 +102,7 @@ const {
 		program_instances_ids: [],
 		player_id: '',
 
-		placed_at_datetime: '',
+		// placed_at_datetime: '',
 
 		comment: '',
 		coaches_comment: '',
@@ -126,9 +126,9 @@ const {
 			.number()
 			.required('Player(s) required!'),
 
-		placed_at_datetime: yup
-			.string()
-			.nullable(),
+		// placed_at_datetime: yup
+		// 	.string()
+		// 	.nullable(),
 
 		comment: yup
 			.string()
@@ -307,7 +307,7 @@ form {
 
 	<br>
 
-	<div class="field">
+	<!-- <div class="field">
 
 		<div class="control">
 
@@ -323,7 +323,7 @@ form {
 
 	</div>
 
-	<br>
+	<br> -->
 
 	<div class="field">
 
@@ -527,6 +527,14 @@ form {
 		</div>
 
 	</div>
+
+	<br>
+
+	<!-- MsgCard -->
+	<MsgCard msg_text={'Grouping'} />
+	<!-- with link -->
+
+	<!-- ... -->
 
 	<br>
 

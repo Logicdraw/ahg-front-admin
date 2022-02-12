@@ -21,7 +21,7 @@ $: id_key = login_info.id_key;
 
 import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
-import Tabs from 'components/elements/views/dashboard/logins/login/Tabs.svelte';
+import Tabs from 'components/elements/views/dashboard/other/logins/login/Tabs.svelte';
 
 import Table from 'components/elements/views/dashboard/other/logins/login/Tabs.svelte';
 import Filter from 'components/elements/views/dashboard/other/logins/login/Filter.svelte';

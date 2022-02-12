@@ -3,7 +3,7 @@ export let url_params;
 export let at_last_page;
 
 
-import FilterModal from 'components/elements/views/dashboard/logins/login/modals/Filter.svelte';
+// import FilterModal from 'components/elements/views/dashboard/logins/login/modals/Filter.svelte';
 
 
 let filter_modal_is_active = false;
@@ -35,7 +35,7 @@ function goToNextPage() {
 </style>
 
 
-<FilterModal {url_params} bind:filter_modal_is_active={filter_modal_is_active} />
+<!-- <FilterModal {url_params} bind:filter_modal_is_active={filter_modal_is_active} /> -->
 
 
 

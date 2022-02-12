@@ -37,7 +37,7 @@ import MsgCard from 'components/elements/MsgCard.svelte';
 
 
 
-<section class="section">
+<section class="section skinny-section">
 
 	<div class="container is-fullwidth">
 
@@ -70,7 +70,7 @@ import MsgCard from 'components/elements/MsgCard.svelte';
 
 
 
-<section class="section">
+<section class="section skinny-section">
 
 	<div class="container is-fullwidth">
 

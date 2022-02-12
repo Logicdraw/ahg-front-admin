@@ -3,9 +3,9 @@ export let params;
 export let login_id;
 export let login_has_create_form;
 
-import ExportModal from 'components/elements/views/dashboard/logins/login/modals/Export.svelte';
-import SelectColumnsModal from 'components/elements/views/dashboard/logins/login/modals/SelectColumns.svelte';
-import FilterModal from 'components/elements/views/dashboard/logins/login/modals/Filter.svelte';
+// import ExportModal from 'components/elements/views/dashboard/logins/login/modals/Export.svelte';
+// import SelectColumnsModal from 'components/elements/views/dashboard/logins/login/modals/SelectColumns.svelte';
+// import FilterModal from 'components/elements/views/dashboard/logins/login/modals/Filter.svelte';
 
 
 import { Navigate } from 'svelte-router-spa';
@@ -25,9 +25,9 @@ let select_columns_modal_is_active = false;
 
 
 
-<ExportModal bind:export_modal_is_active {params} />
+<!-- <ExportModal bind:export_modal_is_active {params} /> -->
 
-<SelectColumnsModal bind:select_columns_modal_is_active />
+<!-- <SelectColumnsModal bind:select_columns_modal_is_active /> -->
 
 
 <div>

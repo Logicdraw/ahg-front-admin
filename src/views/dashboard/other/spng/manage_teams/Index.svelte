@@ -6,10 +6,10 @@ import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 
 
-import Filter from 'components/elements/views/dashboard/other/spng/manage_teams/Filter.svelte';
-import Tabs from 'components/elements/views/dashboard/other/spng/manage_teams/Tabs.svelte';
+// import Filter from 'components/elements/views/dashboard/other/spng/manage_teams/Filter.svelte';
+// import Tabs from 'components/elements/views/dashboard/other/spng/manage_teams/Tabs.svelte';
 
-import Table from 'components/elements/views/dashboard/other/spng/manage_teams/Table.svelte';
+// import Table from 'components/elements/views/dashboard/other/spng/manage_teams/Table.svelte';
 
 
 import { auth } from 'store/index.js';
@@ -128,7 +128,7 @@ $: promise = getRows(url_params);
 
 	<div class="container is-fullwidth">
 
-		<Tabs {params} />
+		<!-- <Tabs {params} /> -->
 
 	</div>
 
@@ -139,7 +139,7 @@ $: promise = getRows(url_params);
 
 	<div class="container is-fullwidth">
 
-		<Filter bind:params={params} {at_last_page} />
+		<!-- <Filter bind:params={params} {at_last_page} /> -->
 
 	</div>
 
@@ -174,7 +174,7 @@ $: promise = getRows(url_params);
 
 		{:else}
 
-			<Table {rows} />
+			<!-- <Table {rows} /> -->
 			<!-- -- -- -->
 
 		{/if}

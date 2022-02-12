@@ -17,7 +17,70 @@ import { get } from 'svelte/store';
 import SvelteSeo from 'svelte-seo';
 
 
-// ...
+
+
+
+
+async function getSeasonInstances() {
+
+	const url = ``;
+
+}
+
+
+async function getLeagueInstances() {
+
+	const url = ``;
+
+}
+
+
+async function getConferenceInstances() {
+
+	const url = ``;
+
+}
+
+
+async function getDivisionInstances() {
+
+	const url = ``;
+
+}
+
+
+async function getTeamInstances() {
+
+	const url = ``;
+	
+}
+
+
+async function getProgramInstances() {
+
+	const url = ``;
+
+}
+
+
+async function getCampInstances() {
+
+	const url = ``;
+
+}
+
+
+
+let promise = Promise.all([
+	getSeasonInstances(),
+	getLeagueInstances(),
+	getConferenceInstances(),
+	getDivisionInstances(),
+	getTeamInstances(),
+	getProgramInstances(),
+	getCampInstances(),
+]);
+
 
 </script>
 
@@ -41,7 +104,7 @@ import SvelteSeo from 'svelte-seo';
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				<span>Edit Group Receipts</span>
+				<span>Edit Group Receipt</span>
 			</p>
 
 		</div>

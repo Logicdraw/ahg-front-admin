@@ -713,11 +713,15 @@ form {
 
 .selectContainer {
 	font-family: 'Inter' !important;
+	/*border: 1px solid var(--border) !important;*/
 }
 
 .selectContainer input {
 	font-family: 'Inter' !important;
+}
 
+.selectContainer.multiSelect {
+	border: 1px solid var(--border) !important;
 }
 
 .selectContainer:not(.multiSelect) input {

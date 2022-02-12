@@ -6,7 +6,9 @@ import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 // import Form from 'components/forms/views/dashboard/settings/Form.svelte';
 
-import Filter from 'components/elements/views/dashboard/file_templates/created/Filter.svelte';
+import Filter from 'components/elements/views/dashboard/file_templates/custom/Filter.svelte';
+import Tabs from 'components/elements/views/dashboard/file_templates/custom/Tabs.svelte';
+
 
 import SvelteSeo from 'svelte-seo';
 
@@ -34,7 +36,7 @@ const token = get(auth).token;
 
 let abort_controller = new AbortController();
 
-async function getCreatedFileTemplates(params) {
+async function getCustomFileTemplates(params) {
 
 	abort_controller.abort();
 
@@ -44,7 +46,7 @@ async function getCreatedFileTemplates(params) {
 
 	let params_string = new URLSearchParams(cleaned_params).toString();
 
-	const url = `${admin_api_url}/files/templates?${params_string}`;
+	const url = `${admin_api_url}/_file_templates/custom-file-templates?${params_string}`;
 
 	try {
 
@@ -81,12 +83,15 @@ async function getCreatedFileTemplates(params) {
 
 
 
-let params = {
+let url_params = {
 	q: '',
+	// --
+	limit: 50,
 	offset: 0,
 }
 
-$: promise = getCreatedFileTemplates(params);
+$: promise = getCustomFileTemplates(url_params);
+
 
 </script>
 
@@ -104,7 +109,7 @@ $: promise = getCreatedFileTemplates(params);
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				<span>Created File Templates</span>
+				<span>Custom File Templates</span>
 			</p>
 
 		</div>
@@ -114,11 +119,24 @@ $: promise = getCreatedFileTemplates(params);
 </section>
 
 
+
 <section class="section skinny-section">
 
 	<div class="container is-fullwidth">
 
-		<Filter bind:params={params} />
+		<!-- <Tabs {params} /> -->
+
+	</div>
+
+</section>
+
+
+
+<section class="section skinny-section">
+
+	<div class="container is-fullwidth">
+
+		<!-- <Filter bind:params={params} /> -->
 
 	</div>
 

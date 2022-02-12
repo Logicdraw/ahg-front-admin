@@ -5,6 +5,7 @@ export let params;
 import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 
+
 import { Route } from 'svelte-router-spa';
 
 
@@ -32,26 +33,48 @@ if (!params) {
 
 
 
+async function getSeasonInstances() {
 
-async function getProgramInstances() {
+	const url = ``;
+
+}
+
+
+async function getLeagueInstances() {
 
 	const url = ``;
 
 }
 
 
-async function getPlayers() {
+async function getConferenceInstances() {
 
 	const url = ``;
 
 }
 
+
+async function getDivisionInstances() {
+
+	const url = ``;
+
+}
+
+
+async function getTeamInstances() {
+
+	const url = ``;
+	
+}
 
 
 
 let promise = Promise.all([
-	getProgramInstances(),
-	getPlayers(),
+	getSeasonInstances(),
+	getLeagueInstances(),
+	getConferenceInstances(),
+	getDivisionInstances(),
+	getTeamInstances(),
 ]);
 
 
@@ -61,7 +84,6 @@ let promise = Promise.all([
 <style>
 
 </style>
-
 
 
 {#await promise}
@@ -77,7 +99,7 @@ let promise = Promise.all([
 		<div class="container">
 
 			<p class="hero-subtitle has-text-centered">
-				<span>Create Program Registration</span>
+				<span>Spring Hockey Independently Registered Players</span>
 			</p>
 
 		</div>
@@ -86,7 +108,7 @@ let promise = Promise.all([
 	
 </section>
 
-<!-- <MsgCard msg_show={true} msg_text={'...'} msg_type={'error'} msg_forever={true} /> -->
+<MsgCard msg_show={true} msg_text={'...'} msg_type={'error'} msg_forever={true} />
 
 
 <Route {currentRoute} {params} />
@@ -104,8 +126,6 @@ let promise = Promise.all([
 </section>
 
 {/await}
-
-
 
 
 
