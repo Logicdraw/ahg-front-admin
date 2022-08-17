@@ -56,6 +56,7 @@ const aliases = alias({
 		{ find: 'views', replacement: 'src/views' },
 		{ find: 'store', replacement: 'src/store' },
 		{ find: 'utils', replacement: 'src/utils' },
+		{ find: 'data', replacement: 'src/data' },
 	]
 });
 

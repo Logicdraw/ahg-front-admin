@@ -209,6 +209,10 @@ import { act_resources_info } from 'utils/act_resources.js';
 							<span>Meeting Sheets</span>
 						</Navigate>
 
+						<Navigate to='/my/loyalty' styles='navbar-item' on:click={closeActive}>
+							<span>Loyalty Helpers</span>
+						</Navigate>
+
 						<Navigate to='/my/streams' styles='navbar-item' on:click={closeActive}>
 							<span>Streams</span>
 						</Navigate>

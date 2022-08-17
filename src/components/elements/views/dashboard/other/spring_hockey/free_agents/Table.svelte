@@ -9,29 +9,6 @@ import TableRow from 'components/elements/views/dashboard/other/spring_hockey/fr
 
 <style>
 
-.table {
-	border: 1px solid var(--border);
-}
-
-@media screen and (max-width: 768px) {
-	.table {
-		display: none !important;
-	}
-}
-
-thead {
-	background: var(--bg-light) !important;
-}
-
-td .arrow-divider {
-	margin-left: 0.325rem !important;
-	margin-right: 0.325rem !important;
-}
-
-td .arrow-divider:last-child {
-	display: none !important;
-}
-
 </style>
 
 

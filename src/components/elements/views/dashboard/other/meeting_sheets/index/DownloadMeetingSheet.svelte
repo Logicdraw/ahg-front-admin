@@ -43,6 +43,7 @@ async function downloadMeetingSheet() {
 
 
 		if (!resp.ok) {
+			alert('Error! Try again later.');
 			throw new Error('Error!');
 		}
 
@@ -51,11 +52,14 @@ async function downloadMeetingSheet() {
 
 		download(result, `${meeting_sheet.slug}.xlsx`, `xlsx`);
 
+		alert('Download initiated!');
+
 	} catch(err) {
 
 		if (err.name === 'AbortError') {
 			return;
 		}
+
 
 		throw err;
 

@@ -6,16 +6,16 @@ export let params;
 import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 
-
-import { Route } from 'svelte-router-spa';
-
-
-import { auth } from 'store/index.js';
+import ErrorSection from 'components/elements/ErrorSection.svelte';
+import Hero from 'components/elements/Hero.svelte';
 
 
-import { get } from 'svelte/store';
-import SvelteSeo from 'svelte-seo';
+import { token } from 'utils/token/index.js';
 
+import { fetchHelper } from 'utils/api/index.js';
+
+
+const admin_api_url = app_.env.ADMIN_API_URL;
 
 
 if (!params) {
@@ -23,41 +23,47 @@ if (!params) {
 }
 
 
-const admin_api_url = app_.env.ADMIN_API_URL;
 
-const token = get(auth).token;
-
-
-
-
-
-async function getAdultCommishes() {
-
-	const url = ``;
-
-}
+const adult_commishes_logins_url = `${admin_api_url}/_other/_logins/adult-commishes`;
+const adult_commishes_logins_url_params = {
+	order_by_label: 'email',
+	order_by_dir: 'asc',
+};
 
 
-async function getSeasonInstances() {
+const season_instances_url = `${admin_api_url}/_other/_login/_adult_commish/season-instances`;
+const season_instances_url_params = {
+	order_by_label: 'seasons_sc.name',
+	order_by_dir: 'asc',
+};
 
-	const url = ``;
 
-}
+const league_instances_url = `${admin_api_url}/_other/_login/_adult_commish/league-instances`;
+const league_instances_url_params = {
+	order_by_label: 'leagues_sc.name',
+	order_by_dir: 'asc',
+};
 
-
-async function getLeagueInstances() {
-
-	const url = ``;
-
-}
 
 
 
 
 let promise = Promise.all([
-	getAdultCommishes(),
-	getSeasonInstances(),
-	getLeagueInstances(),
+	fetchHelper(
+		adult_commishes_logins_url,
+		adult_commishes_logins_url_params,
+		init,
+	),
+	fetchHelper(
+		season_instances_url,
+		season_instances_url_params,
+		init,
+	),
+	fetchHelper(
+		league_instances_url,
+		league_instances_url_params,
+		init,
+	),
 ]);
 
 
@@ -93,22 +99,17 @@ let promise = Promise.all([
 
 </section>
 
-<MsgCard msg_show={true} msg_text={'...'} msg_type={'error'} msg_forever={true} />
 
-
-<Route {currentRoute} {params} />
+<Route {currentRoute} params={{
+	...params,
+	...{'adult_commishes_logins': data[0]},
+	...{'season_instances': data[1]},
+	...{'league_instances': data[2]},
+}} />
 
 {:catch error}
 
-<section class="section skinny-section">
-
-	<div class="container">
-
-		<MsgCard msg_show={true} msg_text={'Error viewing data!'} msg_type={'error'} msg_forever={true} />
-
-	</div>
-
-</section>
+<ErrorSection {error} />
 
 {/await}
 

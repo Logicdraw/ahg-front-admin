@@ -733,3 +733,58 @@ form {
 	border: 1px solid var(--border) !important;
 }
 
+
+
+
+.table {
+	border: 1px solid var(--border) !important;
+}
+
+@media screen and (max-width: 768px) {
+	.table {
+		display: none !important;
+	}
+}
+
+thead {
+	background: var(--bg-light) !important;
+}
+
+td .arrow-divider {
+	margin-left: 0.325rem !important;
+	margin-right: 0.325rem !important;
+}
+
+td .arrow-divider:last-child {
+	display: none !important;
+}
+
+
+
+
+.table tr:hover {
+	cursor: pointer;
+}
+
+.table-card span.id {
+	text-decoration: underline;
+	color: var(--text-grey);
+	/*font-weight: 500;*/
+}
+
+.table-card {
+	margin-bottom: 1.5rem;
+}
+
+.table-card .columns {
+	margin-bottom: 0.75rem !important;
+	padding-bottom: 0.25rem !important;
+	border-bottom: 1px solid var(--border-light);
+	margin-bottom: 1rem;
+}
+
+.table-card .columns:last-child {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+	
+
