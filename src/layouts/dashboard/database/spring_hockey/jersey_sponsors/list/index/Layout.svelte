@@ -38,23 +38,23 @@ const init = {
 
 
 
-const season_instances_url = `${admin_api_url}/_database/_spring_hockey/_jersey_sponsors/season-instances`;
+const season_instances_url = `${admin_api_url}/_database/_spring_hockey/_jersey_sponsors/_list/season-instances`;
 const season_instances_url_params = {};
 
 
-const league_instances_url = `${admin_api_url}/_database/_spring_hockey/_jersey_sponsors/league-instances`;
+const league_instances_url = `${admin_api_url}/_database/_spring_hockey/_jersey_sponsors/_list/league-instances`;
 const league_instances_url_params = {};
 
 
-const conference_instances_url = `${admin_api_url}/_database/_spring_hockey/_jersey_sponsors/conference-instances`;
+const conference_instances_url = `${admin_api_url}/_database/_spring_hockey/_jersey_sponsors/_list/conference-instances`;
 const conference_instances_url_params = {};
 
 
-const division_instances_url = `${admin_api_url}/_database/_spring_hockey/_jersey_sponsors/division-instances`;
+const division_instances_url = `${admin_api_url}/_database/_spring_hockey/_jersey_sponsors/_list/division-instances`;
 const division_instances_url_params = {};
 
 
-const team_instances_url = `${admin_api_url}/_database/_spring_hockey/_jersey_sponsors/team-instances`;
+const team_instances_url = `${admin_api_url}/_database/_spring_hockey/_jersey_sponsors/_list/team-instances`;
 const team_instances_url_params = {};
 
 

@@ -1,4 +1,3 @@
-
 // Auth
 
 import AuthLayout from 'layouts/auth/Layout.svelte';
@@ -13,231 +12,462 @@ import AuthPasswordReset from 'views/auth/password/Reset.svelte';
 
 
 
+
+
 // Dashboard
 
 import DashboardLayout from 'layouts/dashboard/Layout.svelte';
 
 
-import DashboardResourcesIndex from 'views/dashboard/resources/Index.svelte';
 
-import DashboardResourcesMasterSearch from 'views/dashboard/resources/MasterSearch.svelte';
-// 
 
-import DashboardResourcesResource from 'views/dashboard/resources/Resource.svelte';
+// ACT Archive
 
+import DashboardACTArchiveCoachesListLayout from 'layouts/dashboard/act_archive/coaches/list/Layout.svelte';
 
-// import DashboardResourceCreateLayout from 'layouts/dashboard/resource/create/Layout.svelte';
-import DashboardResourceCreateCampInstanceRegistrationsLayout from 'layouts/dashboard/resource/camp_instance_registration/create/Layout.svelte';
-import DashboardResourceCreateCampInstancesLayout from 'layouts/dashboard/resource/camp_instance/create/Layout.svelte';
-import DashboardResourceCreateProgramInstanceRegistrationsLayout from 'layouts/dashboard/resource/program_instance_registration/create/Layout.svelte';
-import DashboardResourceCreateProgramInstancesLayout from 'layouts/dashboard/resource/program_instance/create/Layout.svelte';
-import DashboardResourceCreateTeamInstanceRegistrationsLayout from 'layouts/dashboard/resource/team_instance_registration/create/Layout.svelte';
-import DashboardResourceCreateTeamInstancesLayout from 'layouts/dashboard/resource/team_instance/create/Layout.svelte';
+import DashboardACTArchiveCoachViewLayout from 'layouts/dashboard/act_archive/coaches/coach/view/Layout.svelte';
 
 
-// import DashboardResourceCreateAdultReps from 'views/dashboard/resource/adult_reps/Create.svelte';
-import DashboardResourceCreateCampInstanceRegistrations from 'views/dashboard/resource/camp_instance_registrations/Create.svelte';
-import DashboardResourceCreateCampInstances from 'views/dashboard/resource/camp_instances/Create.svelte';
-// import DashboardResourceCreateCoaches from 'views/dashboard/resource/coaches/Create.svelte';
-// import DashboardResourceCreateGuardians from 'views/dashboard/resource/guardians/Create.svelte';
-// import DashboardResourceCreatePlayers from 'views/dashboard/resource/players/Create.svelte';
-import DashboardResourceCreateProgramInstanceRegistrations from 'views/dashboard/resource/program_instance_registrations/Create.svelte';
-import DashboardResourceCreateProgramInstances from 'views/dashboard/resource/program_instances/Create.svelte';
-import DashboardResourceCreateTeamInstanceRegistrations from 'views/dashboard/resource/team_instance_registrations/Create.svelte';
-import DashboardResourceCreateTeamInstances from 'views/dashboard/resource/team_instances/Create.svelte';
 
+import DashboardACTArchiveHockeySchoolRegistrationsListLayout from 'layouts/dashboard/act_archive/hockey_school_registrations/list/Layout.svelte';
 
-// import DashboardResourceEditLayout from 'layouts/dashboard/resource/edit/Layout.svelte';
-import DashboardResourceEditCampInstanceRegistrationsLayout from 'layouts/dashboard/resource/camp_instance_registration/edit/Layout.svelte';
-import DashboardResourceEditCampInstancesLayout from 'layouts/dashboard/resource/camp_instance/edit/Layout.svelte';
-import DashboardResourceEditProgramInstanceRegistrationsLayout from 'layouts/dashboard/resource/program_instance_registration/edit/Layout.svelte';
-import DashboardResourceEditProgramInstancesLayout from 'layouts/dashboard/resource/program_instance/edit/Layout.svelte';
-import DashboardResourceEditTeamInstanceRegistrationsLayout from 'layouts/dashboard/resource/team_instance_registration/edit/Layout.svelte';
-import DashboardResourceEditTeamInstancesLayout from 'layouts/dashboard/resource/team_instance/edit/Layout.svelte';
+import DashboardACTArchiveHockeySchoolRegistrationViewLayout from 'layouts/dashboard/act_archive/hockey_school_registrations/hockey_school_registration/view/Layout.svelte';
 
 
-// import DashboardResourceEditAdultReps from 'views/dashboard/resource/adult_reps/Edit.svelte';
-import DashboardResourceEditCampInstanceRegistrations from 'views/dashboard/resource/camp_instance_registrations/Edit.svelte';
-import DashboardResourceEditCampInstances from 'views/dashboard/resource/camp_instances/Edit.svelte';
-// import DashboardResourceEditCoaches from 'views/dashboard/resource/coaches/Edit.svelte';
-// import DashboardResourceEditGuardians from 'views/dashboard/resource/guardians/Edit.svelte';
-// import DashboardResourceEditPlayers from 'views/dashboard/resource/players/Edit.svelte';
-import DashboardResourceEditProgramInstanceRegistrations from 'views/dashboard/resource/program_instance_registrations/Edit.svelte';
-import DashboardResourceEditProgramInstances from 'views/dashboard/resource/program_instances/Edit.svelte';
-import DashboardResourceEditTeamInstanceRegistrations from 'views/dashboard/resource/team_instance_registrations/Edit.svelte';
-import DashboardResourceEditTeamInstances from 'views/dashboard/resource/team_instances/Edit.svelte';
 
+import DashboardACTArchiveSpringHockeyRegistrationsListLayout from 'layouts/dashboard/act_archive/spring_hockey_registrations/list/Layout.svelte';
 
+import DashboardACTArchiveSpringHockeyRegistrationViewLayout from 'layouts/dashboard/act_archive/spring_hockey_registrations/spring_hockey_registration/view/Layout.svelte';
 
-// ACT
 
-import DashboardACTResourcesResource from 'views/dashboard/act/resources/Resource.svelte';
 
 
-import DashboardACTResourcesMasterSearch from 'views/dashboard/act/resources/MasterSearch.svelte';
+// Database
 
 
-import DashboardACTResourceCoachesView from 'views/dashboard/act/resource/coaches/View.svelte';
-import DashboardACTResourceHockeySchoolRegistrationsView from 'views/dashboard/act/resource/hockey_school_registrations/View.svelte';
-import DashboardACTResourceSpringHockeyRegistrationsView from 'views/dashboard/act/resource/spring_hockey_registrations/View.svelte';
+import DashboardDatabase_DashboardIndexLayout from 'layouts/dashboard/database/_dashboard/index/Layout.svelte';
 
 
 
 
-// Files
+import DashboardDatabaseAdultHockeyIndexLayout from 'layouts/dashboard/database/adult_hockey/index/Layout.svelte';
 
-import DashboardFileTemplatesCreatedIndex from 'views/dashboard/file_templates/created/Index.svelte';
 
-import DashboardFileTemplatesCustomIndex from 'views/dashboard/file_templates/custom/Index.svelte';
+import DashboardDatabaseAdultHockeyCommishesIndexLayout from 'layouts/dashboard/database/adult_hockey/commishes/index/Layout.svelte';
 
-import DashboardFileTemplatesCreatedCreate from 'views/dashboard/file_templates/created/Create.svelte';
 
+import DashboardDatabaseAdultHockeyFinancesTeamsIndexLayout from 'layouts/dashboard/database/adult_hockey/finances_teams/index/Layout.svelte';
 
-// File
 
-import DashboardFileTemplateCreatedEdit from 'views/dashboard/file_template/created/Edit.svelte';
+import DashboardDatabaseAdultHockeyFreeAgentsIndexLayout from 'layouts/dashboard/database/adult_hockey/free_agents/index/Layout.svelte';
 
 
+import DashboardDatabaseAdultHockeyRepsIndexLayout from 'layouts/dashboard/database/adult_hockey/reps/index/Layout.svelte';
 
 
-// Other
+import DashboardDatabaseAdultHockeyTeamInstancesIndexLayout from 'layouts/dashboard/database/adult_hockey/team_instances/index/Layout.svelte';
 
-import DashboardAdultHockeyIndexLayout from 'layouts/dashboard/other/adult_hockey/index/Layout.svelte';
 
-import DashboardAdultHockeyFinancesTeamsIndexLayout from 'layouts/dashboard/other/adult_hockey/finances_teams/index/Layout.svelte';
+import DashboardDatabaseAdultHockeyLeagueInstancesIndexLayout from 'layouts/dashboard/database/adult_hockey/league_instances/index/Layout.svelte';
 
-import DashboardAdultHockeyFreeAgentsIndexLayout from 'layouts/dashboard/other/adult_hockey/free_agents/index/Layout.svelte';
 
-import DashboardAdultHockeyPaymentsIndexLayout from 'layouts/dashboard/other/adult_hockey/payments/index/Layout.svelte';
+import DashboardDatabaseAdultHockeyMeetingSheetsIndexLayout from 'layouts/dashboard/database/adult_hockey/meeting_sheets/index/Layout.svelte';
 
-import DashboardAdultHockeyRepsIndexLayout from 'layouts/dashboard/other/adult_hockey/reps/index/Layout.svelte';
 
 
-import DashboardAdultHockeyIndex from 'views/dashboard/other/adult_hockey/Index.svelte';
+import DashboardDatabaseGuardiansIndexLayout from 'layouts/dashboard/database/guardians/index/Layout.svelte';
 
-import DashboardAdultHockeyFinancesTeamsIndex from 'views/dashboard/other/adult_hockey/finances_teams/Index.svelte';
 
-import DashboardAdultHockeyFreeAgentsIndex from 'views/dashboard/other/adult_hockey/free_agents/Index.svelte';
+import DashboardDatabaseGuardiansListIndexLayout from 'layouts/dashboard/database/guardians/list/index/Layout.svelte';
 
-import DashboardAdultHockeyPaymentsIndex from 'views/dashboard/other/adult_hockey/payments/Index.svelte';
 
-import DashboardAdultHockeyRepsIndex from 'views/dashboard/other/adult_hockey/reps/Index.svelte';
+import DashboardDatabaseGuardianEditLayout from 'layouts/dashboard/database/guardians/guardian/edit/Layout.svelte';
 
+import DashboardDatabaseGuardianPlayersLayout from 'layouts/dashboard/database/guardians/guardian/players/Layout.svelte';
 
-import DashboardAlertsOneIndexLayout from 'layouts/dashboard/other/alerts/one/index/Layout.svelte';
+import DashboardDatabaseGuardianCampInstancesLayout from 'layouts/dashboard/database/guardians/guardian/camp_instances/Layout.svelte';
 
-import DashboardAlertsSumIndexLayout from 'layouts/dashboard/other/alerts/sum/index/Layout.svelte';
+import DashboardDatabaseGuardianProgramInstancesLayout from 'layouts/dashboard/database/guardians/guardian/program_instances/Layout.svelte';
 
+import DashboardDatabaseGuardianTeamInstancesLayout from 'layouts/dashboard/database/guardians/guardian/team_instances/Layout.svelte';
 
-import DashboardAlertsOneIndex from 'views/dashboard/other/alerts/one/Index.svelte';
 
-import DashboardAlertsSumIndex from 'views/dashboard/other/alerts/sum/Index.svelte';
 
+import DashboardDatabasePlayersIndexLayout from 'layouts/dashboard/database/players/index/Layout.svelte';
 
-import DashboardSpringHockeyIndexLayout from 'layouts/dashboard/other/spring_hockey/index/Layout.svelte';
 
-import DashboardSpringHockeyCoachesIndexLayout from 'layouts/dashboard/other/spring_hockey/coaches/index/Layout.svelte';
+import DashboardDatabasePlayersListIndexLayout from 'layouts/dashboard/database/players/list/index/Layout.svelte';
 
-import DashboardSpringHockeyFinancesIndexLayout from 'layouts/dashboard/other/spring_hockey/finances/index/Layout.svelte';
 
-import DashboardSpringHockeyFreeAgentsIndexLayout from 'layouts/dashboard/other/spring_hockey/free_agents/index/Layout.svelte';
+import DashboardDatabasePlayerEditLayout from 'layouts/dashboard/database/players/player/edit/Layout.svelte';
 
-import DashboardSpringHockeyJerseySponsorsIndexLayout from 'layouts/dashboard/other/spring_hockey/jersey_sponsors/index/Layout.svelte';
+import DashboardDatabasePlayerRegistrationsLayout from 'layouts/dashboard/database/players/player/registrations/Layout.svelte';
 
+import DashboardDatabasePlayerGuardiansLayout from 'layouts/dashboard/database/players/player/guardians/Layout.svelte';
 
-import DashboardSpringHockeyIndex from 'views/dashboard/other/spring_hockey/Index.svelte';
+import DashboardDatabasePlayerCampInstancesLayout from 'layouts/dashboard/database/players/player/camp_instances/Layout.svelte';
 
-import DashboardSpringHockeyCoachesIndex from 'views/dashboard/other/spring_hockey/coaches/Index.svelte';
+import DashboardDatabasePlayerProgramInstancesLayout from 'layouts/dashboard/database/players/player/program_instances/Layout.svelte';
 
-import DashboardSpringHockeyFinancesIndex from 'views/dashboard/other/spring_hockey/finances/Index.svelte';
+import DashboardDatabasePlayerTeamInstancesLayout from 'layouts/dashboard/database/players/player/team_instances/Layout.svelte';
 
-import DashboardSpringHockeyFreeAgentsIndex from 'views/dashboard/other/spring_hockey/free_agents/Index.svelte';
 
-import DashboardSpringHockeyJerseySponsorsIndex from 'views/dashboard/other/spring_hockey/jersey_sponsors/Index.svelte';
 
+import DashboardDatabaseProgramsIndexLayout from 'layouts/dashboard/database/programs/index/Layout.svelte';
 
-import DashboardLoginsIndexLayout from 'layouts/dashboard/other/logins/index/Layout.svelte';
 
-import DashboardLoginsLoginLayout from 'layouts/dashboard/other/logins/login/Layout.svelte';
+import DashboardDatabaseProgramsCoachesIndexLayout from 'layouts/dashboard/database/programs/coaches/index/Layout.svelte';
 
-import DashboardLoginsMasterSearchLayout from 'layouts/dashboard/other/logins/master_search/Layout.svelte';
 
+import DashboardDatabaseProgramsListIndexLayout from 'layouts/dashboard/database/programs/list/index/Layout.svelte';
 
-import DashboardLoginsIndex from 'views/dashboard/other/logins/Index.svelte';
 
-import DashboardLoginsLogin from 'views/dashboard/other/logins/Login.svelte';
+import DashboardDatabaseProgramsProgramInstanceViewFinancesLayout from 'layouts/dashboard/database/programs/program_instance/view/finances/Layout.svelte';
 
-import DashboardLoginsMasterSearch from 'views/dashboard/other/logins/MasterSearch.svelte';
+import DashboardDatabaseProgramsProgramInstanceViewGroupsLayout from 'layouts/dashboard/database/programs/program_instance/view/groups/Layout.svelte';
 
+import DashboardDatabaseProgramsProgramInstanceViewRegistrationsLayout from 'layouts/dashboard/database/programs/program_instance/view/registrations/Layout.svelte';
 
-import DashboardMeetingSheetsIndexLayout from 'layouts/dashboard/other/meeting_sheets/index/Layout.svelte';
 
-import DashboardMeetingSheetsIndex from 'views/dashboard/other/meeting_sheets/Index.svelte';
 
+import DashboardDatabaseRefsIndexLayout from 'layouts/dashboard/database/refs/index/Layout.svelte';
 
-import DashboardReceiptCreateLayout from 'layouts/dashboard/other/receipt/create/Layout.svelte';
 
-import DashboardReceiptEditLayout from 'layouts/dashboard/other/receipt/edit/Layout.svelte';
+import DashboardDatabaseRefsListIndexLayout from 'layouts/dashboard/database/refs/list/index/Layout.svelte';
 
 
-import DashboardReceiptCreate from 'views/dashboard/other/receipt/Create.svelte';
 
-import DashboardReceiptEdit from 'views/dashboard/other/receipt/Edit.svelte';
+import DashboardDatabaseRegistrationsIndexLayout from 'layouts/dashboard/database/registrations/index/Layout.svelte';
 
 
-import DashboardReceiptsIndexLayout from 'layouts/dashboard/other/receipts/index/Layout.svelte';
+import DashboardDatabaseRegistrationsListIndexLayout from 'layouts/dashboard/database/registrations/list/index/Layout.svelte';
 
 
-import DashboardReceiptsIndex from 'views/dashboard/other/receipts/Index.svelte';
+import DashboardDatabaseRegistrationCreateLayout from 'layouts/dashboard/database/registrations/registration/create/Layout.svelte';
 
+import DashboardDatabaseRegistrationEditLayout from 'layouts/dashboard/database/registrations/registration/edit/Layout.svelte';
 
-import DashboardGamesheetIndexLayout from 'layouts/dashboard/other/gs/index/Layout.svelte';
 
-import DashboardGamesheetIndex from 'views/dashboard/other/gs/Index.svelte';
 
+import DashboardDatabaseSpringHockeyIndexLayout from 'layouts/dashboard/database/spring_hockey/index/Layout.svelte';
 
-import DashboardSpngIndexLayout from 'layouts/dashboard/other/spng/index/Layout.svelte';
 
-import DashboardSpngFinancesIndexLayout from 'layouts/dashboard/other/spng/finances/index/Layout.svelte';
+import DashboardDatabaseSpringHockeyCoachesIndexLayout from 'layouts/dashboard/database/spring_hockey/coaches/index/Layout.svelte';
 
-import DashboardSpngManageTeamsIndexLayout from 'layouts/dashboard/other/spng/manage_teams/index/Layout.svelte';
 
-import DashboardSpngSurveysIndexLayout from 'layouts/dashboard/other/spng/surveys/index/Layout.svelte';
+import DashboardDatabaseSpringHockeyFreeAgentsIndexLayout from 'layouts/dashboard/database/spring_hockey/free_agents/index/Layout.svelte';
 
-import DashboardSpngSurveysSetupLayout from 'layouts/dashboard/other/spng/surveys/setup/Layout.svelte';
 
-import DashboardSpngSurveysEditLayout from 'layouts/dashboard/other/spng/surveys/edit/Layout.svelte';
+import DashboardDatabaseSpringHockeyIRPsIndexLayout from 'layouts/dashboard/database/spring_hockey/irps/index/Layout.svelte';
 
-import DashboardSpngSurveysNonIntegratedIndexLayout from 'layouts/dashboard/other/spng/surveys/non_integrated/index/Layout.svelte';
 
+import DashboardDatabaseSpringHockeyJerseySponsorsIndexLayout from 'layouts/dashboard/database/spring_hockey/jersey_sponsors/index/Layout.svelte';
 
+import DashboardDatabaseSpringHockeyJerseySponsorsFinancesTeamsLayout from 'layouts/dashboard/database/spring_hockey/jersey_sponsors/finances_teams/Layout.svelte';
 
-import DashboardSpngIndex from 'views/dashboard/other/spng/Index.svelte';
+import DashboardDatabaseSpringHockeyJerseySponsorsListIndexLayout from 'layouts/dashboard/database/spring_hockey/jersey_sponsors/list/index/Layout.svelte';
 
-import DashboardSpngFinancesIndex from 'views/dashboard/other/spng/finances/Index.svelte';
 
-import DashboardSpngManageTeamsIndex from 'views/dashboard/other/spng/manage_teams/Index.svelte';
+import DashboardDatabaseSpringHockeyMeetingSheetsIndexLayout from 'layouts/dashboard/database/spring_hockey/meeting_sheets/index/Layout.svelte';
 
-import DashboardSpngSurveysIndex from 'views/dashboard/other/spng/surveys/Index.svelte';
 
-import DashboardSpngSurveysSetup from 'views/dashboard/other/spng/surveys/Setup.svelte';
+import DashboardDatabaseSpringHockeyTeamInstancesIndexLayout from 'layouts/dashboard/database/spring_hockey/team_instances/index/Layout.svelte';
 
-import DashboardSpngSurveysEdit from 'views/dashboard/other/spng/surveys/Edit.svelte';
 
-import DashboardSpngSurveysNonIntegratedIndex from 'views/dashboard/other/spng/surveys/non_integrated/Index.svelte';
+import DashboardDatabaseSpringHockeyTeamInstanceViewCoachesLayout from 'layouts/dashboard/database/spring_hockey/team_instances/team_instance/view/coaches/Layout.svelte';
 
+import DashboardDatabaseSpringHockeyTeamInstanceViewFinancesLayout from 'layouts/dashboard/database/spring_hockey/team_instances/team_instance/view/finances/Layout.svelte';
 
+import DashboardDatabaseSpringHockeyTeamInstanceViewRegistrationsLayout from 'layouts/dashboard/database/spring_hockey/team_instances/team_instance/view/registrations/Layout.svelte';
 
-import DashboardStreamsIndexLayout from 'layouts/dashboard/other/streams/index/Layout.svelte';
 
 
-import DashboardStreamsIndex from 'views/dashboard/other/streams/Index.svelte';
+import DashboardDatabaseSummerCampsIndexLayout from 'layouts/dashboard/database/summer_camps/index/Layout.svelte';
 
 
+import DashboardDatabaseSummerCampsListIndexLayout from 'layouts/dashboard/database/summer_camps/list/index/Layout.svelte';
 
-// Settings
 
-import DashboardSettingsIndex from 'views/dashboard/settings/Index.svelte';
+import DashboardDatabaseSummerCampsCoachesIndexLayout from 'layouts/dashboard/database/summer_camps/coaches/index/Layout.svelte';
+
+
+import DashboardDatabaseSummerCampsCampInstanceFinancesLayout from 'layouts/dashboard/database/summer_camps/camp_instance/finances/Layout.svelte';
+
+import DashboardDatabaseSummerCampsCampInstanceGroupsLayout from 'layouts/dashboard/database/summer_camps/camp_instance/groups/Layout.svelte';
+
+import DashboardDatabaseSummerCampsCampInstanceRegistrationsLayout from 'layouts/dashboard/database/summer_camps/camp_instance/registrations/Layout.svelte';
+
+
+
+import DashboardDatabaseTeamStripesIndexLayout from 'layouts/dashboard/database/team_stripes/index/Layout.svelte';
+
+
+import DashboardDatabaseTeamStripesCampInstancesIndexLayout from 'layouts/dashboard/database/team_stripes/camp_instances/index/Layout.svelte';
+
+
+import DashboardDatabaseTeamStripesRefsIndexLayout from 'layouts/dashboard/database/team_stripes/refs/index/Layout.svelte';
+
+
+
+import DashboardDatabaseTrainingIndexLayout from 'layouts/dashboard/database/training/index/Layout.svelte';
+
+
+import DashboardDatabaseTrainingProgramInstancesIndexLayout from 'layouts/dashboard/database/training/program_instances/index/Layout.svelte';
+
+
+
+import DashboardExternalGSIndexLayout from 'layouts/dashboard/external/gs/index/Layout.svelte';
+
+
+import DashboardExternalSpngIndexLayout from 'layouts/dashboard/external/spng/index/Layout.svelte';
+
+import DashboardExternalSpngManageTeamsIndexLayout from 'layouts/dashboard/external/spng/manage_teams/index/Layout.svelte';
+
+import DashboardExternalSpngSurveysIndexLayout from 'layouts/dashboard/external/spng/surveys/index/Layout.svelte';
+
+
+
+import DashboardOtherLoyaltyIndexLayout from 'layouts/dashboard/other/loyalty/index/Layout.svelte';
+
+
+
+import DashboardPortalsIndexLayout from 'layouts/dashboard/portals/index/Layout.svelte';
+
+
+import DashboardPortalsListIndexLayout from 'layouts/dashboard/portals/list/index/Layout.svelte';
+
+
+import DashboardPortalsLoginsIndexLayout from 'layouts/dashboard/portals/logins/index/Layout.svelte';
+
+
+import DashboardPortalsLoginCreateLayout from 'layouts/dashboard/portals/logins/login/create/Layout.svelte';
+
+import DashboardPortalsLoginEditLayout from 'layouts/dashboard/portals/logins/login/edit/Layout.svelte';
+
+
+
+
+import DashboardACTArchiveCoachesList from 'views/dashboard/act_archive/coaches/list/Index.svelte';
+
+import DashboardACTArchiveCoachView from 'views/dashboard/act_archive/coaches/coach/View.svelte';
+
+
+
+import DashboardACTArchiveHockeySchoolRegistrationsList from 'views/dashboard/act_archive/hockey_school_registrations/list/Index.svelte';
+
+import DashboardACTArchiveHockeySchoolRegistrationView from 'views/dashboard/act_archive/hockey_school_registrations/hockey_school_registration/View.svelte';
+
+
+
+import DashboardACTArchiveSpringHockeyRegistrationsList from 'views/dashboard/act_archive/spring_hockey_registrations/list/Index.svelte';
+
+import DashboardACTArchiveSpringHockeyRegistrationView from 'views/dashboard/act_archive/spring_hockey_registrations/spring_hockey_registration/View.svelte';
+
+
+
+
+
+
+import DashboardDatabase_DashboardIndex from 'views/dashboard/database/_dashboard/Index.svelte';
+
+
+
+
+import DashboardDatabaseAdultHockeyIndex from 'views/dashboard/database/adult_hockey/Index.svelte';
+
+
+import DashboardDatabaseAdultHockeyCommishesIndex from 'views/dashboard/database/adult_hockey/commishes/Index.svelte';
+
+
+import DashboardDatabaseAdultHockeyFinancesTeamsIndex from 'views/dashboard/database/adult_hockey/finances_teams/Index.svelte';
+
+
+import DashboardDatabaseAdultHockeyFreeAgentsIndex from 'views/dashboard/database/adult_hockey/free_agents/Index.svelte';
+
+
+import DashboardDatabaseAdultHockeyLeagueInstancesIndex from 'views/dashboard/database/adult_hockey/league_instances/Index.svelte';
+
+
+import DashboardDatabaseAdultHockeyMeetingSheetsIndex from 'views/dashboard/database/adult_hockey/meeting_sheets/Index.svelte';
+
+
+import DashboardDatabaseAdultHockeyRepsIndex from 'views/dashboard/database/adult_hockey/reps/Index.svelte';
+
+
+import DashboardDatabaseAdultHockeyTeamInstancesIndex from 'views/dashboard/database/adult_hockey/team_instances/Index.svelte';
+
+
+
+import DashboardDatabaseGuardiansIndex from 'views/dashboard/database/guardians/Index.svelte';
+
+
+import DashboardDatabaseGuardiansListIndex from 'views/dashboard/database/guardians/list/Index.svelte';
+
+
+import DashboardDatabaseGuardianEdit from 'views/dashboard/database/guardians/guardian/Edit.svelte';
+
+import DashboardDatabaseGuardianPlayers from 'views/dashboard/database/guardians/guardian/Players.svelte';
+
+import DashboardDatabaseGuardianCampInstances from 'views/dashboard/database/guardians/guardian/CampInstances.svelte';
+
+import DashboardDatabaseGuardianProgramInstances from 'views/dashboard/database/guardians/guardian/ProgramInstances.svelte';
+
+import DashboardDatabaseGuardianTeamInstances from 'views/dashboard/database/guardians/guardian/TeamInstances.svelte';
+
+
+
+import DashboardDatabasePlayersIndex from 'views/dashboard/database/players/Index.svelte';
+
+
+import DashboardDatabasePlayersListIndex from 'views/dashboard/database/players/list/Index.svelte';
+
+
+import DashboardDatabasePlayerEdit from 'views/dashboard/database/players/player/Edit.svelte';
+
+import DashboardDatabasePlayerRegistrations from 'views/dashboard/database/players/player/Registrations.svelte';
+
+import DashboardDatabasePlayerGuardians from 'views/dashboard/database/players/player/Guardians.svelte';
+
+import DashboardDatabasePlayerCampInstances from 'views/dashboard/database/players/player/CampInstances.svelte';
+
+import DashboardDatabasePlayerProgramInstances from 'views/dashboard/database/players/player/ProgramInstances.svelte';
+
+import DashboardDatabasePlayerTeamInstances from 'views/dashboard/database/players/player/TeamInstances.svelte';
+
+
+
+import DashboardDatabaseProgramsIndex from 'views/dashboard/database/programs/Index.svelte';
+
+
+import DashboardDatabaseProgramsCoachesIndex from 'views/dashboard/database/programs/coaches/Index.svelte';
+
+
+import DashboardDatabaseProgramsListIndex from 'views/dashboard/database/programs/list/Index.svelte';
+
+
+import DashboardDatabaseProgramsProgramInstanceViewFinances from 'views/dashboard/database/programs/program_instance/view/Finances.svelte';
+
+import DashboardDatabaseProgramsProgramInstanceViewGroups from 'views/dashboard/database/programs/program_instance/view/Groups.svelte';
+
+import DashboardDatabaseProgramsProgramInstanceViewRegistrations from 'views/dashboard/database/programs/program_instance/view/Registrations.svelte';
+
+
+
+import DashboardDatabaseRefsIndex from 'views/dashboard/database/refs/Index.svelte';
+
+
+import DashboardDatabaseRefsListIndex from 'views/dashboard/database/refs/list/Index.svelte';
+
+
+
+import DashboardDatabaseRegistrationsIndex from 'views/dashboard/database/registrations/Index.svelte';
+
+
+import DashboardDatabaseRegistrationsListIndex from 'views/dashboard/database/registrations/list/Index.svelte';
+
+
+import DashboardDatabaseRegistrationCreate from 'views/dashboard/database/registrations/registration/Create.svelte';
+
+import DashboardDatabaseRegistrationEdit from 'views/dashboard/database/registrations/registration/Edit.svelte';
+
+
+
+import DashboardDatabaseSpringHockeyIndex from 'views/dashboard/database/spring_hockey/Index.svelte';
+
+
+import DashboardDatabaseSpringHockeyCoachesIndex from 'views/dashboard/database/spring_hockey/coaches/Index.svelte';
+
+
+import DashboardDatabaseSpringHockeyFreeAgentsIndex from 'views/dashboard/database/spring_hockey/free_agents/Index.svelte';
+
+
+import DashboardDatabaseSpringHockeyIRPsIndex from 'views/dashboard/database/spring_hockey/irps/Index.svelte';
+
+
+import DashboardDatabaseSpringHockeyJerseySponsorsIndex from 'views/dashboard/database/spring_hockey/jersey_sponsors/Index.svelte';
+
+import DashboardDatabaseSpringHockeyJerseySponsorsFinancesTeams from 'views/dashboard/database/spring_hockey/jersey_sponsors/finances_teams/Index.svelte';
+
+import DashboardDatabaseSpringHockeyJerseySponsorsListIndex from 'views/dashboard/database/spring_hockey/jersey_sponsors/list/Index.svelte';
+
+
+import DashboardDatabaseSpringHockeyMeetingSheetsIndex from 'views/dashboard/database/spring_hockey/meeting_sheets/Index.svelte';
+
+
+import DashboardDatabaseSpringHockeyTeamInstancesIndex from 'views/dashboard/database/spring_hockey/team_instances/Index.svelte';
+
+
+import DashboardDatabaseSpringHockeyTeamInstanceViewCoaches from 'views/dashboard/database/spring_hockey/team_instances/team_instance/view/Coaches.svelte';
+
+import DashboardDatabaseSpringHockeyTeamInstanceViewFinances from 'views/dashboard/database/spring_hockey/team_instances/team_instance/view/Finances.svelte';
+
+import DashboardDatabaseSpringHockeyTeamInstanceViewRegistrations from 'views/dashboard/database/spring_hockey/team_instances/team_instance/view/Registrations.svelte';
+
+
+
+import DashboardDatabaseSummerCampsIndex from 'views/dashboard/database/summer_camps/Index.svelte';
+
+
+import DashboardDatabaseSummerCampsListIndex from 'views/dashboard/database/summer_camps/list/Index.svelte';
+
+
+import DashboardDatabaseSummerCampsCoachesIndex from 'views/dashboard/database/summer_camps/coaches/Index.svelte';
+
+
+import DashboardDatabaseSummerCampsCampInstanceFinances from 'views/dashboard/database/summer_camps/camp_instance/Finances.svelte';
+
+import DashboardDatabaseSummerCampsCampInstanceGroups from 'views/dashboard/database/summer_camps/camp_instance/Groups.svelte';
+
+import DashboardDatabaseSummerCampsCampInstanceRegistrations from 'views/dashboard/database/summer_camps/camp_instance/Registrations.svelte';
+
+
+
+import DashboardDatabaseTeamStripesIndex from 'views/dashboard/database/team_stripes/Index.svelte';
+
+
+import DashboardDatabaseTeamStripesCampInstancesIndex from 'views/dashboard/database/team_stripes/camp_instances/Index.svelte';
+
+
+import DashboardDatabaseTeamStripesRefsIndex from 'views/dashboard/database/team_stripes/refs/Index.svelte';
+
+
+
+import DashboardDatabaseTrainingIndex from 'views/dashboard/database/training/Index.svelte';
+
+
+import DashboardDatabaseTrainingProgramInstancesIndex from 'views/dashboard/database/training/program_instances/Index.svelte';
+
+
+
+import DashboardExternalGSIndex from 'views/dashboard/external/gs/Index.svelte';
+
+
+import DashboardExternalSpngIndex from 'views/dashboard/external/spng/Index.svelte';
+
+import DashboardExternalSpngManageTeamsIndex from 'views/dashboard/external/spng/manage_teams/Index.svelte';
+
+import DashboardExternalSpngSurveysIndex from 'views/dashboard/external/spng/surveys/Index.svelte';
+
+
+
+import DashboardOtherLoyaltyIndex from 'views/dashboard/other/loyalty/Index.svelte';
+
+
+
+import DashboardPortalsIndex from 'views/dashboard/portals/Index.svelte';
+
+
+import DashboardPortalsListIndex from 'views/dashboard/portals/list/Index.svelte';
+
+
+import DashboardPortalsLoginsIndex from 'views/dashboard/portals/logins/Index.svelte';
+
+
+import DashboardPortalsLoginCreate from 'views/dashboard/portals/logins/login/Create.svelte';
+
+import DashboardPortalsLoginEdit from 'views/dashboard/portals/logins/login/Edit.svelte';
+
+
 
 
 // Errors
@@ -245,6 +475,7 @@ import DashboardSettingsIndex from 'views/dashboard/settings/Index.svelte';
 import ErrorsLayout from 'layouts/errors/Layout.svelte';
 
 import ErrorsNotFound from 'views/errors/NotFound.svelte';
+
 
 
 
@@ -277,465 +508,833 @@ const routes = [
 		component: DashboardLayout,
 		nestedRoutes: [
 			{
-				name: 'resources',
+				name: 'act_archive',
 				nestedRoutes: [
 					{
-						name: 'index',
-						component: DashboardResourcesIndex,
+						name: 'coaches',
+						component: DashboardACTArchiveCoachesListLayout, 
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardACTArchiveCoachesList,
+							},
+						],
 					},
 					{
-						name: 'master-search',
-						component: DashboardResourcesMasterSearch,
+						name: 'coach/:id',
+						component: DashboardACTArchiveCoachViewLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardACTArchiveCoachView,
+							},
+						],
 					},
-					// Adult --
+
 					{
-						name: 'resource/:resource_id',
-						component: DashboardResourcesResource,
+						name: 'hockey_school_registrations',
+						component: DashboardACTArchiveHockeySchoolRegistrationsListLayout, 
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardACTArchiveHockeySchoolRegistrationsList,
+							},
+						],
+					},
+					{
+						name: 'hockey_school_registration/:id',
+						component: DashboardACTArchiveHockeySchoolRegistrationViewLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardACTArchiveHockeySchoolRegistrationView,
+							},
+						],
+					},
+
+					{
+						name: 'spring_hockey_registrations',
+						component: DashboardACTArchiveSpringHockeyRegistrationsListLayout, 
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardACTArchiveSpringHockeyRegistrationsList,
+							},
+						],
+					},
+					{
+						name: 'spring_hockey_registrations/:id',
+						component: DashboardACTArchiveSpringHockeyRegistrationViewLayout,
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardACTArchiveSpringHockeyRegistrationView,
+							},
+						],
 					},
 				],
 			},
+			// ...
 			{
-				name: 'resource',
+				name: 'database',
 				nestedRoutes: [
 					{
-						name: 'create',
-						// component: DashboardResourceCreateLayout,
+						name: 'dashboard',
+						component: DashboardDatabase_DashboardIndexLayout,
 						nestedRoutes: [
-							// {
-							// 	name: 'adult_reps',
-							// 	component: DashboardResourceCreateAdultReps,
-							// },
 							{
-								name: 'camp_instance_registrations',
-								component: DashboardResourceCreateCampInstanceRegistrationsLayout,
+								name: 'index',
+								component: DashboardDatabase_DashboardIndex,
+							},
+						],
+					},
+					{
+						name: 'adult_hockey',
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardDatabaseAdultHockeyIndexLayout,
 								nestedRoutes: [
 									{
 										name: 'index',
-										component: DashboardResourceCreateCampInstanceRegistrations,
+										component: DashboardDatabaseAdultHockeyIndex,
 									},
 								],
 							},
 							{
-								name: 'camp_instances',
-								component: DashboardResourceCreateCampInstances,
-							},
-							// {
-							// 	name: 'coaches',
-							// 	component: DashboardResourceCreateCoaches,
-							// },
-							// {
-							// 	name: 'guardians',
-							// 	component: DashboardResourceCreateGuardians,
-							// },
-							// {
-							// 	name: 'players',
-							// 	component: DashboardResourceCreatePlayers,
-							// },
-							{
-								name: 'program_instance_registrations',
-								component: DashboardResourceCreateProgramInstanceRegistrationsLayout,
+								name: 'commishes',
+								component: DashboardDatabaseAdultHockeyCommishesIndexLayout,
 								nestedRoutes: [
 									{
 										name: 'index',
-										component: DashboardResourceCreateProgramInstanceRegistrations,
+										component: DashboardDatabaseAdultHockeyCommishesIndex,
 									},
 								],
 							},
 							{
-								name: 'program_instances',
-								component: DashboardResourceCreateProgramInstances,
-							},
-							{
-								name: 'team_instance_registrations',
-								component: DashboardResourceCreateTeamInstanceRegistrationsLayout,
+								name: 'finances_teams',
+								component: DashboardDatabaseAdultHockeyFinancesTeamsIndexLayout,
 								nestedRoutes: [
 									{
 										name: 'index',
-										component: DashboardResourceCreateTeamInstanceRegistrations,
+										component: DashboardDatabaseAdultHockeyFinancesTeamsIndex,
+									},
+								],
+							},
+							{
+								name: 'free_agents',
+								component: DashboardDatabaseAdultHockeyFreeAgentsIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseAdultHockeyFreeAgentsIndex,
+									},
+								],
+							},
+							{
+								name: 'reps',
+								component: DashboardDatabaseAdultHockeyRepsIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseAdultHockeyRepsIndex,
+									},
+								],
+							},
+							{
+								name: 'league_instances',
+								component: DashboardDatabaseAdultHockeyLeagueInstancesIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseAdultHockeyLeagueInstancesIndex,
 									},
 								],
 							},
 							{
 								name: 'team_instances',
-								component: DashboardResourceCreateTeamInstances,
+								component: DashboardDatabaseAdultHockeyTeamInstancesIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseAdultHockeyTeamInstancesIndex,
+									},
+								],
+							},
+							{
+								name: 'meeting_sheets',
+								component: DashboardDatabaseAdultHockeyMeetingSheetsIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseAdultHockeyMeetingSheetsIndex,
+									},
+								],
 							},
 						],
 					},
 					{
-						name: 'edit',
-						// component: DashboardResourceEditLayout,
+						name: 'guardians',
 						nestedRoutes: [
-							// {
-							// 	name: 'adult_reps/:resource_row_id',
-							// 	component: DashboardResourceEditAdultRep,
-							// },
 							{
-								name: 'camp_instance_registrations/:resource_row_id',
-								component: DashboardResourceEditCampInstanceRegistrations,
+								name: 'index',
+								component: DashboardDatabaseGuardiansIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseGuardiansIndex,
+									},
+								],
 							},
 							{
-								name: 'camp_instances/:resource_row_id',
-								component: DashboardResourceEditCampInstances,
-							},
-							// {
-							// 	name: 'coaches/:resource_row_id',
-							// 	component: DashboardResourceEditCoaches,
-							// },
-							// {
-							// 	name: 'guardians/:resource_row_id',
-							// 	component: DashboardResourceEditGuardians,
-							// },
-							// {
-							// 	name: 'players/:resource_row_id',
-							// 	component: DashboardResourceEditPlayers,
-							// },
-							{
-								name: 'program_instance_registrations/:resource_row_id',
-								component: DashboardResourceEditProgramInstanceRegistrations,
+								name: 'list',
+								component: DashboardDatabaseGuardiansListIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseGuardiansListIndex,
+									},
+								],
 							},
 							{
-								name: 'program_instances/:resource_row_id',
-								component: DashboardResourceEditProgramInstances,
+								name: 'guardian/:id/edit',
+								component: DashboardDatabaseGuardianEditLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseGuardianEdit,
+									},
+								],
 							},
 							{
-								name: 'team_instance_registrations/:resource_row_id',
-								component: DashboardResourceEditTeamInstanceRegistrations,
+								name: 'guardian/:id/players',
+								component: DashboardDatabaseGuardianPlayersLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseGuardianPlayers,
+									},
+								],
 							},
 							{
-								name: 'team_instances/:resource_row_id',
-								component: DashboardResourceEditTeamInstances,
+								name: 'guardian/:id/camp_instances',
+								component: DashboardDatabaseGuardianCampInstancesLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseCampInstancesPlayers,
+									},
+								],
+							},
+							{
+								name: 'guardian/:id/program_instances',
+								component: DashboardDatabaseGuardianProgramInstancesLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseProgramInstancesPlayers,
+									},
+								],
+							},
+							{
+								name: 'guardian/:id/team_instances',
+								component: DashboardDatabaseGuardianTeamInstancesLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseTeamInstancesPlayers,
+									},
+								],
+							},
+						],
+					},
+					{
+						name: 'players',
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardDatabasePlayersIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabasePlayersIndex,
+									},
+								],
+							},
+							{
+								name: 'list',
+								component: DashboardDatabasePlayersListIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabasePlayersListIndex,
+									},
+								],
+							},
+							{
+								name: 'player/:id/edit',
+								component: DashboardDatabasePlayerEditLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabasePlayerEdit,
+									},
+								],
+							},
+							{
+								name: 'player/:id/registrations',
+								component: DashboardDatabasePlayerRegistrationsLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabasePlayerRegistrations,
+									},
+								],
+							},
+							{
+								name: 'player/:id/guardians',
+								component: DashboardDatabasePlayerGuardiansLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabasePlayerGuardians,
+									},
+								],
+							},
+							{
+								name: 'player/:id/camp_instances',
+								component: DashboardDatabasePlayerCampInstancesLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabasePlayerCampInstances,
+									},
+								],
+							},
+							{
+								name: 'player/:id/program_instances',
+								component: DashboardDatabasePlayerProgramInstancesLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabasePlayerProgramInstances,
+									},
+								],
+							},
+							{
+								name: 'player/:id/team_instances',
+								component: DashboardDatabasePlayerTeamInstancesLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseTeamCampInstances,
+									},
+								],
+							},
+						],
+					},
+					{
+						name: 'programs',
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardDatabaseProgramsIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseProgramsIndex,
+									},
+								],
+							},
+							{
+								name: 'coaches',
+								component: DashboardDatabaseProgramsCoachesIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseProgramsCoachesIndex,
+									},
+								],
+							},
+							{
+								name: 'program_instance/:id/finances',
+								component: DashboardDatabaseProgramsProgramInstanceViewFinancesLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseProgramsProgramInstanceViewFinances,
+									},
+								],
+							},
+							{
+								name: 'program_instance/:id/groups',
+								component: DashboardDatabaseProgramsProgramInstanceViewGroupsLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseProgramsProgramInstanceViewGroups,
+									},
+								],
+							},
+							{
+								name: 'program_instance/:id/registrations',
+								component: DashboardDatabaseProgramsProgramInstanceViewRegistrationsLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseProgramsProgramInstanceViewRegistrations,
+									},
+								],
+							},
+						],
+					},
+					{
+						name: 'refs',
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardDatabaseRefsIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseRefsIndex,
+									},
+								],
+							},
+							{
+								name: 'list',
+								component: DashboardDatabaseRefsListIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseRefsListIndex,
+									},
+								],
+							},
+						],
+					},
+					{
+						name: 'registrations',
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardDatabaseRegistrationsIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseRegistrationsIndex,
+									},
+								],
+							},
+							{
+								name: 'list',
+								component: DashboardDatabaseRegistrationsListIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseRegistrationsListIndex,
+									},
+								],
+							},
+							{
+								name: 'registration/create',
+								component: DashboardDatabaseRegistrationCreateLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseRegistrationCreate,
+									},
+								],
+							},
+							{
+								name: 'registration/edit/:id',
+								component: DashboardDatabaseRegistrationEditLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseRegistrationEdit,
+									},
+								],
+							},
+						],
+					},
+					{
+						name: 'spring_hockey',
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardDatabaseSpringHockeyIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSpringHockeyIndex,
+									},
+								],
+							},
+							{
+								name: 'coaches',
+								component: DashboardDatabaseSpringHockeyCoachesIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSpringHockeyCoachesIndex,
+									},
+								],
+							},
+							{
+								name: 'free_agents',
+								component: DashboardDatabaseSpringHockeyFreeAgentsIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSpringHockeyFreeAgentsIndex,
+									},
+								],
+							},
+							{
+								name: 'irps',
+								component: DashboardDatabaseSpringHockeyIRPsIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSpringHockeyIRPsIndex,
+									},
+								],
+							},
+							{
+								name: 'jersey_sponsors',
+								component: DashboardDatabaseSpringHockeyJerseySponsorsIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSpringHockeyJerseySponsorsIndex,
+									},
+								],
+							},
+							{
+								name: 'jersey_sponsors/finances_teams',
+								component: DashboardDatabaseSpringHockeyJerseySponsorsFinancesTeamsLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSpringHockeyJerseySponsorsFinancesTeams,
+									},
+								],
+							},
+							{
+								name: 'jersey_sponsors/list',
+								component: DashboardDatabaseSpringHockeyJerseySponsorsListLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSpringHockeyJerseySponsorsList,
+									},
+								],
+							},
+							{
+								name: 'meeting_sheets',
+								component: DashboardDatabaseSpringHockeyMeetingSheetsIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSpringHockeyMeetingSheetsIndex,
+									},
+								],
+							},
+							{
+								name: 'team_instances',
+								component: DashboardDatabaseSpringHockeyTeamInstancesIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSpringHockeyTeamInstancesIndex,
+									},
+								],
+							},
+							{
+								name: 'team_instance/:id/coaches',
+								component: DashboardDatabaseSpringHockeyTeamInstanceViewCoachesLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSpringHockeyTeamInstanceViewCoaches,
+									},
+								],
+							},
+							{
+								name: 'team_instance/:id/finances',
+								component: DashboardDatabaseSpringHockeyTeamInstanceViewFinancesLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSpringHockeyTeamInstanceViewFinances,
+									},
+								],
+							},
+							{
+								name: 'team_instance/:id/registrations',
+								component: DashboardDatabaseSpringHockeyTeamInstanceViewRegistrationsLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSpringHockeyTeamInstanceViewRegistrations,
+									},
+								],
+							},
+						],
+					},
+					{
+						name: 'summer_camps',
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardDatabaseSummerCampsIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSummerCampsIndex,
+									},
+								],
+							},
+							{
+								name: 'list',
+								component: DashboardDatabaseSummerCampsListIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSummerCampsListIndex,
+									},
+								],
+							},
+							{
+								name: 'coaches',
+								component: DashboardDatabaseSummerCampsCoachesIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSummerCampsCoachesIndex,
+									},
+								],
+							},
+							{
+								name: 'camp_instance/:id/finances',
+								component: DashboardDatabaseSummerCampsCampInstanceFinancesLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSummerCampsCampInstanceFinances,
+									},
+								],
+							},
+							{
+								name: 'camp_instance/:id/groups',
+								component: DashboardDatabaseSummerCampsCampInstanceGroupsLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSummerCampsCampInstanceGroups,
+									},
+								],
+							},
+							{
+								name: 'camp_instance/:id/registrations',
+								component: DashboardDatabaseSummerCampsCampInstanceRegistrationsLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseSummerCampsCampInstanceRegistrations,
+									},
+								],
+							},
+						],
+					},
+					{
+						name: 'team_stripes',
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardDatabaseTeamStripesIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseTeamStripesIndex,
+									},
+								],
+							},
+							{
+								name: 'camp_instances',
+								component: DashboardDatabaseTeamStripesCampInstancesIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseTeamStripesCampInstancesIndex,
+									},
+								],
+							},
+							{
+								name: 'refs',
+								component: DashboardDatabaseTeamStripesRefsIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseTeamStripesRefsIndex,
+									},
+								],
+							},
+						],
+					},
+					{
+						name: 'training',
+						nestedRoutes: [
+							{
+								name: 'index',
+								component: DashboardDatabaseTrainingIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseTrainingIndex,
+									},
+								],
+							},
+							{
+								name: 'program_instances',
+								component: DashboardDatabaseTrainingProgramInstancesIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardDatabaseTrainingProgramInstancesIndex,
+									},
+								],
 							},
 						],
 					},
 				],
 			},
+			// ...
 			{
-				name: 'act',
+				name: 'external',
 				nestedRoutes: [
 					{
-						name: 'resources',
+						name: 'gs',
 						nestedRoutes: [
-							// {
-							// 	name: 'index',
-							// 	component: DashboardResourcesIndex,
-							// },
 							{
-								name: 'master-search',
-								component: DashboardACTResourcesMasterSearch,
-							},
-							// Adult --
-							{
-								name: 'resource/:act_resource_id',
-								component: DashboardACTResourcesResource,
+								name: 'index',
+								component: DashboardExternalGSIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardExternalGSIndex,
+									},
+								],
 							},
 						],
 					},
 					{
-						name: 'resource',
+						name: 'spng',
 						nestedRoutes: [
 							{
-								name: 'coaches/:act_resource_row_id',
-								component: DashboardACTResourceCoachesView,
+								name: 'index',
+								component: DashboardExternalSpngIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardExternalSpngIndex,
+									},
+								],
 							},
 							{
-								name: 'hockey_school_registrations/:act_resource_row_id',
-								component: DashboardACTResourceHockeySchoolRegistrationsView,
+								name: 'manage_teams',
+								component: DashboardExternalSpngManageTeamsIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardExternalSpngManageTeamsIndex,
+									},
+								],
 							},
 							{
-								name: 'spring_hockey_registrations/:act_resource_row_id',
-								component: DashboardACTResourceSpringHockeyRegistrationsView,
+								name: 'surveys',
+								component: DashboardExternalSpngSurveysIndexLayout,
+								nestedRoutes: [
+									{
+										name: 'index',
+										component: DashboardExternalSpngSurveysIndex,
+									},
+								],
 							},
 						],
 					},
 				],
 			},
+			// ...
 			{
-				name: 'file_templates/created',
-				component: DashboardFileTemplatesCreatedIndex,
-			},
-			{
-				name: 'file_templates/created/create',
-				component: DashboardFileTemplatesCreatedCreate,
-			},
-			{
-				name: 'file_templates/custom',
-				component: DashboardFileTemplatesCustomIndex,
-			},
-			{
-				name: 'file_template',
+				name: 'other',
 				nestedRoutes: [
 					{
-						name: 'created',
+						name: 'loyalty',
+						component: DashboardOtherLoyaltyIndexLayout,
 						nestedRoutes: [
 							{
-								name: 'edit/:file_template_row_id',
-								component: DashboardFileTemplateCreatedEdit,
+								name: 'index',
+								component: DashboardOtherLoyaltyIndex,
 							},
 						],
 					},
 				],
 			},
-			// Other
+			// ...
 			{
-				name: 'adult_hockey',
+				name: 'portals',
 				nestedRoutes: [
 					{
 						name: 'index',
-						component: DashboardAdultHockeyIndex,
-					},
-					{
-						name: 'payments',
-						component: DashboardAdultHockeyPaymentsIndexLayout,
+						component: DashboardPortalsIndexLayout,
 						nestedRoutes: [
 							{
 								name: 'index',
-								component: DashboardAdultHockeyPaymentsIndex,
+								component: DashboardPortalsIndex,
 							},
 						],
 					},
 					{
-						name: 'finances_teams',
-						component: DashboardAdultHockeyFinancesTeamsIndexLayout,
+						name: 'list',
+						component: DashboardPortalsListIndexLayout,
 						nestedRoutes: [
 							{
 								name: 'index',
-								component: DashboardAdultHockeyFinancesTeamsIndex,
+								component: DashboardPortalsListIndex,
 							},
 						],
 					},
 					{
-						name: 'free_agents',
-						component: DashboardAdultHockeyFreeAgentsIndexLayout,
+						name: 'logins',
+						component: DashboardPortalsLoginsIndexLayout,
 						nestedRoutes: [
 							{
 								name: 'index',
-								component: DashboardAdultHockeyFreeAgentsIndex,
+								component: DashboardPortalsLoginsIndex,
 							},
 						],
 					},
 					{
-						name: 'reps',
-						component: DashboardAdultHockeyRepsIndexLayout,
+						name: 'login/create',
+						component: DashboardPortalsLoginCreateLayout,
 						nestedRoutes: [
 							{
 								name: 'index',
-								component: DashboardAdultHockeyRepsIndex,
-							},
-						],
-					},
-				],
-			},
-			{
-				name: 'spring_hockey',
-				nestedRoutes: [
-					{
-						name: 'index',
-						component: DashboardSpringHockeyIndex,
-					},
-					{
-						name: 'coaches',
-						component: DashboardSpringHockeyCoachesIndexLayout,
-						nestedRoutes: [
-							{
-								name: 'index',
-								component: DashboardSpringHockeyCoachesIndex,
+								component: DashboardPortalsLoginCreate,
 							},
 						],
 					},
 					{
-						name: 'finances',
-						component: DashboardSpringHockeyFinancesIndexLayout,
+						name: 'login/edit/:id',
+						component: DashboardPortalsLoginEditLayout,
 						nestedRoutes: [
 							{
 								name: 'index',
-								component: DashboardSpringHockeyFinancesIndex,
+								component: DashboardPortalsLoginEdit,
 							},
 						],
-					},
-					{
-						name: 'free_agents',
-						component: DashboardSpringHockeyFreeAgentsIndexLayout,
-						nestedRoutes: [
-							{
-								name: 'index',
-								component: DashboardSpringHockeyFreeAgentsIndex,
-							},
-						],
-					},
-					{
-						name: 'jersey_sponsors',
-						component: DashboardSpringHockeyJerseySponsorsIndexLayout,
-						nestedRoutes: [
-							{
-								name: 'index',
-								component: DashboardSpringHockeyJerseySponsorsIndex,
-							},
-						],
-					},
-				],
-			},
-			{
-				name: 'logins',
-				component: DashboardLoginsIndexLayout,
-				nestedRoutes: [
-					{
-						name: 'index',
-						component: DashboardLoginsIndex,
-					},
-					{
-						name: 'login/:login_id',
-						component: DashboardLoginsLoginLayout,
-						nestedRoutes: [
-							{
-								name: 'index',
-								component: DashboardLoginsLogin,
-							},
-						],
-					},
-					{
-						name: 'master-search',
-						component: DashboardLoginsMasterSearchLayout,
-						nestedRoutes: [
-							{
-								name: 'index',
-								component: DashboardLoginsMasterSearch,
-							},
-						],
-					},
-				],
-			},
-			{
-				name: 'meeting_sheets',
-				component: DashboardMeetingSheetsIndexLayout,
-				nestedRoutes: [
-					{
-						name: 'index',
-						component: DashboardMeetingSheetsIndex,
-					},
-				],
-			},
-			{
-				name: 'alerts',
-				nestedRoutes: [
-					{
-						name: 'one',
-						component: DashboardAlertsOneIndexLayout,
-						nestedRoutes: [
-							{
-								name: 'index',
-								component: DashboardAlertsOneIndex,
-							},
-						],
-					},
-					{
-						name: 'sum',
-						component: DashboardAlertsSumIndexLayout,
-						nestedRoutes: [
-							{
-								name: 'index',
-								component: DashboardAlertsSumIndex,
-							},
-						],
-					},
-				],
-			},
-			{
-				name: 'spng',
-				// component: DashboardSpng
-				nestedRoutes: [
-					{
-						name: 'index',
-						component: DashboardSpngIndex,
-					},
-					{
-						name: 'finances',
-						component: DashboardSpngFinancesIndexLayout,
-						nestedRoutes: [
-							{
-								name: 'index',
-								component: DashboardSpngFinancesIndex,
-							},
-						],
-					},
-					{
-						name: 'manage_teams',
-						component: DashboardSpngManageTeamsIndexLayout,
-						nestedRoutes: [
-							{
-								name: 'index',
-								component: DashboardSpngManageTeamsIndex,
-							},
-						],
-					},
-					{
-						name: 'surveys',
-						component: DashboardSpngSurveysIndexLayout,
-						nestedRoutes: [
-							{
-								name: 'index',
-								component: DashboardSpngSurveysIndex,
-							},
-						],
-					},
-					{
-						name: 'edit',
-						component: DashboardSpngSurveysIndexLayout,
-						nestedRoutes: [
-							{
-								name: 'index',
-								component: DashboardSpngSurveysIndex,
-							},
-						],
-					},
-					{
-						name: 'setup',
-						component: DashboardSpngSurveysIndexLayout,
-						nestedRoutes: [
-							{
-								name: 'index',
-								component: DashboardSpngSurveysIndex,
-							},
-						],
-					},
-					{
-						name: 'non-integrated',
-						component: DashboardSpngSurveysNonIntegratedIndexLayout,
-						nestedRoutes: [
-							{
-								name: 'index',
-								component: DashboardSpngSurveysNonIntegratedIndex,
-							},
-						],
-					},
-				],
-			},
-			{
-				name: 'gs',
-				// ...
-				nestedRoutes: [
-					{
-						name: 'index',
-						component: DashboardGamesheetIndex,
-					},
-				],
-			},
-			{
-				name: 'streams',
-				// ...
-				nestedRoutes: [
-					{
-						name: 'index',
-						component: DashboardStreamsIndex,
-					},
-				],
-			},
-			{
-				name: 'settings',
-				// ...
-				nestedRoutes: [
-					{
-						name: 'index',
-						component: DashboardSettingsIndex,
 					},
 				],
 			},

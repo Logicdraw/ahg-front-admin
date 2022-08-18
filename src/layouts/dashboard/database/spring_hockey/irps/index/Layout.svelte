@@ -38,7 +38,7 @@ const init = {
 
 
 
-const season_instances_url = `${admin_api_url}/_database/_spring_hockey/_free_agents/season-instances`;
+const season_instances_url = `${admin_api_url}/_database/_spring_hockey/_irps/season-instances`;
 const season_instances_url_params = {};
 
 

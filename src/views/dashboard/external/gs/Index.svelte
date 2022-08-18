@@ -39,22 +39,6 @@ const resources = [
 </style>
 
 
-<section class="hero bg-grey">
-
-	<div class="hero-body">
-
-		<div class="container">
-
-			<p class="hero-subtitle has-text-centered">
-				<span>Gamesheet Helpers</span>
-			</p>
-
-		</div>
-
-	</div>
-
-</section>
-
 
 <section class="section" style="padding-bottom: 1.5rem !important;">
 

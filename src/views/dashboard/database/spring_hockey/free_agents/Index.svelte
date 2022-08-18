@@ -5,10 +5,10 @@ export let params;
 import Loading from 'components/elements/Loading.svelte';
 import MsgCard from 'components/elements/MsgCard.svelte';
 
-import Tabs from 'components/elements/views/dashboard/other/spring_hockey/free_agents/Tabs.svelte';
-import Filter from 'components/elements/views/dashboard/other/spring_hockey/free_agents/Filter.svelte';
+import Tabs from 'components/elements/views/dashboard/database/spring_hockey/free_agents/Tabs.svelte';
+import Filter from 'components/elements/views/dashboard/database/spring_hockey/free_agents/Filter.svelte';
 
-import Table from 'components/elements/views/dashboard/other/spring_hockey/free_agents/Table.svelte';
+import Table from 'components/elements/views/dashboard/database/spring_hockey/free_agents/Table.svelte';
 
 
 // import SvelteSeo from 'svelte-seo';
@@ -31,10 +31,6 @@ let abort_controller = new AbortController();
 let url_params = {
 	q: '',
 	season_instance_id: null,
-	league_instance_id: null,
-	conference_instance_id: null,
-	division_instance_id: null,
-	team_instance_id: null,
 	// --
 	order_by_dir: 'desc',
 	order_by_label: 'id',
@@ -44,7 +40,7 @@ let url_params = {
 }
 
 
-let url = `${admin_api_url}/_other/_spring_hockey/free-agents`;
+let url = `${admin_api_url}/_other/_spring_hockey/_free_agents/free-agents`;
 
 
 let headers = {
@@ -93,7 +89,7 @@ setContext('refresh_table', {
 
 	<div class="container is-fullwidth">
 
-		<Filter bind:url_params season_instances={params['season_instances']} league_instances={params['league_instances']} conference_instances={params['conference_instances']} division_instances={params['division_instances']} team_instances={params['team_instances']} />
+		<Filter bind:url_params season_instances={params['season_instances']} />
 
 
 	</div>

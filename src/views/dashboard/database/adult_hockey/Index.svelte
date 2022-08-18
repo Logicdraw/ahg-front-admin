@@ -8,7 +8,6 @@ import MsgCard from 'components/elements/MsgCard.svelte';
 import { Navigate } from 'svelte-router-spa';
 
 
-// import { resources_info } from 'utils/resources.js';
 
 const resources = [
 	{
@@ -27,6 +26,14 @@ const resources = [
 		name: 'Adult Hockey Reps',
 		to: '/my/adult_hockey/reps',
 	},
+	{
+		name: 'Adult Hockey Leagues',
+		to: '/my/adult_hockey/league_instances',
+	},
+	{
+		name: 'Adult Hockey Teams',
+		to: '/my/adult_hockey/team_instances',
+	},
 ];
 
 
@@ -39,28 +46,12 @@ const resources = [
 </style>
 
 
-<section class="hero bg-grey">
-
-	<div class="hero-body">
-
-		<div class="container">
-
-			<p class="hero-subtitle has-text-centered">
-				<span>Adult Hockey Helpers</span>
-			</p>
-
-		</div>
-
-	</div>
-
-</section>
-
 
 <section class="section skinny-section" style="padding-bottom: 1.5rem !important;">
 
 	<div class="container is-fullwidth">
 
-		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={'Views:'} />
+		<MsgCard msg_show={true} msg_forever={true} msg_type={'error'} msg_text={'Helpers:'} />
 
 		<div class="columns is-variable is-mobile is-multiline is-centered">
 

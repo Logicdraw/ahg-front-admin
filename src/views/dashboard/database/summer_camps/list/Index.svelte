@@ -42,7 +42,7 @@ let url_params = {
 }
 
 
-let url = `${admin_api_url}/_other/_adult_hockey/reps`;
+let url = `${admin_api_url}/_database/_summer_camps/_list/camp-instances`;
 
 
 let headers = {
