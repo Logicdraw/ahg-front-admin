@@ -23,19 +23,19 @@ import DashboardLayout from 'layouts/dashboard/Layout.svelte';
 
 // ACT Archive
 
-import DashboardACTArchiveCoachesListLayout from 'layouts/dashboard/act_archive/coaches/list/Layout.svelte';
+import DashboardACTArchiveCoachesListIndexLayout from 'layouts/dashboard/act_archive/coaches/list/index/Layout.svelte';
 
 import DashboardACTArchiveCoachViewLayout from 'layouts/dashboard/act_archive/coaches/coach/view/Layout.svelte';
 
 
 
-import DashboardACTArchiveHockeySchoolRegistrationsListLayout from 'layouts/dashboard/act_archive/hockey_school_registrations/list/Layout.svelte';
+import DashboardACTArchiveHockeySchoolRegistrationsListIndexLayout from 'layouts/dashboard/act_archive/hockey_school_registrations/list/index/Layout.svelte';
 
 import DashboardACTArchiveHockeySchoolRegistrationViewLayout from 'layouts/dashboard/act_archive/hockey_school_registrations/hockey_school_registration/view/Layout.svelte';
 
 
 
-import DashboardACTArchiveSpringHockeyRegistrationsListLayout from 'layouts/dashboard/act_archive/spring_hockey_registrations/list/Layout.svelte';
+import DashboardACTArchiveSpringHockeyRegistrationsListIndexLayout from 'layouts/dashboard/act_archive/spring_hockey_registrations/list/index/Layout.svelte';
 
 import DashboardACTArchiveSpringHockeyRegistrationViewLayout from 'layouts/dashboard/act_archive/spring_hockey_registrations/spring_hockey_registration/view/Layout.svelte';
 
@@ -163,7 +163,7 @@ import DashboardDatabaseSpringHockeyIRPsIndexLayout from 'layouts/dashboard/data
 
 import DashboardDatabaseSpringHockeyJerseySponsorsIndexLayout from 'layouts/dashboard/database/spring_hockey/jersey_sponsors/index/Layout.svelte';
 
-import DashboardDatabaseSpringHockeyJerseySponsorsFinancesTeamsLayout from 'layouts/dashboard/database/spring_hockey/jersey_sponsors/finances_teams/Layout.svelte';
+import DashboardDatabaseSpringHockeyJerseySponsorsFinancesTeamsIndexLayout from 'layouts/dashboard/database/spring_hockey/jersey_sponsors/finances_teams/index/Layout.svelte';
 
 import DashboardDatabaseSpringHockeyJerseySponsorsListIndexLayout from 'layouts/dashboard/database/spring_hockey/jersey_sponsors/list/index/Layout.svelte';
 
@@ -386,7 +386,7 @@ import DashboardDatabaseSpringHockeyIRPsIndex from 'views/dashboard/database/spr
 
 import DashboardDatabaseSpringHockeyJerseySponsorsIndex from 'views/dashboard/database/spring_hockey/jersey_sponsors/Index.svelte';
 
-import DashboardDatabaseSpringHockeyJerseySponsorsFinancesTeams from 'views/dashboard/database/spring_hockey/jersey_sponsors/finances_teams/Index.svelte';
+import DashboardDatabaseSpringHockeyJerseySponsorsFinancesTeamsIndex from 'views/dashboard/database/spring_hockey/jersey_sponsors/finances_teams/Index.svelte';
 
 import DashboardDatabaseSpringHockeyJerseySponsorsListIndex from 'views/dashboard/database/spring_hockey/jersey_sponsors/list/Index.svelte';
 
@@ -414,11 +414,11 @@ import DashboardDatabaseSummerCampsListIndex from 'views/dashboard/database/summ
 import DashboardDatabaseSummerCampsCoachesIndex from 'views/dashboard/database/summer_camps/coaches/Index.svelte';
 
 
-import DashboardDatabaseSummerCampsCampInstanceFinances from 'views/dashboard/database/summer_camps/camp_instance/Finances.svelte';
+import DashboardDatabaseSummerCampsCampInstanceViewFinances from 'views/dashboard/database/summer_camps/camp_instance/view/Finances.svelte';
 
-import DashboardDatabaseSummerCampsCampInstanceGroups from 'views/dashboard/database/summer_camps/camp_instance/Groups.svelte';
+import DashboardDatabaseSummerCampsCampInstanceViewGroups from 'views/dashboard/database/summer_camps/camp_instance/view/Groups.svelte';
 
-import DashboardDatabaseSummerCampsCampInstanceRegistrations from 'views/dashboard/database/summer_camps/camp_instance/Registrations.svelte';
+import DashboardDatabaseSummerCampsCampInstanceViewRegistrations from 'views/dashboard/database/summer_camps/camp_instance/view/Registrations.svelte';
 
 
 
@@ -722,7 +722,7 @@ const routes = [
 								nestedRoutes: [
 									{
 										name: 'index',
-										component: DashboardDatabaseCampInstancesPlayers,
+										component: DashboardDatabaseGuardianCampInstances,
 									},
 								],
 							},
@@ -1013,11 +1013,11 @@ const routes = [
 							},
 							{
 								name: 'jersey_sponsors/finances_teams',
-								component: DashboardDatabaseSpringHockeyJerseySponsorsFinancesTeamsLayout,
+								component: DashboardDatabaseSpringHockeyJerseySponsorsFinancesTeamsIndexLayout,
 								nestedRoutes: [
 									{
 										name: 'index',
-										component: DashboardDatabaseSpringHockeyJerseySponsorsFinancesTeams,
+										component: DashboardDatabaseSpringHockeyJerseySponsorsFinancesTeamsIndex,
 									},
 								],
 							},

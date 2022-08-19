@@ -8,7 +8,3 @@ export let params;
 <style>
 
 </style>
-
-
-<!-- ... -->
-

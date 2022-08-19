@@ -16,7 +16,7 @@ import Hero from 'components/elements/Hero.svelte';
 </style>
 
 
-<Hero title={'ACT Archive: Coaches'} />
+<Hero title={'Coaches (ACT Archive)'} />
 
 
 <Route {currentRoute} params={{
